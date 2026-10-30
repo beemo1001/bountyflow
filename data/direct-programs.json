@@ -1,0 +1,321 @@
+{
+  "_meta": {
+    "note": "Curated direct bug bounty & VDP programs that do NOT live on HackerOne/Bugcrowd/Intigriti/YesWeHack. Bounty amounts marked approx are public documented figures at time of curation - always verify on the program page. Edit this file to add/remove programs; the site picks it up automatically.",
+    "curated": "2026-10",
+    "sources": ["bughunters.google.com", "security.apple.com", "microsoft.com/msrc", "facebook.com/whitehat", "immunefi.com/bug-bounty", "intel.com", "signal.org", "mozilla.org", "zerodayinitiative.com", "torproject.org", "apache.org"]
+  },
+  "programs": [
+    {
+      "name": "Google & Alphabet VRP",
+      "platform": "direct",
+      "url": "https://bughunters.google.com",
+      "offersBounties": true,
+      "maxBounty": 151500,
+      "currency": "USD",
+      "approx": true,
+      "offersSwag": true,
+      "safeHarbor": "full",
+      "summary": "The original big-tech bug bounty. Virtually all *.google.com, *.youtube.com, *.blogger.com, *.deepmind.com, *.waymo.com and *.wing.com properties, plus Google apps in the Apple App Store. Paid out $17.1M in 2025 across all Google VRPs.",
+      "targets": [
+        { "cat": "wildcard", "target": "*.google.com" },
+        { "cat": "wildcard", "target": "*.youtube.com" },
+        { "cat": "wildcard", "target": "*.deepmind.com" },
+        { "cat": "mobile", "target": "Google & Waymo iOS apps (App Store)" },
+        { "cat": "web", "target": "*.blogger.com, *.waymo.com, *.wing.com" }
+      ]
+    },
+    {
+      "name": "Google Cloud VRP",
+      "platform": "direct",
+      "url": "https://bughunters.google.com/about/rules/6521337925486592/google-cloud-vulnerability-reward-program-vrp-rules",
+      "offersBounties": true,
+      "maxBounty": 101010,
+      "currency": "USD",
+      "approx": false,
+      "offersSwag": false,
+      "safeHarbor": "full",
+      "summary": "Dedicated VRP for Google Cloud platform (GCP) products and services, with a top award of $101,010. Over 150 products under the top reward tiers.",
+      "targets": [
+        { "cat": "web", "target": "Google Cloud Console & platform services" },
+        { "cat": "api", "target": "GCP APIs and Cloud services" }
+      ]
+    },
+    {
+      "name": "Google Open Source VRP",
+      "platform": "direct",
+      "url": "https://bughunters.google.com/about/rules/6115402752161792/google-open-source-software-vulnerability-reward-program-rules",
+      "offersBounties": true,
+      "maxBounty": 31337,
+      "currency": "USD",
+      "approx": false,
+      "offersSwag": false,
+      "safeHarbor": "full",
+      "summary": "Bug bounty for Google's open-source projects (the OSS-VRP). Top reward $31,337. Covers the most sensitive Google OSS repos, supply-chain compromises and design issues.",
+      "targets": [
+        { "cat": "source", "target": "Sensitive Google open-source repositories (GitHub)" },
+        { "cat": "source", "target": "Supply chain / build infrastructure" }
+      ]
+    },
+    {
+      "name": "Apple Security Bounty",
+      "platform": "direct",
+      "url": "https://security.apple.com/bounty/",
+      "offersBounties": true,
+      "maxBounty": 2000000,
+      "currency": "USD",
+      "approx": false,
+      "offersSwag": false,
+      "safeHarbor": "full",
+      "summary": "One of the highest-paying programs in the world: up to $2M for zero-click exploit chains (over $5M with bonuses). Covers iOS, iPadOS, macOS, visionOS, watchOS, tvOS, iCloud and wireless proximity attacks. New Target Flags make reward validation faster.",
+      "targets": [
+        { "cat": "mobile", "target": "iOS / iPadOS exploitation" },
+        { "cat": "desktop", "target": "macOS exploitation" },
+        { "cat": "hardware", "target": "Wireless proximity attacks (radios, C1/C1X modems)" },
+        { "cat": "web", "target": "iCloud web properties" },
+        { "cat": "mobile", "target": "visionOS / watchOS / tvOS" }
+      ]
+    },
+    {
+      "name": "Microsoft MSRC Bounty Programs",
+      "platform": "direct",
+      "url": "https://www.microsoft.com/en-us/msrc/bounty",
+      "offersBounties": true,
+      "maxBounty": 250000,
+      "currency": "USD",
+      "approx": true,
+      "offersSwag": false,
+      "safeHarbor": null,
+      "summary": "Microsoft's family of bounty programs: Windows Insider Preview, Microsoft Cloud (Azure), Office 365, Microsoft Edge, Xbox, Dynamics, and up to $250,000 for Hyper-V RCEs. Also the long-running BlueHat prize-style competitions.",
+      "targets": [
+        { "cat": "desktop", "target": "Windows / Office / Edge" },
+        { "cat": "web", "target": "Azure, Microsoft 365 cloud services" },
+        { "cat": "api", "target": "Microsoft Graph / Azure APIs" },
+        { "cat": "hardware", "target": "Xbox / Hyper-V (up to $250k)" }
+      ]
+    },
+    {
+      "name": "Meta (Facebook) Bug Bounty",
+      "platform": "direct",
+      "url": "https://www.facebook.com/whitehat",
+      "offersBounties": true,
+      "maxBounty": 40000,
+      "currency": "USD",
+      "approx": true,
+      "offersSwag": true,
+      "safeHarbor": "full",
+      "summary": "Facebook, Instagram, WhatsApp, Messenger and Oculus. Account-takeover chains have historically paid six figures. Known for fast triage and a public researcher directory. Great scope breadth across web and mobile.",
+      "targets": [
+        { "cat": "web", "target": "facebook.com, instagram.com, messenger.com" },
+        { "cat": "mobile", "target": "Facebook / Instagram / WhatsApp / Messenger apps" },
+        { "cat": "api", "target": "Facebook Graph API" },
+        { "cat": "hardware", "target": "Meta Quest / Oculus" }
+      ]
+    },
+    {
+      "name": "Intel Product Security Bug Bounty",
+      "platform": "direct",
+      "url": "https://www.intel.com/content/www/us/en/security-center/bug-bounty-program.html",
+      "offersBounties": true,
+      "maxBounty": 100000,
+      "currency": "USD",
+      "approx": true,
+      "offersSwag": false,
+      "safeHarbor": null,
+      "summary": "Intel's program covering CPUs, firmware, software and hardware. Up to $100,000 for the highest-impact findings. Heavily focused on hardware and low-level research - an advanced program.",
+      "targets": [
+        { "cat": "hardware", "target": "Intel CPUs, chipsets, firmware" },
+        { "cat": "desktop", "target": "Intel software & drivers" },
+        { "cat": "web", "target": "intel.com web properties" }
+      ]
+    },
+    {
+      "name": "Signal Bug Bounty Program",
+      "platform": "direct",
+      "url": "https://signal.org/security/",
+      "offersBounties": true,
+      "maxBounty": 100000,
+      "currency": "USD",
+      "approx": true,
+      "offersSwag": false,
+      "safeHarbor": "full",
+      "summary": "The encrypted-messaging app pays up to $100,000 for remote code execution as the user, plus bounties for a range of other vulnerability classes in the Signal clients and server. Small, high-quality scope - read their detailed matrix.",
+      "targets": [
+        { "cat": "mobile", "target": "Signal Android / iOS apps" },
+        { "cat": "desktop", "target": "Signal Desktop" },
+        { "cat": "source", "target": "Signal server & libraries (open source)" }
+      ]
+    },
+    {
+      "name": "Zero Day Initiative (ZDI)",
+      "platform": "direct",
+      "url": "https://www.zerodayinitiative.com/",
+      "offersBounties": true,
+      "maxBounty": null,
+      "currency": "USD",
+      "approx": false,
+      "offersSwag": false,
+      "safeHarbor": null,
+      "summary": "The world's oldest and largest vendor-neutral 0-day acquisition program (owned by Trend Micro). Variable payouts - frequently six figures for high-quality 0-days in widely deployed software. Also runs the Pwn2Own hacking competitions.",
+      "targets": [
+        { "cat": "desktop", "target": "Any widely-deployed software (0-day acquisition)" },
+        { "cat": "source", "target": "Vulnerability research: browsers, OS kernels, virtualization, ICS" }
+      ]
+    },
+    {
+      "name": "Mozilla Firefox Bug Bounty",
+      "platform": "direct",
+      "url": "https://www.mozilla.org/en-US/security/bug-bounty/",
+      "offersBounties": true,
+      "maxBounty": 5000,
+      "currency": "USD",
+      "approx": true,
+      "offersSwag": true,
+      "safeHarbor": "full",
+      "summary": "Firefox, Firefox for Android/iOS, Firefox Focus and related web properties. Bounties scale by severity - a classic program for learning browser and web exploitation with an extremely transparent hall of fame.",
+      "targets": [
+        { "cat": "desktop", "target": "Firefox browser" },
+        { "cat": "mobile", "target": "Firefox for Android / iOS / Focus" },
+        { "cat": "web", "target": "mozilla.org, firefox.com web properties" }
+      ]
+    },
+    {
+      "name": "Tor Project Bug Bounty & VDP",
+      "platform": "direct",
+      "url": "https://gitlab.torproject.org/legacy/trac/-/wikis/doc/ReportingBugs",
+      "offersBounties": false,
+      "maxBounty": 0,
+      "currency": "USD",
+      "approx": false,
+      "offersSwag": true,
+      "safeHarbor": "full",
+      "summary": "Tor runs a vulnerability disclosure program for the Tor network, Tor Browser and infrastructure. Rewards are mostly swag (the famous Tor t-shirt) and hall-of-fame credit - an ideal, forgiving practice ground with real security impact.",
+      "targets": [
+        { "cat": "web", "target": "torproject.org, support & spec sites" },
+        { "cat": "desktop", "target": "Tor Browser" },
+        { "cat": "network", "target": "Tor network protocol & relays" }
+      ]
+    },
+    {
+      "name": "Apache Software Foundation Security VDP",
+      "platform": "direct",
+      "url": "https://security.apache.org/",
+      "offersBounties": false,
+      "maxBounty": 0,
+      "currency": "USD",
+      "approx": false,
+      "offersSwag": true,
+      "safeHarbor": "full",
+      "summary": "Report vulnerabilities in any Apache project (350+ open-source projects: httpd, Kafka, Struts, Log4j...). No cash bounty, but ASF thanks and credit - excellent for learning open-source code review on real, widely deployed code.",
+      "targets": [
+        { "cat": "source", "target": "All Apache Software Foundation projects" },
+        { "cat": "web", "target": "apache.org infrastructure" }
+      ]
+    },
+    {
+      "name": "Immunefi (Web3 Bug Bounty Hub)",
+      "platform": "direct",
+      "url": "https://immunefi.com/bug-bounty/",
+      "offersBounties": true,
+      "maxBounty": 3000000,
+      "currency": "USD",
+      "approx": true,
+      "offersSwag": false,
+      "safeHarbor": null,
+      "summary": "The largest Web3 bug bounty platform: 150+ live smart-contract and blockchain programs, 40+ criticals confirmed monthly. Max bounties reach into the millions. Requires solid Solidity/EVM skills - the highest payout density in bug bounty.",
+      "targets": [
+        { "cat": "web3", "target": "150+ live smart contract & blockchain programs" },
+        { "cat": "web3", "target": "DeFi, bridges, L1/L2 protocols, NFT contracts" }
+      ]
+    },
+    {
+      "name": "Ethena (Web3)",
+      "platform": "direct",
+      "url": "https://immunefi.com/bug-bounty/",
+      "offersBounties": true,
+      "maxBounty": 3000000,
+      "currency": "USD",
+      "approx": false,
+      "offersSwag": false,
+      "safeHarbor": null,
+      "summary": "One of the highest maximum bounties currently live on Immunefi - $3M for critical findings in the Ethena protocol (synthetic dollar protocol on Ethereum). Find the program via Immunefi's explorer.",
+      "targets": [
+        { "cat": "web3", "target": "Ethena protocol smart contracts (Ethereum)" }
+      ]
+    },
+    {
+      "name": "Lombard Finance (Web3)",
+      "platform": "direct",
+      "url": "https://immunefi.com/bug-bounty/",
+      "offersBounties": true,
+      "maxBounty": 500000,
+      "currency": "USD",
+      "approx": false,
+      "offersSwag": false,
+      "safeHarbor": null,
+      "summary": "Bitcoin liquid-staking protocol with a $500k maximum bounty on Immunefi. Smart contract focus.",
+      "targets": [
+        { "cat": "web3", "target": "Lombard smart contracts (BTC liquid staking)" }
+      ]
+    },
+    {
+      "name": "SSV Network (Web3)",
+      "platform": "direct",
+      "url": "https://immunefi.com/bug-bounty/",
+      "offersBounties": true,
+      "maxBounty": 250000,
+      "currency": "USD",
+      "approx": false,
+      "offersSwag": false,
+      "safeHarbor": null,
+      "summary": "Distributed Ethereum staking infrastructure - $250k max bounty on Immunefi. Contract + validator infrastructure scope.",
+      "targets": [
+        { "cat": "web3", "target": "SSV Network contracts & node infrastructure" }
+      ]
+    },
+    {
+      "name": "ENS - Ethereum Name Service (Web3)",
+      "platform": "direct",
+      "url": "https://immunefi.com/bug-bounty/",
+      "offersBounties": true,
+      "maxBounty": 250000,
+      "currency": "USD",
+      "approx": false,
+      "offersSwag": false,
+      "safeHarbor": null,
+      "summary": "The naming protocol of Ethereum - $250k max bounty, triaged by Immunefi. Heavily audited, high competition, great learning material.",
+      "targets": [
+        { "cat": "web3", "target": "ENS registry, registrar & resolver contracts" }
+      ]
+    },
+    {
+      "name": "The Graph (Web3)",
+      "platform": "direct",
+      "url": "https://immunefi.com/bug-bounty/",
+      "offersBounties": true,
+      "maxBounty": 50000,
+      "currency": "USD",
+      "approx": false,
+      "offersSwag": false,
+      "safeHarbor": null,
+      "summary": "Indexing protocol for blockchain data - $50k max bounty with $1.6M+ already paid out and a fast 1-day median resolution time on Immunefi.",
+      "targets": [
+        { "cat": "web3", "target": "The Graph contracts & indexing infrastructure" }
+      ]
+    },
+    {
+      "name": "Hedera (Web3)",
+      "platform": "direct",
+      "url": "https://immunefi.com/bug-bounty/",
+      "offersBounties": true,
+      "maxBounty": 30000,
+      "currency": "USD",
+      "approx": false,
+      "offersSwag": false,
+      "safeHarbor": null,
+      "summary": "Enterprise-grade hashgraph network - $30k max bounty on Immunefi, triaged directly by the platform.",
+      "targets": [
+        { "cat": "web3", "target": "Hedera network services & smart contracts" }
+      ]
+    }
+  ]
+}
