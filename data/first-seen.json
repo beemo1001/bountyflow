@@ -57,6 +57,7 @@
   "int-skodaautoprivatebugbountyprogram": "2026-10-16",
   "int-sqillscorporatewebsite": "2026-09-30",
   "int-uzleuven": "2026-09-30",
+  "int-vdp-867": "2026-11-07",
   "int-vdp-868": "2026-09-28",
   "int-voiscooters": "2026-10-26",
   "int-website": "2026-09-24",
@@ -942,6 +943,7 @@
   "int-usz-vdp",
   "int-uzleuven",
   "int-vdp",
+  "int-vdp-867",
   "int-vdp-868",
   "int-vdp-869",
   "int-vlerickbusinessschool",
@@ -1012,5 +1014,5 @@
   "ywh-yes-we-hack",
   "ywh-zecible-public-bug-bounty-program"
  ],
- "updated": "2026-11-06T22:44:08Z"
+ "updated": "2026-11-07T14:01:49Z"
 }
