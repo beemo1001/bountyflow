@@ -1,7 +1,7 @@
 /* ============================================================
    BountyFlow · ui.js
-   Shared rendering helpers: DOM builder, SVG icon system,
-   badges, program cards, scope tables, gauges, money formatting.
+   Shared rendering helpers: DOM builder, icons, badges,
+   program rows, scope tables, gauges, money formatting.
    ============================================================ */
 
 const BFUI = (() => {
@@ -19,7 +19,6 @@ const BFUI = (() => {
         else if (k.startsWith('on') && typeof v === 'function') el.addEventListener(k.slice(2), v);
         else if (k === 'dataset') Object.assign(el.dataset, v);
         else if (typeof v === 'boolean') {
-          // setAttribute('checked', false) would render checked="false" → TRUE. Use properties.
           if (v && BOOL_PROPS.has(k)) el[k] = true;
           else if (v) el.setAttribute(k, '');
         }
@@ -91,7 +90,11 @@ const BFUI = (() => {
     'code': '<path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/>',
     'activity': '<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>',
     'list': '<path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/>',
-    'banknote': '<rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01"/><path d="M18 12h.01"/>'
+    'banknote': '<rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01"/><path d="M18 12h.01"/>',
+    'sparkle': '<path d="M12 3l1.9 5.6L19.5 10.5l-5.6 1.9L12 18l-1.9-5.6L4.5 10.5l5.6-1.9z"/>',
+    'calendar': '<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>',
+    'external': '<path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>',
+    'arrow-right': '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>'
   };
 
   function icon(name, size = 16, cls = '') {
@@ -127,128 +130,116 @@ const BFUI = (() => {
     return Math.floor(hr / 24) + 'd ago';
   }
 
-  /* ---------- badges & chips ---------- */
-  function platformBadge(p) {
+  // "2026-11-04" -> "today" / "yesterday" / "3 days ago" / "Oct 28"
+  function dayLabel(iso) {
+    if (!iso) return '';
+    const d = new Date(iso + 'T12:00:00Z');
+    const days = Math.round((Date.now() - d.getTime()) / 86400000);
+    if (days <= 0) return 'today';
+    if (days === 1) return 'yesterday';
+    if (days < 7) return days + ' days ago';
+    return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+  }
+
+  /* ---------- badges ---------- */
+  function platformTag(p) {
     const pl = BF.PLATFORMS[p.platform];
-    return h('span', { class: 'badge platform platform-' + p.platform, title: pl.label },
-      h('span', { class: 'badge-dot' }), pl.short);
+    return h('span', { class: 'tag plat', title: pl.label },
+      h('span', { class: 'dot', style: 'background:' + pl.color }), pl.label);
   }
 
-  function difficultyBadge(a) {
-    const d = BF.DIFFICULTY[a.difficulty.level];
-    return h('span', { class: 'badge diff diff-' + a.difficulty.level, title: 'Difficulty ' + a.difficulty.score + '/100 · ' + a.why.slice(0, 3).join(' · ') },
-      h('span', { class: 'badge-dot' }), d.label, h('span', { class: 'diff-score' }, a.difficulty.score));
+  function levelTag(a) {
+    const lv = a.difficulty.level;
+    const cls = lv === 'beginner' ? 'ok' : lv === 'intermediate' ? 'warn' : 'red';
+    return h('span', { class: 'tag ' + cls, title: 'Auto-rated difficulty ' + a.difficulty.score + '/100' }, BF.DIFFICULTY[lv].label);
   }
 
-  function catChip(cat, count, clickable) {
-    const c = BF.CATS[cat] || BF.CATS.other;
-    const attrs = { class: 'chip cat-chip' + (clickable ? ' clickable' : ''), title: c.label + (count ? ' · ' + count + ' assets' : '') };
-    if (clickable) {
-      attrs.onclick = () => { BFFilters.patch({ cats: [cat] }); window.BFApp.go('#/'); };
-    }
-    return h('span', attrs, icon(c.icon, 11), c.label + (count ? ' ' + count : ''));
+  function newTag(p) {
+    return p.isNew ? h('span', { class: 'tag solid-red', title: 'First seen ' + p.firstSeen }, 'NEW') : null;
   }
 
-  function techChip(t) {
-    return h('span', { class: 'chip tech-chip', title: t.group }, t.id);
+  function rewardText(p) {
+    if (p.bountyKnown && p.maxBountyUSD) return { main: money(p.maxBountyUSD), sub: (p.minBountyUSD ? 'from ' + money(p.minBountyUSD) : 'max bounty') + (p.bountyApprox ? ' ≈' : ''), cls: 'paid' };
+    if (p.offersBounties) return { main: 'Paid', sub: 'amount varies', cls: 'paid' };
+    return { main: p.offersSwag ? 'Swag' : 'VDP', sub: 'no cash', cls: 'vdp' };
   }
+
+  function catLabel(cat) { return (BF.CATS[cat] || BF.CATS.other).label; }
+
+  function techChip(t) { return h('span', { class: 'tag', title: t.group }, t.id); }
 
   /* ---------- difficulty gauge (SVG arc) ---------- */
   function gauge(score, level) {
     const color = BF.DIFFICULTY[level].color;
     const r = 44, cx = 55, cy = 55;
-    const frac = score / 100;
-    const start = Math.PI * 0.75, end = start + Math.PI * 1.5 * frac;
+    const start = Math.PI * 0.75, end = start + Math.PI * 1.5 * (score / 100);
     const arc = (a, b) => {
       const x1 = cx + r * Math.cos(a), y1 = cy + r * Math.sin(a);
       const x2 = cx + r * Math.cos(b), y2 = cy + r * Math.sin(b);
-      const large = b - a > Math.PI ? 1 : 0;
-      return `M ${x1} ${y1} A ${r} ${r} 0 ${large} 1 ${x2} ${y2}`;
+      return `M ${x1} ${y1} A ${r} ${r} 0 ${b - a > Math.PI ? 1 : 0} 1 ${x2} ${y2}`;
     };
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('viewBox', '0 0 110 110');
     svg.setAttribute('class', 'gauge');
     svg.innerHTML =
-      `<path d="${arc(start, start + Math.PI * 1.5)}" fill="none" stroke="#1b2740" stroke-width="8" stroke-linecap="round"/>` +
-      `<path d="${arc(start, Math.max(start + 0.01, end))}" fill="none" stroke="${color}" stroke-width="8" stroke-linecap="round"/>` +
-      `<text x="55" y="53" text-anchor="middle" fill="#e9eef7" font-size="23" font-weight="600" font-family="'IBM Plex Mono', monospace">${score}</text>` +
-      `<text x="55" y="70" text-anchor="middle" fill="#66748f" font-size="9" letter-spacing="2">/100</text>`;
+      `<path d="${arc(start, start + Math.PI * 1.5)}" fill="none" stroke="#1e1e23" stroke-width="7" stroke-linecap="round"/>` +
+      `<path d="${arc(start, Math.max(start + 0.01, end))}" fill="none" stroke="${color}" stroke-width="7" stroke-linecap="round"/>` +
+      `<text x="55" y="58" text-anchor="middle" fill="#f2f2f4" font-size="24" font-weight="600" font-family="JetBrains Mono, monospace">${score}</text>` +
+      `<text x="55" y="74" text-anchor="middle" fill="#7d7d88" font-size="9" letter-spacing="1.5" font-family="JetBrains Mono, monospace">/ 100</text>`;
     return svg;
   }
 
-  /* ---------- horizontal bar (stats) ---------- */
-  function bar(label, value, max, color, valueLabel) {
+  function bar(label, value, max, valueLabel) {
     const pct = max > 0 ? Math.round((value / max) * 100) : 0;
     return h('div', { class: 'bar-row' },
       h('span', { class: 'bar-label' }, label),
-      h('div', { class: 'bar-track' },
-        h('div', { class: 'bar-fill', style: `width:${Math.max(pct, 2)}%;background:${color || 'var(--accent)'};` })),
-      h('span', { class: 'bar-value' }, valueLabel != null ? valueLabel : value));
+      h('div', { class: 'meter' }, h('i', { style: `width:${Math.max(pct, 2)}%` })),
+      h('span', { class: 'bar-value mono' }, valueLabel != null ? valueLabel : value));
+  }
+
+  function bookmarkBtn(p) {
+    const on = BFStore.isBookmarked(p.id);
+    return h('button', {
+      class: 'icon-btn bm' + (on ? ' active' : ''), title: on ? 'Remove from saved' : 'Save program', 'aria-label': 'Save program',
+      onclick: e => {
+        e.stopPropagation();
+        const now = BFStore.toggleBookmark(p.id);
+        e.currentTarget.classList.toggle('active', now);
+        CF.toast(now ? 'Saved' : 'Removed from saved');
+      }
+    }, icon('star', 15));
   }
 
   /* ============================================================
-     PROGRAM CARD (dashboard grid)
+     PROGRAM ROW (main list): one clean line per program
      ============================================================ */
-  function programCard(p, opts) {
+  function programRow(p, extra) {
     const a = p.analysis;
-    const bookmarked = BFStore.isBookmarked(p.id);
-
-    const bountyBox = p.bountyKnown && p.maxBountyUSD
-      ? h('div', { class: 'card-bounty' },
-          h('span', { class: 'bounty-label' }, 'Max bounty'),
-          h('div', { class: 'bounty-row' },
-            h('span', { class: 'bounty-max' }, money(p.maxBountyUSD)),
-            p.minBountyUSD ? h('span', { class: 'bounty-min' }, 'min ' + money(p.minBountyUSD)) : null,
-            p.bountyApprox ? h('span', { class: 'bounty-approx', title: 'Approximate public figure: verify on program page' }, '≈') : null))
-      : p.offersBounties
-        ? h('div', { class: 'card-bounty' },
-            h('span', { class: 'bounty-label' }, 'Rewards'),
-            h('div', { class: 'bounty-row' },
-              h('span', { class: 'bounty-unknown' }, icon('dollar', 14), 'Cash bounties'),
-              h('span', { class: 'bounty-note' }, 'amount varies')))
-        : h('div', { class: 'card-bounty vdp' },
-            h('span', { class: 'bounty-label' }, 'Rewards'),
-            h('div', { class: 'bounty-row' },
-              h('span', { class: 'bounty-unknown' }, icon(p.offersSwag ? 'gift' : 'shield', 14), p.offersSwag ? 'VDP + swag' : 'VDP'),
-              h('span', { class: 'bounty-note' }, 'no cash')));
-
-    const metaIcons = [];
-    if (p.responseEfficiency != null) metaIcons.push(h('span', { class: 'meta-eff ' + (p.responseEfficiency >= 80 ? 'good' : ''), title: 'Response efficiency' }, icon('zap', 12), p.responseEfficiency + '%'));
-    if (p.safeHarbor === 'full') metaIcons.push(h('span', { title: 'Full safe harbor: legal protection' }, icon('shield-check', 12)));
-    if (p.allowsDisclosure) metaIcons.push(h('span', { title: 'Disclosure allowed' }, icon('megaphone', 12)));
-
-    const card = h('article', {
-      class: 'card program-card level-' + a.difficulty.level,
-      dataset: { id: p.id },
-      onclick: (e) => { if (!e.target.closest('.card-actions, a')) BFApp.go('#/program/' + encodeURIComponent(p.id)); }
+    const rw = rewardText(p);
+    const cats = a.topCats.slice(0, 3).map(c => catLabel(c.cat));
+    return h('article', {
+      class: 'prow', tabindex: '0', role: 'link', dataset: { id: p.id },
+      onclick: e => { if (!e.target.closest('button, a')) BFApp.go('#/program/' + encodeURIComponent(p.id)); },
+      onkeydown: e => { if (e.key === 'Enter') BFApp.go('#/program/' + encodeURIComponent(p.id)); }
     },
-      h('div', { class: 'card-top' },
-        platformBadge(p),
-        h('div', { class: 'card-actions' },
-          h('button', {
-            class: 'icon-btn bm-btn' + (bookmarked ? ' active' : ''),
-            title: bookmarked ? 'Remove bookmark' : 'Bookmark program',
-            onclick: (e) => { e.stopPropagation(); BFStore.toggleBookmark(p.id); e.currentTarget.classList.toggle('active'); }
-          }, icon('star', 14))
-        )
-      ),
-      h('h3', { class: 'card-name', title: p.name }, p.name),
-      bountyBox,
-      h('p', { class: 'card-line' }, a.oneLiner),
-      h('div', { class: 'card-cats' },
-        a.topCats.slice(0, 4).map(({ cat, count }) => catChip(cat, count, true)),
-        a.total > 0 ? h('span', { class: 'chip count-chip' }, a.total + ' assets') : null),
-      h('div', { class: 'card-foot' },
-        h('div', { class: 'card-foot-left' },
-          difficultyBadge(a),
-          a.tech.length ? h('span', { class: 'meta-icons', title: a.tech.slice(0, 10).map(t => t.id).join(', ') }, icon('code', 12), a.tech.slice(0, 2).map(t => t.id).join(' · ')) : null,
-          metaIcons.length ? h('span', { class: 'meta-icons' }, metaIcons) : null),
-        h('a', { class: 'card-link', href: p.url, target: '_blank', rel: 'noopener noreferrer', onclick: e => e.stopPropagation() },
-          'Open', icon('arrow-up-right', 11))
-      )
-    );
+      h('div', { class: 'prow-main' },
+        h('div', { class: 'prow-name' }, h('span', { class: 'name' }, p.name), newTag(p)),
+        h('div', { class: 'prow-meta' }, platformTag(p),
+          h('span', { class: 'muted small' }, a.total ? a.total + ' targets · ' + cats.join(', ') : 'scope on program page'),
+          extra || null)),
+      h('div', { class: 'prow-reward ' + rw.cls }, h('b', {}, rw.main), h('span', {}, rw.sub)),
+      h('div', { class: 'prow-level' }, levelTag(a)),
+      h('div', { class: 'prow-act' }, bookmarkBtn(p),
+        p.url ? h('a', { class: 'icon-btn', href: p.url, target: '_blank', rel: 'noopener noreferrer', title: 'Open program page', 'aria-label': 'Open program page' }, icon('external', 15)) : null));
+  }
 
-    return card;
+  /* compact card for the "new" strip */
+  function miniCard(p) {
+    const rw = rewardText(p);
+    return h('a', { class: 'mini card hover', href: '#/program/' + encodeURIComponent(p.id) },
+      h('div', { class: 'row' }, platformTag(p), h('span', { class: 'spacer' }), h('span', { class: 'muted tiny mono' }, dayLabel(p.firstSeen))),
+      h('div', { class: 'mini-name' }, p.name),
+      h('div', { class: 'row' }, h('b', { class: 'mini-reward ' + rw.cls }, rw.main), h('span', { class: 'spacer' }), levelTag(p.analysis)));
   }
 
   /* ============================================================
@@ -276,7 +267,7 @@ const BFUI = (() => {
       root.append(
         h('div', { class: 'scope-toolbar' },
           h('input', {
-            class: 'scope-search input', type: 'search', placeholder: 'Filter ' + filtered.length + ' assets…',
+            class: 'input scope-search', type: 'search', placeholder: 'Filter ' + filtered.length + ' assets…',
             value: q,
             oninput: e => { q = e.target.value; page = 1; render(); e.target.focus(); }
           }),
@@ -301,10 +292,10 @@ const BFUI = (() => {
       slice.forEach(t => {
         const c = BF.CATS[t.cat] || BF.CATS.other;
         tbody.append(h('tr', {},
-          h('td', {}, h('span', { class: 'chip cat-chip' }, icon(c.icon, 11), c.label)),
+          h('td', {}, h('span', { class: 'tag' }, c.label)),
           h('td', { class: 'tgt' }, h('span', { class: 'mono' }, t.t || 'n/a')),
           which === 'in' ? h('td', {}, t.b ? h('span', { class: 'bounty-yes', title: 'Bounty eligible' }, icon('dollar', 13)) : h('span', { class: 'dim', title: 'Submission eligible only' }, '·')) : null,
-          which === 'in' ? h('td', {}, t.s ? h('span', { class: 'sev sev-' + t.s }, t.s) : h('span', { class: 'dim' }, 'n/a')) : null,
+          which === 'in' ? h('td', {}, t.s ? h('span', { class: 'tag ' + ({critical:'red',high:'red',medium:'warn',low:'info'}[String(t.s).toLowerCase()]||'') }, t.s) : h('span', { class: 'dim' }, 'n/a')) : null,
           h('td', { class: 'note' }, t.n ? t.n.slice(0, 220) : '')
         ));
       });
@@ -313,9 +304,9 @@ const BFUI = (() => {
 
       if (pages > 1) {
         root.append(h('div', { class: 'pager' },
-          h('button', { class: 'btn small', disabled: page === 1, onclick: () => { page--; render(); root.scrollIntoView({ block: 'start' }); } }, icon('chevron-left', 13), 'Prev'),
+          h('button', { class: 'btn sm', disabled: page === 1, onclick: () => { page--; render(); root.scrollIntoView({ block: 'start' }); } }, icon('chevron-left', 13), 'Prev'),
           h('span', { class: 'pager-info' }, 'page ' + page + ' / ' + pages),
-          h('button', { class: 'btn small', disabled: page === pages, onclick: () => { page++; render(); root.scrollIntoView({ block: 'start' }); } }, 'Next', icon('chevron-right', 13))
+          h('button', { class: 'btn sm', disabled: page === pages, onclick: () => { page++; render(); root.scrollIntoView({ block: 'start' }); } }, 'Next', icon('chevron-right', 13))
         ));
       }
     }
@@ -325,5 +316,6 @@ const BFUI = (() => {
     return root;
   }
 
-  return { h, esc, icon, money, timeAgo, platformBadge, difficultyBadge, catChip, techChip, gauge, bar, programCard, scopeTable };
+
+  return { h, esc, icon, money, timeAgo, dayLabel, platformTag, levelTag, newTag, rewardText, catLabel, techChip, gauge, bar, bookmarkBtn, programRow, miniCard, scopeTable };
 })();

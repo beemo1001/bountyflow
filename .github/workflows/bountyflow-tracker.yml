@@ -1,0 +1,64 @@
+# BountyFlow tracker + Discord digest
+# Twice a day: records newly launched programs in data/first-seen.json (powers
+# the website's "New" feed), then posts the Discord digest if the
+# DISCORD_WEBHOOK secret exists. Without the secret, only the tracker runs.
+name: BountyFlow tracker
+
+on:
+  schedule:
+    - cron: "17 7,19 * * *"   # 07:17 and 19:17 UTC
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "digest = normal run, test = sample message (state untouched), force = weekly roundup now"
+        required: true
+        default: digest
+        type: choice
+        options: [digest, test, force]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bountyflow-tracker
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Track new programs
+        if: ${{ github.event_name == 'schedule' || inputs.mode != 'test' }}
+        run: python scripts/update_first_seen.py
+
+      - name: Discord digest
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          SITE_URL: ${{ vars.SITE_URL }}
+          AVATAR_URL: ${{ vars.AVATAR_URL }}
+          RUN_MODE: ${{ inputs.mode || 'digest' }}
+        run: |
+          if [ -z "$DISCORD_WEBHOOK" ]; then
+            echo "DISCORD_WEBHOOK secret not set: skipping the Discord digest (tracker still ran)."
+            exit 0
+          fi
+          python scripts/discord_digest.py --mode="$RUN_MODE"
+
+      - name: Commit updated data
+        run: |
+          git config user.name  "bountyflow-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/first-seen.json scripts/discord-digest/state.json
+          if git diff --cached --quiet; then
+            echo "nothing changed"
+          else
+            git commit -m "tracker: update new programs and digest state"
+            git push
+          fi

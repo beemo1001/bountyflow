@@ -92,12 +92,12 @@ PLATFORM_LABEL = {
     "yeswehack": "YesWeHack",
 }
 PLATFORM_COLOR = {
-    "hackerone": 0xEC699C,
-    "bugcrowd": 0xF26C4F,
-    "intigriti": 0x14B8A6,
-    "yeswehack": 0xFACC15,
+    "hackerone": 0xD8D8DE,
+    "bugcrowd": 0xF28C5A,
+    "intigriti": 0x6FD3C2,
+    "yeswehack": 0xF5D26B,
 }
-BRAND_BLUE = 0x3B82F6
+BRAND_BLUE = 0xE0243A  # CyberFlow crimson (name kept for compatibility)
 
 CAT_LABEL = {
     "web": "web", "api": "API", "wildcard": "wildcard", "mobile": "mobile",

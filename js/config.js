@@ -54,17 +54,17 @@ const BF = (() => {
   };
 
   const PLATFORMS = {
-    hackerone: { label: 'HackerOne', short: 'H1',  color: '#ec699c' },
-    bugcrowd:  { label: 'Bugcrowd',  short: 'BC',  color: '#f26c4f' },
-    intigriti: { label: 'Intigriti', short: 'INT', color: '#14b8a6' },
-    yeswehack: { label: 'YesWeHack', short: 'YWH', color: '#facc15' },
-    direct:    { label: 'Direct',    short: 'DIR', color: '#60a5fa' }
+    hackerone: { label: 'HackerOne', short: 'H1',  color: '#d8d8de' },
+    bugcrowd:  { label: 'Bugcrowd',  short: 'BC',  color: '#f28c5a' },
+    intigriti: { label: 'Intigriti', short: 'INT', color: '#6fd3c2' },
+    yeswehack: { label: 'YesWeHack', short: 'YWH', color: '#f5d26b' },
+    direct:    { label: 'Direct',    short: 'DIR', color: '#ff4458' }
   };
 
   const DIFFICULTY = {
-    beginner:     { label: 'Beginner',     color: '#34d399', min: 0,  max: 33 },
-    intermediate: { label: 'Intermediate', color: '#fbbf24', min: 34, max: 66 },
-    advanced:     { label: 'Advanced',     color: '#fb7185', min: 67, max: 100 }
+    beginner:     { label: 'Beginner',     color: '#3ddc97', min: 0,  max: 33 },
+    intermediate: { label: 'Intermediate', color: '#f5b942', min: 34, max: 66 },
+    advanced:     { label: 'Advanced',     color: '#ff4458', min: 67, max: 100 }
   };
 
   // Skill taxonomy used by Student Mode (icon = name rendered by BFUI.icon)
@@ -82,5 +82,8 @@ const BF = (() => {
     hardware:  { label: 'Hardware / IoT',        icon: 'wrench' }
   };
 
-  return { SOURCES, FX, CACHE, CATS, PLATFORMS, DIFFICULTY, SKILLS };
+  // How long a program counts as "new" (days since first seen)
+  const NEW_DAYS = 14;
+
+  return { SOURCES, FX, CACHE, CATS, PLATFORMS, DIFFICULTY, SKILLS, NEW_DAYS };
 })();

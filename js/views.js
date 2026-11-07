@@ -1,184 +1,146 @@
 /* ============================================================
    BountyFlow · views.js
-   All page views: Dashboard (stats + filters + grid), Program
-   Detail (scope + analysis + playbook), Student Mode, Scope
-   Explorer, Bookmarks.
+   Programs (search + filters + list), New programs feed,
+   Program detail, Skill match, Scope check, Saved.
    ============================================================ */
 
 const BFViews = (() => {
   'use strict';
-  const { h, icon, money, gauge, bar, programCard, catChip, techChip, platformBadge, difficultyBadge, scopeTable } = BFUI;
+  const { h, icon, money, gauge, bar, programRow, miniCard, platformTag, levelTag, newTag, rewardText, catLabel, techChip, dayLabel, bookmarkBtn, scopeTable } = BFUI;
 
   let programs = [];
-  const setPrograms = list => { programs = list; };
+  let feedMeta = { baseline: null };
+  const setPrograms = (list, meta) => { programs = list; if (meta) feedMeta = meta; };
   const byId = id => programs.find(p => p.id === id);
+  const newest = () => programs.filter(p => p.firstSeen).sort((a, b) => b.firstSeen.localeCompare(a.firstSeen) || (b.maxBountyUSD || 0) - (a.maxBountyUSD || 0));
+
+  function pageHead(eyebrow, title, lead, right) {
+    return h('div', { class: 'page-head' },
+      h('div', {}, h('div', { class: 'eyebrow' }, eyebrow), h('h1', { class: 'display h1' }, title), lead ? h('p', { class: 'lead' }, lead) : null),
+      right || null);
+  }
+
+  function listHeader() {
+    return h('div', { class: 'plist-head' },
+      h('span', {}, 'Program'), h('span', {}, 'Reward'), h('span', {}, 'Level'), h('span', {}));
+  }
 
   /* ============================================================
-     DASHBOARD
+     PROGRAMS
      ============================================================ */
-  let visibleCount = 0;
-  const PAGE = 24;
+  let visible = 0;
+  const PAGE = 30;
 
   function dashboard() {
-    const view = h('div', { class: 'view dashboard' });
-    view.append(statsStrip(), filterSidebar(), mainArea());
+    const paying = programs.filter(p => p.offersBounties).length;
+    const weekNew = programs.filter(p => p.firstSeen && daysSince(p.firstSeen) <= 7).length;
+
+    const view = h('div', { class: 'view' });
+    view.append(pageHead('Bug bounty radar', 'Find your next target',
+      'Every public bug bounty and disclosure program in one place. Scopes analyzed, difficulty rated, and a playbook for each one.',
+      h('div', { class: 'kpis' },
+        kpi(programs.length.toLocaleString(), 'programs'),
+        kpi(paying.toLocaleString(), 'pay cash'),
+        kpi(String(weekNew), 'new this week', true))));
+
+    const fresh = newest().filter(p => p.isNew);
+    if (fresh.length) {
+      const strip = fresh.filter(p => p.offersBounties).concat(fresh.filter(p => !p.offersBounties)).slice(0, 4);
+      view.append(h('section', { class: 'new-strip' },
+        h('div', { class: 'section-head' },
+          h('h2', {}, 'Just launched'),
+          h('a', { class: 'more', href: '#/new' }, 'All ' + fresh.length + ' new programs', icon('arrow-right', 14))),
+        h('div', { class: 'mini-grid' }, strip.map(miniCard))));
+    }
+
+    view.append(h('section', { class: 'browse' },
+      h('div', { class: 'toolbar' },
+        h('div', { class: 'search grow' }, icon('search', 16),
+          h('input', {
+            id: 'searchInput', class: 'input', type: 'search', placeholder: 'Search by company, platform or domain',
+            value: BFFilters.get().q, 'aria-label': 'Search programs',
+            oninput: e => { clearTimeout(view._t); view._t = setTimeout(() => BFFilters.patch({ q: e.target.value.trim() }), 160); }
+          })),
+        h('div', { id: 'filterBar', class: 'filter-bar' })),
+      h('div', { id: 'activeBar', class: 'active-bar' }),
+      h('div', { id: 'resultMeta', class: 'result-meta' }),
+      h('div', { class: 'plist card' }, listHeader(), h('div', { id: 'rows' })),
+      h('div', { id: 'loadMore', class: 'load-more' })));
     return view;
   }
 
-  /* Re-render sidebar + preset chips + sort select from current filter state.
-     Called after every state change so the chrome always mirrors the state. */
-  function syncDashboardChrome() {
-    const oldSb = document.getElementById('filterSidebar');
-    if (oldSb) oldSb.replaceWith(filterSidebar());
-    const oldPr = document.getElementById('presetRow');
-    if (oldPr) oldPr.replaceWith(buildPresets());
-    const ss = document.getElementById('sortSelect');
-    if (ss) ss.value = BFFilters.get().sort;
+  function kpi(v, l, accent) {
+    return h('div', { class: 'kpi' + (accent ? ' accent' : '') }, h('b', {}, v), h('span', {}, l));
   }
 
-  function buildPresets() {
+  /* ---------- filter bar (popovers) ---------- */
+  let openPop = null;
+  document.addEventListener('click', e => { if (!e.target.closest('.pop')) openPop = null; });
+
+  function pop(id, label, count, build, right) {
+    const el = h('div', { class: 'pop' + (openPop === id ? ' open' : ''), dataset: { pop: id } },
+      h('button', {
+        class: 'btn sm outline' + (count ? ' has' : ''), type: 'button',
+        onclick: e => {
+          e.stopPropagation();
+          const was = el.classList.contains('open');
+          document.querySelectorAll('.pop.open').forEach(p => p.classList.remove('open'));
+          el.classList.toggle('open', !was);
+          openPop = was ? null : id;
+        }
+      }, label, count ? h('span', { class: 'pill' }, count) : null, icon('chevron-down', 14)),
+      h('div', { class: 'pop-panel' + (right ? ' right' : ''), onclick: e => e.stopPropagation() }, build()));
+    return el;
+  }
+
+  const opt = (on, label, onclick, count) =>
+    h('button', { class: 'opt' + (on ? ' on' : ''), type: 'button', onclick }, h('span', { class: 'box' }), label, count != null ? h('span', { class: 'count' }, count) : null);
+  const radio = (on, label, onclick) =>
+    h('button', { class: 'opt radio' + (on ? ' on' : ''), type: 'button', onclick }, h('span', { class: 'box' }), label);
+  const toggleIn = (arr, v) => arr.includes(v) ? arr.filter(x => x !== v) : [...arr, v];
+
+  function renderFilterBar() {
+    const bar = document.getElementById('filterBar');
+    if (!bar) return;
     const st = BFFilters.get();
-    return h('div', { class: 'preset-row', id: 'presetRow' },
-      h('span', { class: 'preset-label' }, 'Quick filters'),
-      Object.entries(BFFilters.PRESETS).map(([key, p]) =>
-        h('button', {
-          class: 'preset-chip' + (st.preset === key ? ' active' : ''),
-          title: p.title,
-          onclick: () => { BFFilters.applyPreset(key); }
-        }, p.label)));
-  }
+    bar.innerHTML = '';
 
-  function statsStrip() {
-    const paying = programs.filter(p => p.offersBounties).length;
-    const vdp = programs.length - paying;
-    const assets = programs.reduce((s, p) => s + p.analysis.total, 0);
-    const wild = programs.filter(p => (p.analysis.catCounts.wildcard || 0) > 0).length;
-    const known = programs.filter(p => p.bountyKnown && p.maxBountyUSD);
-    const topB = known.length ? known.reduce((a, b) => a.maxBountyUSD > b.maxBountyUSD ? a : b) : null;
+    const catCounts = {};
+    programs.forEach(p => Object.keys(p.analysis.catCounts).forEach(c => { if (p.analysis.catCounts[c] > 0) catCounts[c] = (catCounts[c] || 0) + 1; }));
+    const platCounts = {};
+    programs.forEach(p => { platCounts[p.platform] = (platCounts[p.platform] || 0) + 1; });
 
-    const box = (ic, label, value, sub, cls) =>
-      h('div', { class: 'stat-card ' + (cls || '') },
-        h('div', { class: 'stat-icon' }, icon(ic, 15)),
-        h('div', { class: 'stat-value' }, value),
-        h('div', { class: 'stat-label' }, label),
-        sub ? h('div', { class: 'stat-sub' }, sub) : null);
-
-    return h('section', { class: 'stats-strip card-row' },
-      box('grid', 'Programs', programs.length.toLocaleString(), 'all platforms'),
-      box('dollar', 'Paying bounties', paying.toLocaleString(), 'cash rewards'),
-      box('shield', 'VDP / practice', vdp.toLocaleString(), 'no cash, low pressure', 'green'),
-      box('layers', 'In-scope assets', assets.toLocaleString(), 'targets to hunt', 'cyan'),
-      box('target', 'Wildcard programs', wild.toLocaleString(), 'recon-friendly', 'violet'),
-      topB ? box('trending', 'Top known bounty', money(topB.maxBountyUSD), topB.name, 'red') : box('trending', 'Top known bounty', 'n/a', 'see money filter', 'red'));
-  }
-
-  /* ---------- filter sidebar ---------- */
-  function filterSidebar() {
-    const st = BFFilters.get();
-
-    const group = (title, ...kids) =>
-      h('div', { class: 'fgroup' }, h('div', { class: 'fgroup-title' }, title), ...kids);
-
-    const radioRow = (name, options, current, onchange) =>
-      h('div', { class: 'radio-row' },
-        options.map(([val, label]) =>
-          h('label', { class: 'radio-pill' + (current === val ? ' active' : '') },
-            h('input', { type: 'radio', name, value: val, checked: current === val, onchange: () => onchange(val) }),
-            label)));
-
-    const checkRow = (name, checked, label, sub, onchange) =>
-      h('label', { class: 'check-row' + (checked ? ' checked' : '') },
-        h('input', { type: 'checkbox', checked, onchange: e => onchange(e.target.checked) }),
-        h('span', { class: 'check-label' }, label, sub ? h('span', { class: 'check-sub' }, sub) : null));
-
-    const sidebar = h('aside', { class: 'filter-sidebar', id: 'filterSidebar' });
-
-    // --- money ---
-    sidebar.append(group('Rewards',
-      radioRow('reward', [
-        ['any', 'All'], ['bounty', 'Bounties'], ['vdp', 'VDP'], ['swag', 'Swag']
-      ], st.reward, v => BFFilters.patch({ reward: v })),
-      h('div', { class: 'range-row' },
-        h('label', {}, 'Min max-bounty'),
-        h('select', { class: 'input select', onchange: e => BFFilters.patch({ minMaxBounty: +e.target.value }) },
-          [[0, 'any amount'], [1000, '$1k+'], [5000, '$5k+'], [10000, '$10k+'], [50000, '$50k+'], [100000, '$100k+'], [1000000, '$1M+']]
-            .map(([v, l]) => h('option', { value: v, selected: st.minMaxBounty === v }, l)))),
-      h('div', { class: 'hint' }, 'HackerOne never publishes amounts; those programs match “Pays bounties” only.')
-    ));
-
-    // --- platform ---
-    sidebar.append(group('Platform',
-      h('div', { class: 'check-grid' },
-        Object.entries(BF.PLATFORMS).map(([key, pl]) => {
-          const on = st.platforms.includes(key);
-          return h('label', { class: 'check-row' + (on ? ' checked' : '') },
-            h('input', { type: 'checkbox', checked: on, onchange: e => {
-              const next = e.target.checked ? [...st.platforms, key] : st.platforms.filter(x => x !== key);
-              BFFilters.patch({ platforms: next });
-            } }),
-            h('span', { class: 'check-label' }, h('span', { class: 'p-dot', style: 'background:' + pl.color }), pl.label));
-        }))
-    ));
-
-    // --- scope type ---
-    sidebar.append(group('Scope type',
-      h('div', { class: 'check-grid cat-grid' },
-        Object.entries(BF.CATS).map(([key, c]) => {
-          const on = st.cats.includes(key);
-          return h('label', { class: 'check-row' + (on ? ' checked' : '') },
-            h('input', { type: 'checkbox', checked: on, onchange: e => {
-              const next = e.target.checked ? [...st.cats, key] : st.cats.filter(x => x !== key);
-              BFFilters.patch({ cats: next });
-            } }),
-            h('span', { class: 'check-label' }, icon(c.icon, 12), c.label));
-        }))
-    ));
-
-    // --- difficulty ---
-    sidebar.append(group('Difficulty · auto-analyzed',
-      radioRow('difficulty', [
-        ['any', 'All'], ['beginner', 'Beginner'], ['intermediate', 'Intermediate'], ['advanced', 'Advanced']
-      ], st.difficulty, v => BFFilters.patch({ difficulty: v }))
-    ));
-
-    // --- trust ---
-    sidebar.append(group('Trust & responsiveness',
-      radioRow('sh', [['any', 'Safe harbor: any'], ['full', 'Full only'], ['partial', 'Partial+Full']], st.safeHarbor, v => BFFilters.patch({ safeHarbor: v === 'partial' ? 'any' : v }) ),
-      checkRow('disc', st.disclosureOnly, 'Disclosure allowed', 'publish findings after fix', v => BFFilters.patch({ disclosureOnly: v })),
-      checkRow('resp', st.responsiveOnly, 'Responsive only', '≥80% eff or ≤3d first reply', v => BFFilters.patch({ responsiveOnly: v }))
-    ));
-
-    // --- tech ---
-    const topTechs = techHistogram().slice(0, 18);
-    sidebar.append(group('Tech detected in scope',
-      h('div', { class: 'check-grid tech-grid' },
-        topTechs.map(({ id, n }) => {
-          const on = st.techs.includes(id);
-          return h('label', { class: 'check-row small' + (on ? ' checked' : '') },
-            h('input', { type: 'checkbox', checked: on, onchange: e => {
-              const next = e.target.checked ? [...st.techs, id] : st.techs.filter(x => x !== id);
-              BFFilters.patch({ techs: next });
-            } }),
-            h('span', { class: 'check-label' }, id, h('span', { class: 'count-tag' }, n)));
-        }))
-    ));
-
-    // --- misc ---
-    sidebar.append(group('Scope size & severity',
-      h('div', { class: 'range-row' },
-        h('label', {}, 'Min assets'),
-        h('select', { class: 'input select', onchange: e => BFFilters.patch({ minAssets: +e.target.value }) },
-          [[0, 'any'], [5, '5+'], [10, '10+'], [25, '25+'], [100, '100+']]
-            .map(([v, l]) => h('option', { value: v, selected: st.minAssets === v }, l)))),
-      h('div', { class: 'range-row' },
-        h('label', {}, 'Accepts severity'),
-        h('select', { class: 'input select', onchange: e => BFFilters.patch({ maxSeverity: e.target.value }) },
-          [['any', 'any'], ['critical', 'critical'], ['high', 'high'], ['medium', 'medium']]
-            .map(([v, l]) => h('option', { value: v, selected: st.maxSeverity === v }, l)))),
-      h('button', { class: 'btn ghost small reset-btn', onclick: () => { BFFilters.reset(); } }, icon('rotate', 13), 'Reset all filters')
-    ));
-
-    return sidebar;
+    bar.append(
+      pop('reward', 'Reward', (st.reward !== 'any' ? 1 : 0) + (st.minMaxBounty ? 1 : 0), () => [
+        h('div', { class: 'pop-label' }, 'Type'),
+        [['any', 'Any reward'], ['bounty', 'Cash bounties'], ['vdp', 'No cash (VDP)'], ['swag', 'Swag']].map(([v, l]) =>
+          radio(st.reward === v, l, () => BFFilters.patch({ reward: v }))),
+        h('div', { class: 'pop-label' }, 'Top bounty at least'),
+        [[0, 'Any amount'], [1000, '$1k'], [5000, '$5k'], [10000, '$10k'], [50000, '$50k'], [100000, '$100k']].map(([v, l]) =>
+          radio(st.minMaxBounty === v, l, () => BFFilters.patch({ minMaxBounty: v }))),
+        h('p', { class: 'pop-note' }, 'HackerOne does not publish amounts, so its programs drop out when you set a minimum.')
+      ]),
+      pop('platform', 'Platform', st.platforms.length, () =>
+        Object.entries(BF.PLATFORMS).map(([k, pl]) =>
+          opt(st.platforms.includes(k), pl.label, () => BFFilters.patch({ platforms: toggleIn(st.platforms, k) }), platCounts[k] || 0))),
+      pop('scope', 'Scope', st.cats.length, () =>
+        Object.keys(BF.CATS).filter(c => catCounts[c]).map(c =>
+          opt(st.cats.includes(c), catLabel(c), () => BFFilters.patch({ cats: toggleIn(st.cats, c) }), catCounts[c]))),
+      pop('level', 'Level', st.difficulty !== 'any' ? 1 : 0, () =>
+        [['any', 'Any level'], ['beginner', 'Beginner'], ['intermediate', 'Intermediate'], ['advanced', 'Advanced']].map(([v, l]) =>
+          radio(st.difficulty === v, l, () => BFFilters.patch({ difficulty: v })))),
+      pop('more', 'More', (st.safeHarbor !== 'any' ? 1 : 0) + (st.disclosureOnly ? 1 : 0) + (st.responsiveOnly ? 1 : 0) + st.techs.length + (st.minAssets ? 1 : 0), () => [
+        h('div', { class: 'pop-label' }, 'Trust'),
+        opt(st.safeHarbor === 'full', 'Full safe harbor', () => BFFilters.patch({ safeHarbor: st.safeHarbor === 'full' ? 'any' : 'full' })),
+        opt(st.responsiveOnly, 'Fast triage', () => BFFilters.patch({ responsiveOnly: !st.responsiveOnly })),
+        opt(st.disclosureOnly, 'Public disclosure allowed', () => BFFilters.patch({ disclosureOnly: !st.disclosureOnly })),
+        h('div', { class: 'pop-label' }, 'Scope size'),
+        [[0, 'Any size'], [10, '10+ targets'], [50, '50+ targets']].map(([v, l]) => radio(st.minAssets === v, l, () => BFFilters.patch({ minAssets: v }))),
+        h('div', { class: 'pop-label' }, 'Tech in scope'),
+        techHistogram().slice(0, 12).map(({ id, n }) => opt(st.techs.includes(id), id, () => BFFilters.patch({ techs: toggleIn(st.techs, id) }), n))
+      ], true),
+      h('select', { class: 'select sort', 'aria-label': 'Sort', onchange: e => BFFilters.patch({ sort: e.target.value }) },
+        Object.entries(BFFilters.SORTS).map(([k, s]) => h('option', { value: k, selected: st.sort === k }, s.label))));
   }
 
   function techHistogram() {
@@ -187,365 +149,281 @@ const BFViews = (() => {
     return Object.entries(counts).map(([id, n]) => ({ id, n })).sort((a, b) => b.n - a.n);
   }
 
-  /* ---------- main area: toolbar + grid ---------- */
-  function mainArea() {
+  function activeChips() {
     const st = BFFilters.get();
-    const main = h('div', { class: 'main-area' });
-
-    // presets
-    const presets = buildPresets();
-
-    const toolbar = h('div', { class: 'toolbar' },
-      h('div', { class: 'search-wrap' },
-        h('span', { class: 'search-ic' }, icon('search', 15)),
-        h('input', {
-          id: 'searchInput', class: 'input search-input', type: 'search',
-          placeholder: 'Search programs, companies, domains…',
-          value: st.q,
-          oninput: e => { clearTimeout(main._t); main._t = setTimeout(() => BFFilters.patch({ q: e.target.value }), 160); }
-        })),
-      h('div', { class: 'toolbar-right' },
-        h('button', { class: 'btn ghost small', title: 'Random program', onclick: () => roulette() }, icon('shuffle', 14), 'Surprise me'),
-        h('select', { id: 'sortSelect', class: 'input select sort-select', onchange: e => BFFilters.patch({ sort: e.target.value }) },
-          Object.entries(BFFilters.SORTS).map(([k, s]) => h('option', { value: k, selected: st.sort === k }, s.label))),
-        h('button', { class: 'btn ghost small filters-toggle', onclick: () => document.body.classList.toggle('filters-open') }, icon('sliders', 14), 'Filters'))
-    );
-
-    main.append(presets, toolbar);
-    const resultMeta = h('div', { class: 'result-meta', id: 'resultMeta' });
-    const grid = h('div', { class: 'card-grid', id: 'cardGrid' });
-    const loadMore = h('div', { class: 'load-more-wrap', id: 'loadMoreWrap' });
-    main.append(resultMeta, grid, loadMore);
-    return main;
+    const D = BFFilters.DEFAULTS;
+    const chips = [];
+    const add = (label, patch) => chips.push(h('button', { class: 'chip on', type: 'button', onclick: () => BFFilters.patch(Object.assign({ preset: null }, patch)) }, label, h('span', { class: 'x' }, '×')));
+    if (st.reward !== 'any') add({ bounty: 'Cash bounties', vdp: 'VDP', swag: 'Swag' }[st.reward], { reward: 'any' });
+    if (st.minMaxBounty) add('≥ ' + money(st.minMaxBounty), { minMaxBounty: 0 });
+    st.platforms.forEach(p => add(BF.PLATFORMS[p].label, { platforms: st.platforms.filter(x => x !== p) }));
+    st.cats.forEach(c => add(catLabel(c), { cats: st.cats.filter(x => x !== c) }));
+    if (st.difficulty !== 'any') add(BF.DIFFICULTY[st.difficulty].label, { difficulty: 'any' });
+    if (st.safeHarbor !== 'any') add('Safe harbor', { safeHarbor: 'any' });
+    if (st.responsiveOnly) add('Fast triage', { responsiveOnly: false });
+    if (st.disclosureOnly) add('Disclosure', { disclosureOnly: false });
+    if (st.minAssets) add(st.minAssets + '+ targets', { minAssets: 0 });
+    st.techs.forEach(t => add(t, { techs: st.techs.filter(x => x !== t) }));
+    if (st.q) add('“' + st.q + '”', { q: '' });
+    return { chips, any: chips.length > 0, D };
   }
 
-  function refreshResults() {
-    const grid = document.getElementById('cardGrid');
-    const meta = document.getElementById('resultMeta');
-    const lmWrap = document.getElementById('loadMoreWrap');
-    if (!grid) return;
-
-    const st = BFFilters.get();
-    const results = BFFilters.run(programs);
-    visibleCount = Math.min(PAGE, results.length);
-
-    grid.innerHTML = '';
-    results.slice(0, visibleCount).forEach(p => grid.append(programCard(p)));
-
-    meta.innerHTML = '';
-    const bits = [];
-    if (st.q) bits.push('“' + st.q + '”');
-    if (st.preset) bits.push(BFFilters.PRESETS[st.preset].label);
-    meta.append(...[
-      h('span', { class: 'result-count' }, results.length.toLocaleString() + ' programs'),
-      bits.length ? h('span', { class: 'result-filters' }, '· ' + bits.join(' + ')) : null,
-      bits.length ? h('span', { class: 'result-reset', onclick: () => BFFilters.reset() }, 'Clear') : null,
-      results.length === 0 ? h('span', { class: 'result-filters' }, '· try relaxing filters') : null
-    ].filter(Boolean)); // native .append(null) renders literal "null"; filter first
-
-    lmWrap.innerHTML = '';
-    if (results.length > visibleCount) {
-      lmWrap.append(
-        h('button', { class: 'btn load-more', onclick: () => {
-          visibleCount = Math.min(visibleCount + PAGE, results.length);
-          grid.innerHTML = '';
-          results.slice(0, visibleCount).forEach(p => grid.append(programCard(p)));
-          if (results.length <= visibleCount) lmWrap.innerHTML = '';
-        } }, 'Load ' + Math.min(PAGE, results.length - visibleCount) + ' more · ' + (results.length - visibleCount) + ' remaining')
-      );
+  function renderActiveBar() {
+    const el = document.getElementById('activeBar');
+    if (!el) return;
+    el.innerHTML = '';
+    const { chips, any } = activeChips();
+    if (any) {
+      el.append(...chips, h('button', { class: 'btn xs ghost', type: 'button', onclick: () => { BFFilters.reset(); const i = document.getElementById('searchInput'); if (i) i.value = ''; } }, 'Clear all'));
+    } else {
+      el.append(h('span', { class: 'muted small' }, 'Quick views:'),
+        ...Object.entries(BFFilters.PRESETS).map(([k, p]) => h('button', { class: 'chip', type: 'button', title: p.title, onclick: () => BFFilters.applyPreset(k) }, p.label)));
     }
+  }
+
+  function syncDashboardChrome() { renderFilterBar(); renderActiveBar(); }
+
+  function refreshResults() {
+    const rows = document.getElementById('rows');
+    if (!rows) return;
+    syncDashboardChrome();
+    const results = BFFilters.run(programs);
+    visible = Math.min(PAGE, results.length);
+    const meta = document.getElementById('resultMeta');
+    meta.textContent = results.length.toLocaleString() + (results.length === 1 ? ' program' : ' programs');
+
+    const paint = () => {
+      rows.innerHTML = '';
+      if (!results.length) {
+        rows.append(h('div', { class: 'empty' }, icon('search', 28), h('h3', {}, 'No programs match'), h('p', {}, 'Remove a filter or try a broader search.')));
+      }
+      results.slice(0, visible).forEach(p => rows.append(programRow(p)));
+      const lm = document.getElementById('loadMore');
+      lm.innerHTML = '';
+      if (results.length > visible) {
+        lm.append(h('button', { class: 'btn', type: 'button', onclick: () => { visible = Math.min(visible + PAGE, results.length); paint(); } },
+          'Show more', h('span', { class: 'muted' }, (results.length - visible) + ' left')));
+      }
+    };
+    paint();
   }
 
   function roulette() {
     const results = BFFilters.run(programs);
     if (!results.length) return;
-    const pick = results[Math.floor(Math.random() * results.length)];
-    BFApp.go('#/program/' + encodeURIComponent(pick.id));
+    BFApp.go('#/program/' + encodeURIComponent(results[Math.floor(Math.random() * results.length)].id));
+  }
+
+  /* ============================================================
+     NEW PROGRAMS FEED
+     ============================================================ */
+  let newPaidOnly = false;
+  function newFeed() {
+    const view = h('div', { class: 'view' });
+    const all = newest();
+    const since = feedMeta.baseline ? dayLabel(feedMeta.baseline) : null;
+    view.append(pageHead('New programs', 'Fresh launches',
+      'Programs that appeared on HackerOne, Bugcrowd, Intigriti and YesWeHack recently. New programs have the least competition: this is where beginners land their first valid reports.',
+      h('div', { class: 'seg' },
+        h('button', { class: newPaidOnly ? '' : 'on', onclick: () => { newPaidOnly = false; BFApp.rerender(); } }, 'All'),
+        h('button', { class: newPaidOnly ? 'on' : '', onclick: () => { newPaidOnly = true; BFApp.rerender(); } }, 'Paid only'))));
+
+    const list = all.filter(p => !newPaidOnly || p.offersBounties);
+    if (!list.length) {
+      view.append(h('div', { class: 'card empty' }, icon('calendar', 28), h('h3', {}, 'Nothing new yet'),
+        h('p', {}, 'The tracker checks for new programs twice a day. Check back soon.')));
+      return view;
+    }
+    const groups = new Map();
+    list.forEach(p => { const k = p.firstSeen; if (!groups.has(k)) groups.set(k, []); groups.get(k).push(p); });
+    for (const [day, items] of groups) {
+      view.append(h('div', { class: 'day-group' },
+        h('div', { class: 'day-label' }, h('span', { class: 'mono' }, day), h('span', { class: 'muted' }, dayLabel(day) + ' · ' + items.length + (items.length === 1 ? ' program' : ' programs'))),
+        h('div', { class: 'plist card' }, items.map(p => programRow(p)))));
+    }
+    if (since) view.append(h('p', { class: 'muted small center' }, 'Tracking new programs since ' + feedMeta.baseline + '.'));
+    return view;
   }
 
   /* ============================================================
      PROGRAM DETAIL
      ============================================================ */
-  function programDetail(id) {
+  let detailTab = 'overview';
+  function programDetail(id, tab) {
     const p = byId(id);
-    if (!p) return h('div', { class: 'view' }, h('div', { class: 'card pad' },
-      h('h2', {}, 'Program not found'), h('p', { class: 'dim' }, 'It may have been removed from the dataset.'),
-      h('a', { class: 'btn', href: '#/' }, icon('arrow-left', 14), 'Back to dashboard')));
-
+    if (!p) return h('div', { class: 'view' }, h('div', { class: 'card empty' }, icon('search', 28),
+      h('h3', {}, 'Program not found'), h('p', {}, 'It may have closed or left the dataset.'),
+      h('a', { class: 'btn', href: '#/' }, icon('arrow-left', 14), 'All programs')));
+    detailTab = tab || 'overview';
     const a = p.analysis;
-    const view = h('div', { class: 'view detail-view' });
-    const bookmarked = BFStore.isBookmarked(p.id);
+    const rw = rewardText(p);
+    const view = h('div', { class: 'view detail' });
 
-    view.append(h('a', { class: 'back-link', href: '#/' }, icon('arrow-left', 14), 'All programs'));
+    view.append(h('a', { class: 'back', href: '#/' }, icon('arrow-left', 14), 'All programs'));
 
-    // ---- header ----
-    view.append(h('div', { class: 'detail-head card' },
-      h('div', { class: 'detail-head-main' },
-        h('div', { class: 'detail-badges' },
-          platformBadge(p), difficultyBadge(a),
-          p.offersBounties ? h('span', { class: 'badge pays' }, icon('dollar', 11), 'Pays bounties') : h('span', { class: 'badge vdp-badge' }, icon('shield', 11), 'VDP'),
-          p.offersSwag ? h('span', { class: 'badge swag' }, icon('gift', 11), 'Swag') : null,
-          p.managed ? h('span', { class: 'badge managed' }, 'Managed') : null,
-          p.bountySplitting ? h('span', { class: 'badge split', title: 'Allows bounty splitting' }, 'Split OK') : null,
-          p.submissionState !== 'open' ? h('span', { class: 'badge closed' }, p.submissionState) : null),
-        h('h1', { class: 'detail-name' }, p.name),
-        h('div', { class: 'detail-actions' },
-          p.url ? h('a', { class: 'btn primary', href: p.url, target: '_blank', rel: 'noopener noreferrer' }, 'Open program', icon('arrow-up-right', 13)) : null,
-          p.website ? h('a', { class: 'btn ghost', href: p.website, target: '_blank', rel: 'noopener noreferrer' }, 'Company site', icon('arrow-up-right', 13)) : null,
-          h('button', { class: 'btn ghost bm-big' + (bookmarked ? ' active' : ''), onclick: e => { BFStore.toggleBookmark(p.id); e.currentTarget.classList.toggle('active'); } }, icon('star', 14), bookmarked ? 'Saved' : 'Bookmark'))),
-      h('div', { class: 'detail-bounty-box' },
-        p.bountyKnown && p.maxBountyUSD
-          ? [h('div', { class: 'db-sub' }, 'Max bounty'),
-             h('div', { class: 'db-max' }, money(p.maxBountyUSD)),
-             p.minBountyUSD ? h('div', { class: 'db-min' }, 'min ' + money(p.minBountyUSD) + (p.bountyApprox ? ' · approx (verify)' : '')) : (p.bountyApprox ? h('div', { class: 'db-min' }, 'approx: verify on program page') : null)]
-          : p.offersBounties
-            ? [h('div', { class: 'db-sub' }, 'Rewards'), h('div', { class: 'db-max text' }, icon('banknote', 22), 'Cash bounties'), h('div', { class: 'db-min' }, 'amount varies by severity')]
-            : [h('div', { class: 'db-sub' }, 'Rewards'), h('div', { class: 'db-max text' }, icon('shield', 22), p.offersSwag ? 'VDP + swag' : 'VDP'), h('div', { class: 'db-min' }, p.offersSwag ? 'swag + thanks' : 'thanks / points only')],
-        (p.responseEfficiency != null || p.avgFirstResponseDays != null)
-          ? h('div', { class: 'db-divider' }) : null,
-        p.responseEfficiency != null ? h('div', { class: 'db-eff' }, icon('zap', 13), p.responseEfficiency + '% response efficiency') : null,
-        p.avgFirstResponseDays != null ? h('div', { class: 'db-eff' }, icon('clock', 13), '~' + (p.avgFirstResponseDays < 1 ? '<1' : Math.round(p.avgFirstResponseDays)) + 'd average first reply') : null)
-    ));
+    view.append(h('div', { class: 'dhead' },
+      h('div', { class: 'dhead-main' },
+        h('div', { class: 'row wrap-row' }, platformTag(p), levelTag(a), newTag(p),
+          p.safeHarbor === 'full' ? h('span', { class: 'tag info' }, 'Safe harbor') : null,
+          p.managed ? h('span', { class: 'tag' }, 'Managed') : null,
+          p.submissionState && p.submissionState !== 'open' ? h('span', { class: 'tag warn' }, p.submissionState) : null),
+        h('h1', { class: 'dname' }, p.name),
+        p.firstSeen ? h('p', { class: 'muted small' }, 'First seen ' + p.firstSeen + ' (' + dayLabel(p.firstSeen) + ')') : null,
+        h('div', { class: 'row wrap-row' },
+          p.url ? h('a', { class: 'btn primary', href: p.url, target: '_blank', rel: 'noopener noreferrer' }, 'Open program page', icon('external', 14)) : null,
+          p.website ? h('a', { class: 'btn', href: p.website, target: '_blank', rel: 'noopener noreferrer' }, 'Company site') : null,
+          bookmarkBtn(p))),
+      h('div', { class: 'dreward card' },
+        h('span', { class: 'eyebrow' }, 'Reward'),
+        h('b', { class: rw.cls }, rw.main),
+        h('span', { class: 'muted small' }, rw.sub),
+        p.responseEfficiency != null ? h('span', { class: 'small dim' }, p.responseEfficiency + '% response efficiency') : null,
+        p.avgFirstResponseDays != null ? h('span', { class: 'small dim' }, '~' + (p.avgFirstResponseDays < 1 ? '<1' : Math.round(p.avgFirstResponseDays)) + ' days to first reply') : null)));
 
-    if (p.summary) view.append(h('div', { class: 'card pad summary-card' }, h('h3', {}, 'About'), h('p', {}, p.summary)));
+    const tabs = [['overview', 'Overview'], ['scope', 'Scope · ' + a.total], ['playbook', 'Playbook']];
+    const body = h('div', {});
+    const tabBar = h('div', { class: 'tabs' }, tabs.map(([k, l]) =>
+      h('button', { class: k === detailTab ? 'active' : '', type: 'button', onclick: () => { detailTab = k; paint(); } }, l)));
+    view.append(tabBar, body);
 
-    // ---- two columns ----
-    const cols = h('div', { class: 'detail-cols' });
-
-    // LEFT: scope
-    const left = h('div', { class: 'detail-left' });
-    left.append(h('div', { class: 'section-title' },
-      icon('folder', 14), 'Scope ',
-      h('span', { class: 'count' }, '· ' + a.total.toLocaleString() + ' in / ' + (p.oos.length || 0) + ' out')));
-
-    // category distribution
-    const maxCat = Math.max(...a.topCats.map(c => c.count), 1);
-    left.append(h('div', { class: 'card pad cat-dist' },
-      h('h4', { class: 'card-h' }, icon('layers', 14), 'Attack surface'),
-      a.topCats.map(({ cat, count }) =>
-        h('div', { class: 'cat-dist-row' },
-          h('span', { class: 'cd-label' }, icon((BF.CATS[cat] || BF.CATS.other).icon, 12), (BF.CATS[cat] || BF.CATS.other).label),
-          bar('', count, maxCat, BF.CATS[cat].color, count)))));
-
-    // scope tables with in/out tabs
-    const scopeCard = h('div', { class: 'card pad scope-card' });
-    let which = 'in';
-    const tabs = h('div', { class: 'tab-row' },
-      h('button', { class: 'tab active', onclick: e => { which = 'in'; tabRender(); } }, icon('circle-check', 13), 'In scope'),
-      h('button', { class: 'tab', onclick: e => { which = 'oos'; tabRender(); } }, icon('ban', 13), 'Out of scope'),
-      a.bountyEligibleAssets ? h('span', { class: 'tab-info', title: 'Assets flagged eligible for bounty' }, icon('dollar', 11), a.bountyEligibleAssets + ' bounty-eligible') : null);
-    const scopeHost = h('div', {});
-    function tabRender() {
-      tabs.querySelectorAll('.tab').forEach((t, i) => t.classList.toggle('active', (i === 0) === (which === 'in')));
-      scopeHost.innerHTML = '';
-      scopeHost.append(scopeTable(p, which));
-    }
-    scopeCard.append(tabs, scopeHost);
-    tabRender();
-    left.append(scopeCard);
-    cols.append(left);
-
-    // RIGHT: analysis panel
-    const right = h('div', { class: 'detail-right' });
-
-    // difficulty + why
-    right.append(h('div', { class: 'card pad analysis-card' },
-      h('h4', { class: 'card-h' }, icon('activity', 14), 'Auto analysis'),
-      h('div', { class: 'gauge-row' },
-        gauge(a.difficulty.score, a.difficulty.level),
-        h('div', { class: 'gauge-side' },
-          h('div', { class: 'diff-label', style: 'color:' + BF.DIFFICULTY[a.difficulty.level].color }, BF.DIFFICULTY[a.difficulty.level].label),
-          h('div', { class: 'dim small' }, 'difficulty score'),
-          a.skills.length ? h('div', { class: 'skills-needed' }, 'skills that apply:', a.skills.map(s => h('span', { class: 'chip skill-chip' }, icon(BF.SKILLS[s] ? BF.SKILLS[s].icon : 'help', 11), BF.SKILLS[s] ? BF.SKILLS[s].label : s))) : null)),
-      h('div', { class: 'why-list' },
-        h('div', { class: 'why-title' }, 'Why this rating'),
-        a.why.map(w => h('div', { class: 'why-item' }, w)))
-    ));
-
-    // vuln classes
-    if (a.vulnClasses.length) {
-      right.append(h('div', { class: 'card pad' },
-        h('h4', { class: 'card-h' }, icon('bug', 14), 'What to hunt here'),
-        h('div', { class: 'vuln-list' },
-          a.vulnClasses.map(([name, hint]) =>
-            h('div', { class: 'vuln-item' },
-              h('span', { class: 'vuln-name' }, name),
-              h('span', { class: 'vuln-hint' }, hint))))));
+    function paint() {
+      tabBar.querySelectorAll('button').forEach((b, i) => b.classList.toggle('active', tabs[i][0] === detailTab));
+      body.innerHTML = '';
+      if (detailTab === 'overview') body.append(overview());
+      else if (detailTab === 'scope') body.append(scopeTab());
+      else body.append(playbook());
     }
 
-    // tech stack
-    if (a.tech.length) {
-      right.append(h('div', { class: 'card pad' },
-        h('h4', { class: 'card-h' }, icon('code', 14), 'Tech fingerprint'),
-        h('div', { class: 'chips-wrap' }, a.tech.map(techChip)),
-        h('div', { class: 'dim small' }, 'detected from scope names & descriptions')));
+    function overview() {
+      const g = h('div', { class: 'grid-2' });
+      g.append(h('div', { class: 'card pad' },
+        h('div', { class: 'card-title' }, icon('activity', 15), 'Difficulty'),
+        h('div', { class: 'gauge-row' }, gauge(a.difficulty.score, a.difficulty.level),
+          h('div', {}, h('div', { class: 'h3' }, BF.DIFFICULTY[a.difficulty.level].label),
+            h('ul', { class: 'why' }, a.why.slice(0, 5).map(w => h('li', {}, w)))))));
+      g.append(h('div', { class: 'card pad' },
+        h('div', { class: 'card-title' }, icon('layers', 15), 'Attack surface'),
+        a.topCats.length ? a.topCats.slice(0, 6).map(({ cat, count }) => bar(catLabel(cat), count, Math.max(...a.topCats.map(c => c.count)), count))
+          : h('p', { class: 'muted' }, 'Scope is described on the program page.'),
+        a.tech.length ? h('div', { class: 'tech-row' }, h('span', { class: 'muted small' }, 'Tech spotted:'), a.tech.slice(0, 10).map(techChip)) : null));
+      const out = h('div', { class: 'stack' });
+      if (p.summary) out.append(h('div', { class: 'card pad' }, h('div', { class: 'card-title' }, icon('info', 15), 'About'), h('p', { class: 'dim' }, p.summary)));
+      out.append(g);
+      if (a.vulnClasses.length) {
+        out.append(h('div', { class: 'card pad' }, h('div', { class: 'card-title' }, icon('bug', 15), 'What to hunt here'),
+          h('div', { class: 'hunt' }, a.vulnClasses.map(([n, hint]) => h('div', {}, h('b', {}, n), h('span', { class: 'dim small' }, hint))))));
+      }
+      return out;
     }
 
-    // STUDENT PLAYBOOK
-    right.append(h('div', { class: 'card pad playbook-card' },
-      h('h4', { class: 'card-h' }, icon('grad-cap', 14), 'Your playbook'),
-      h('div', { class: 'pb-block' }, h('div', { class: 'pb-title' }, h('span', { class: 'pb-num' }, '01'), 'Recon'), a.playbook.recon.length
-        ? a.playbook.recon.map(([t, d]) => h('div', { class: 'pb-item' }, h('span', { class: 'pb-step' }, t), h('span', { class: 'pb-desc mono' }, d)))
-        : h('div', { class: 'dim' }, 'No extra recon steps. Jump straight in.')),
-      h('div', { class: 'pb-block' }, h('div', { class: 'pb-title' }, h('span', { class: 'pb-num' }, '02'), 'Attack'), a.playbook.attack.length
-        ? a.playbook.attack.map(([t, d]) => h('div', { class: 'pb-item' }, h('span', { class: 'pb-step' }, t), h('span', { class: 'pb-desc' }, d)))
-        : h('div', { class: 'dim' }, 'General web methodology applies.')),
-      h('div', { class: 'pb-block' }, h('div', { class: 'pb-title' }, h('span', { class: 'pb-num' }, '03'), 'Free toolkit'),
-        h('div', { class: 'chips-wrap' }, a.playbook.tools.map(t => h('span', { class: 'chip tool-chip' }, t)))),
-      h('div', { class: 'pb-block' }, h('div', { class: 'pb-title' }, h('span', { class: 'pb-num' }, '04'), 'Rules & expectations'),
-        h('div', { class: 'pb-rules' }, a.playbook.rules.map(r => h('div', { class: 'pb-rule' }, icon('alert', 13), h('span', {}, r)))),
-        h('div', { class: 'pb-expect' }, icon('flag', 13), h('span', {}, a.playbook.expectation)))
-    ));
+    function scopeTab() {
+      let which = 'in';
+      const wrap = h('div', { class: 'card pad' });
+      const seg = h('div', { class: 'seg' },
+        h('button', { class: 'on', type: 'button', onclick: () => set('in') }, 'In scope · ' + p.scope.length),
+        h('button', { type: 'button', onclick: () => set('oos') }, 'Out of scope · ' + p.oos.length));
+      const host = h('div', {});
+      function set(w) { which = w; seg.children[0].classList.toggle('on', w === 'in'); seg.children[1].classList.toggle('on', w === 'oos'); host.innerHTML = ''; host.append(scopeTable(p, which)); }
+      wrap.append(h('div', { class: 'row wrap-row', style: 'margin-bottom:14px' }, seg, h('span', { class: 'spacer' }),
+        a.bountyEligibleAssets ? h('span', { class: 'muted small' }, a.bountyEligibleAssets + ' bounty-eligible targets') : null), host);
+      set('in');
+      return wrap;
+    }
 
-    cols.append(right);
-    view.append(cols);
+    function playbook() {
+      const pb = a.playbook;
+      const step = (n, title, content) => h('div', { class: 'pb-step card pad' },
+        h('div', { class: 'pb-num' }, n), h('div', { class: 'pb-body' }, h('h3', { class: 'h3' }, title), content));
+      return h('div', { class: 'stack' },
+        step('01', 'Recon', pb.recon.length ? h('div', { class: 'pb-list' }, pb.recon.map(([t, d]) => h('div', {}, h('b', {}, t), h('code', {}, d)))) : h('p', { class: 'muted' }, 'Small, fixed scope: skip recon and start testing.')),
+        step('02', 'Attack', pb.attack.length ? h('div', { class: 'pb-list' }, pb.attack.map(([t, d]) => h('div', {}, h('b', {}, t), h('span', { class: 'dim' }, d)))) : h('p', { class: 'muted' }, 'General web methodology applies.')),
+        step('03', 'Free toolkit', h('div', { class: 'row wrap-row' }, pb.tools.map(t => h('span', { class: 'tag' }, t)))),
+        step('04', 'Rules', h('div', {}, h('ul', { class: 'why' }, pb.rules.map(r => h('li', {}, r))), h('div', { class: 'note' }, icon('flag', 15), h('span', {}, pb.expectation)))));
+    }
+
+    paint();
     return view;
   }
 
   /* ============================================================
-     STUDENT MODE
+     SKILL MATCH
      ============================================================ */
   function studentMode() {
     const st = BFFilters.get();
-    const view = h('div', { class: 'view student-view' });
+    const view = h('div', { class: 'view' });
+    view.append(pageHead('Skill match', 'Programs that fit you',
+      'Pick your level and what you can already do. BountyFlow ranks the programs where those skills actually apply.'));
 
-    view.append(h('div', { class: 'section-title big' }, icon('grad-cap', 15), 'Student Mode'));
-    view.append(h('p', { class: 'section-sub' }, 'Find programs that match your current skill level: pick a level, tick what you can already do, and BountyFlow ranks the programs where you can actually land a report today.'));
+    view.append(h('div', { class: 'card pad stack' },
+      h('div', {}, h('div', { class: 'pop-label', style: 'padding-left:0' }, 'Your level'),
+        h('div', { class: 'seg' }, [['beginner', 'Beginner'], ['intermediate', 'Intermediate'], ['advanced', 'Advanced']].map(([lv, l]) =>
+          h('button', { class: st.studentLevel === lv ? 'on' : '', type: 'button', onclick: () => BFFilters.patch({ studentLevel: st.studentLevel === lv ? null : lv }) }, l)))),
+      h('div', {}, h('div', { class: 'pop-label', style: 'padding-left:0' }, 'What you can do today'),
+        h('div', { class: 'row wrap-row' }, Object.entries(BF.SKILLS).map(([k, s]) =>
+          h('button', { class: 'chip' + (st.studentSkills.includes(k) ? ' on' : ''), type: 'button', onclick: () => BFFilters.patch({ studentSkills: toggleIn(st.studentSkills, k) }) }, s.label))))));
 
-    // level cards
-    const levels = [
-      ['beginner', 'sprout', 'Beginner', 'New to bug bounty. Broad scopes, forgiving programs, low competition.'],
-      ['intermediate', 'trending', 'Intermediate', 'Comfortable with the toolkit. Ready for real competition and logic bugs.'],
-      ['advanced', 'flame', 'Advanced', 'Deep skills. Web3, hardware, network & code review welcome.']
-    ];
-    view.append(h('div', { class: 'level-cards' },
-      levels.map(([lv, ic, title, desc]) =>
-        h('div', {
-          class: 'level-card card' + (st.studentLevel === lv ? ' active' : ''),
-          dataset: { level: lv },
-          onclick: () => { BFFilters.patch({ studentLevel: st.studentLevel === lv ? null : lv }); }
-        },
-          h('div', { class: 'level-icon' }, icon(ic, 18)),
-          h('div', { class: 'level-name' }, title),
-          h('div', { class: 'level-desc' }, desc)))));
-
-    // skills
-    view.append(h('div', { class: 'card pad skills-card' },
-      h('h4', { class: 'card-h' }, icon('zap', 14), 'What can you do today?'),
-      h('div', { class: 'skills-grid' },
-        Object.entries(BF.SKILLS).map(([k, s]) => {
-          const on = st.studentSkills.includes(k);
-          return h('label', { class: 'skill-tile' + (on ? ' active' : '') },
-            h('input', { type: 'checkbox', checked: on, onchange: e => {
-              const next = e.target.checked ? [...st.studentSkills, k] : st.studentSkills.filter(x => x !== k);
-              BFFilters.patch({ studentSkills: next });
-            } }),
-            h('span', { class: 'skill-icon' }, icon(s.icon, 15)),
-            h('span', { class: 'skill-name' }, s.label));
-        })),
-      h('div', { class: 'hint' }, 'Nothing selected = no skill filtering. Matching ranks programs where your skills actually apply.')));
-
-    // learning path
     if (st.studentSkills.length) {
       const path = BFAnalyzer.learningPath(programs, st.studentSkills);
       if (path.length) {
-        view.append(h('div', { class: 'card pad learn-card' },
-          h('h4', { class: 'card-h' }, icon('trending', 14), 'Level-up path: learn these to unlock more programs'),
-          path.map(({ skill, unlocks, advice }) =>
-            h('div', { class: 'learn-row' },
-              h('span', { class: 'learn-skill' }, icon(BF.SKILLS[skill] ? BF.SKILLS[skill].icon : 'help', 14), BF.SKILLS[skill] ? BF.SKILLS[skill].label : skill),
-              h('span', { class: 'learn-unlock' }, '+' + unlocks + ' programs'),
-              h('span', { class: 'learn-advice' }, advice)))));
+        view.append(h('div', { class: 'card pad' }, h('div', { class: 'card-title' }, icon('trending', 15), 'Learn next to unlock more programs'),
+          h('div', { class: 'learn' }, path.map(({ skill, unlocks, advice }) =>
+            h('div', {}, h('b', {}, BF.SKILLS[skill] ? BF.SKILLS[skill].label : skill), h('span', { class: 'tag red' }, '+' + unlocks), h('span', { class: 'dim small' }, advice))))));
       }
     }
 
-    // matched programs
     const matched = programs.map(p => ({ p, m: BFAnalyzer.skillMatch(p, st.studentSkills) }))
       .filter(x => st.studentSkills.length ? x.m != null : true)
       .filter(x => st.studentLevel ? x.p.analysis.difficulty.level === st.studentLevel : true)
-      .sort((x, y) => (y.m || 0) - (x.m || 0));
+      .sort((x, y) => (y.m || 0) - (x.m || 0) || (y.p.offersBounties - x.p.offersBounties));
 
-    view.append(h('div', { class: 'section-title' },
-      icon('target', 14), 'Matched programs ',
-      h('span', { class: 'count' }, (st.studentLevel ? BF.DIFFICULTY[st.studentLevel].label + ' · ' : '') + matched.length)));
-
-    const grid = h('div', { class: 'card-grid' });
-    matched.slice(0, 36).forEach(({ p }) => grid.append(programCard(p)));
-    view.append(grid);
-    if (!matched.length) view.append(h('div', { class: 'card pad dim' }, 'No programs match. Loosen your selections.'));
+    view.append(h('div', { class: 'section-head', style: 'margin-top:28px' }, h('h2', {}, matched.length.toLocaleString() + ' matching programs'),
+      matched.length > 40 ? h('span', { class: 'muted small' }, 'showing the best 40') : null));
+    view.append(matched.length
+      ? h('div', { class: 'plist card' }, listHeader(), matched.slice(0, 40).map(({ p }) => programRow(p)))
+      : h('div', { class: 'card empty' }, h('h3', {}, 'No matches'), h('p', {}, 'Untick a skill or change level.')));
     return view;
   }
 
   /* ============================================================
-     SCOPE EXPLORER
+     SCOPE CHECK
      ============================================================ */
   function explorer() {
-    const view = h('div', { class: 'view explorer-view' });
-    view.append(h('div', { class: 'section-title big' }, icon('crosshair', 15), 'Scope Explorer'));
-    view.append(h('p', { class: 'section-sub' }, 'Check whether a domain is covered by any bounty program before you start hunting: exact matches and wildcard coverage, live from the dataset.'));
-
-    let results = null;
-    const out = h('div', { class: 'explorer-out' });
-
-    function runSearch(q) {
-      results = BFAnalyzer.domainCoveredBy(q, programs);
+    const view = h('div', { class: 'view' });
+    view.append(pageHead('Scope check', 'Is this domain in scope?',
+      'Before you touch a target, check whether any program covers it. Matches exact targets and wildcards like *.example.com.'));
+    const out = h('div', { style: 'margin-top:20px' });
+    function run(q) {
       out.innerHTML = '';
       if (!q) return;
-      if (results.length) {
-        out.append(h('div', { class: 'explorer-found' },
-          icon('circle-check', 16),
-          (results.length === 1 ? '1 program covers ' : results.length + ' programs cover '),
-          h('span', { class: 'hl' }, q.toLowerCase())));
-        const grid = h('div', { class: 'card-grid' });
-        results.slice(0, 24).forEach(({ p, via }) => {
-          const card = programCard(p);
-          card.append(h('div', { class: 'via-row' }, 'via', h('span', { class: 'mono' }, via)));
-          grid.append(card);
-        });
-        out.append(grid);
-        if (results.length > 24) out.append(h('div', { class: 'dim pad' }, '…and ' + (results.length - 24) + ' more'));
+      const res = BFAnalyzer.domainCoveredBy(q, programs);
+      if (res.length) {
+        out.append(h('div', { class: 'note ok' }, icon('circle-check', 16), h('span', {}, res.length + (res.length === 1 ? ' program covers ' : ' programs cover '), h('b', { class: 'mono' }, q.toLowerCase()), '. Read the policy before testing.')),
+          h('div', { class: 'plist card', style: 'margin-top:14px' }, res.slice(0, 30).map(({ p, via }) => programRow(p, h('span', { class: 'tag' }, 'via ' + via)))));
       } else {
-        out.append(h('div', { class: 'explorer-none card pad' },
-          h('div', { class: 'big-icon' }, icon('ban', 24)),
-          h('h3', {}, 'Not covered by any program here'),
-          h('p', { class: 'dim' }, 'No in-scope target or wildcard matches this domain in the current dataset. Testing it would be OUT of scope for all listed programs. Do not test it.')));
+        out.append(h('div', { class: 'note red' }, icon('ban', 16), h('span', {}, h('b', {}, 'Not covered. '), 'No listed program has this domain in scope. Testing it is unauthorized: do not test it.')));
       }
     }
-
-    view.append(h('div', { class: 'explorer-bar' },
-      h('span', { class: 'search-ic' }, icon('search', 15)),
-      h('input', {
-        class: 'input explorer-input', type: 'search', placeholder: 'example.com or sub.example.com…',
-        oninput: e => { clearTimeout(view._t); view._t = setTimeout(() => runSearch(e.target.value.trim()), 250); }
-      })));
-    view.append(out);
-    view.append(h('div', { class: 'card pad hint-card' },
-      h('h4', { class: 'card-h' }, icon('info', 14), 'How wildcard matching works'),
-      h('p', { class: 'dim' }, 'A program with *.example.com in scope covers every subdomain of example.com. This explorer checks the live dataset for both exact matches and wildcard coverage, great for “who owns this asset?” questions before you start hunting.')));
+    view.append(h('div', { class: 'search big-search' }, icon('search', 18),
+      h('input', { class: 'input', type: 'search', placeholder: 'example.com or api.example.com', autofocus: true, 'aria-label': 'Domain',
+        oninput: e => { clearTimeout(view._t); view._t = setTimeout(() => run(e.target.value.trim()), 220); } })), out);
     return view;
   }
 
   /* ============================================================
-     BOOKMARKS
+     SAVED
      ============================================================ */
   function bookmarks() {
-    const view = h('div', { class: 'view bookmarks-view' });
+    const view = h('div', { class: 'view' });
     const ids = BFStore.bookmarks();
     const list = programs.filter(p => ids.includes(p.id));
-
-    view.append(h('div', { class: 'section-title big' }, icon('bookmark', 15), 'Bookmarks ', h('span', { class: 'count' }, list.length + ' saved')));
-    if (!list.length) {
-      view.append(h('div', { class: 'card pad empty-bookmarks' },
-        h('div', { class: 'big-icon' }, icon('star', 22)),
-        h('h3', {}, 'No bookmarks yet'),
-        h('p', { class: 'dim' }, 'Hit the star on any program card to save it here. Stored in your browser only.')));
-      return view;
-    }
-    const grid = h('div', { class: 'card-grid' });
-    list.forEach(p => grid.append(programCard(p)));
-    view.append(grid);
+    view.append(pageHead('Saved', 'Your shortlist', 'Programs you starred. Stored in this browser only.'));
+    view.append(list.length
+      ? h('div', { class: 'plist card' }, listHeader(), list.map(p => programRow(p)))
+      : h('div', { class: 'card empty' }, icon('star', 28), h('h3', {}, 'Nothing saved yet'), h('p', {}, 'Hit the star on any program to keep it here.')));
     return view;
   }
 
-  return { setPrograms, dashboard, refreshResults, syncDashboardChrome, programDetail, studentMode, explorer, bookmarks, roulette };
+  function daysSince(iso) { return Math.round((Date.now() - new Date(iso + 'T12:00:00Z').getTime()) / 86400000); }
+
+  return { setPrograms, dashboard, refreshResults, syncDashboardChrome, programDetail, newFeed, studentMode, explorer, bookmarks, roulette, daysSince };
 })();
