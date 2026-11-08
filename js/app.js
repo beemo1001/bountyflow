@@ -79,7 +79,10 @@ const BFApp = (() => {
   //   ?program=<id>  opens that program      ?view=new|match|scope|saved  opens that page
   function applyQueryRoute() {
     const q = new URLSearchParams(location.search);
-    const prog = q.get('program'), view = q.get('view');
+    let ref = new URLSearchParams();
+    try { if (document.referrer) ref = new URL(document.referrer).searchParams; } catch (e) { /* no referrer */ }
+    console.info('[BountyFlow] boot', location.href, '| referrer:', document.referrer || '(none)');
+    const prog = q.get('program') || ref.get('program'), view = q.get('view') || ref.get('view');
     if (prog) location.hash = '#/program/' + encodeURIComponent(prog);
     else if (view && /^(new|match|scope|saved)$/.test(view)) location.hash = '#/' + view;
   }
