@@ -58,7 +58,10 @@ WEEKLY_TOP = 3                # programs featured in the roundup
 WEEKLY_MIN_SCORE = 40
 WEEKLY_AVOID_RECENT = 8       # skip programs featured in recent roundups
 
-# Public site (deep links + bot avatar). Override with the SITE_URL / AVATAR_URL repo variables.
+# Where Discord links send members: the BountyFlow app inside the Whop community.
+# Whop forwards the query string to the embed, so ?program=<id> / ?view=new deep links work.
+# Override with the APP_URL repo variable. The bot avatar is served from the public site.
+DEFAULT_APP = "https://whop.com/cyberflow/exp_SUX6Kgq38007TT/app/"
 DEFAULT_SITE = "https://beemo1001.github.io/bountyflow/"
 
 # Footer note on every message (edit to match your cron schedule)
@@ -586,7 +589,7 @@ def snapshot(p, a):
 # ------------------------------------------------------------
 
 def deep_link(p, base):
-    return (base + "#/program/" + p["id"]) if base else None
+    return (base + "?program=" + p["id"]) if base else None
 
 
 def money_line(p):
@@ -651,7 +654,7 @@ def card(title, intro, blocks, more_line, now):
 
 
 def new_page(base):
-    return (base + "#/new") if base else "https://beemo1001.github.io/bountyflow/#/new"
+    return (base or DEFAULT_APP) + "?view=new"
 
 
 def listing(programs, base, now, title, intro):
@@ -841,8 +844,8 @@ def weekly_picks(programs, history_ids):
 
 def plan(mode, programs, state, now):
     """Returns a dict: type, embeds, featured ids, post?, weekly?, write_state?"""
-    base = os.environ.get("SITE_URL") or DEFAULT_SITE
-    if base and not base.endswith("/"):
+    base = os.environ.get("APP_URL") or DEFAULT_APP
+    if not base.endswith("/"):
         base += "/"
     seen = state.get("seen") or {}
 
@@ -897,7 +900,7 @@ def plan(mode, programs, state, now):
         intro = "{} new program{} launched this week. These 3 are the best bets for students right now:".format(
             week_new, "" if week_new == 1 else "s")
         embed = card("This week's top picks", intro, [program_block(p, base) for p in picks],
-                     "[Browse every program]({})".format(base or "https://beemo1001.github.io/bountyflow/"), now)
+                     "[Browse every program]({})".format(base or DEFAULT_APP), now)
         return {"type": "weekly", "embeds": [embed], "featured": [p["id"] for p in picks],
                 "post": True, "weekly": True, "write_state": True}
 

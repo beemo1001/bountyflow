@@ -75,7 +75,17 @@ const BFApp = (() => {
     el.onclick = async () => { el.lastChild.textContent = 'Refreshing'; await BFData.clearCache(); location.reload(); };
   }
 
+  // Deep links that survive embedding (Whop passes the query string, not the #hash):
+  //   ?program=<id>  opens that program      ?view=new|match|scope|saved  opens that page
+  function applyQueryRoute() {
+    const q = new URLSearchParams(location.search);
+    const prog = q.get('program'), view = q.get('view');
+    if (prog) location.hash = '#/program/' + encodeURIComponent(prog);
+    else if (view && /^(new|match|scope|saved)$/.test(view)) location.hash = '#/' + view;
+  }
+
   async function init() {
+    applyQueryRoute();
     CF.initChrome('bountyflow');
     const boot = CF.boot('BountyFlow');
     try {
