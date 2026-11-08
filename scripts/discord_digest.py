@@ -47,17 +47,19 @@ from datetime import datetime, timedelta, timezone
 # KNOBS (tune freely)
 # ------------------------------------------------------------
 
-# New-program alerts
-ALERT_MIN_SCORE = 50          # student-value threshold; scale is roughly 0-99
-ALERT_REQUIRES_PAID = True    # only alert for programs that pay cash bounties
-ALERT_MAX_SPOTLIGHT = 2       # new programs shown in full detail
-ALERT_MAX_LISTED = 6          # further new programs listed compactly
+# New-program alerts: every new open program is listed, paid ones first
+ALERT_MIN_SCORE = 0           # raise (0-99) to only announce higher-value programs
+ALERT_REQUIRES_PAID = False   # True = skip new programs that pay no cash (VDPs)
+ALERT_MAX_LISTED = 8          # programs shown per message; the rest link to the New page
 
 # Weekly roundup
 WEEKLY_INTERVAL_DAYS = 7      # one roundup per week (alerts happen in between)
 WEEKLY_TOP = 3                # programs featured in the roundup
 WEEKLY_MIN_SCORE = 40
-WEEKLY_AVOID_RECENT = 8       # skip programs featured in the last N spotlights
+WEEKLY_AVOID_RECENT = 8       # skip programs featured in recent roundups
+
+# Public site (deep links + bot avatar). Override with the SITE_URL / AVATAR_URL repo variables.
+DEFAULT_SITE = "https://beemo1001.github.io/bountyflow/"
 
 # Footer note on every message (edit to match your cron schedule)
 NEXT_SCAN_NOTE = "next scan in about 12h"
@@ -616,122 +618,63 @@ def scope_line(p, a):
     return " · ".join(parts)
 
 
-def header_embed(kind, programs, new_count, notable_count, retired_names, now):
-    paid = sum(1 for p in programs if p["offersBounties"] or p["bountyKnown"])
-    beginner = sum(1 for p in programs if p["analysis"]["level"] == "beginner")
-    top_bounty = max((p["maxBountyUSD"] or 0 for p in programs), default=0)
-
-    if kind == "welcome":
-        title = "BountyFlow digest is online"
-        desc = ("This channel now gets one tidy message when something is worth your time: "
-                "brand-new programs that pay and suit students, plus a weekly roundup of the best picks. "
-                "Watching {} programs today. Here are the top {} right now.").format(len(programs), WEEKLY_TOP)
-    elif kind == "new":
-        title = "New bounty opportunities"
-        desc = "{} new program{} worth your time appeared since the last scan.".format(
-            notable_count, "" if notable_count == 1 else "s")
-        if retired_names:
-            desc += " Also retired (stop hunting {}): {}.".format(
-                "it" if len(retired_names) == 1 else "them", ", ".join(retired_names[:5]))
-    elif kind == "test":
-        title = "BountyFlow test message"
-        desc = ("If you can read this, the digest works. This is what your students will get: "
-                "the current top {} picks with everything they need to start.").format(WEEKLY_TOP)
-    else:  # weekly
-        title = "Weekly student digest"
-        desc = "The best student-friendly programs to hunt this week, picked from {} programs.".format(len(programs))
-
-    fields = [
-        {"name": "Programs tracked", "value": str(len(programs)), "inline": True},
-        {"name": "Paying programs", "value": str(paid), "inline": True},
-        {"name": "Beginner-friendly", "value": str(beginner), "inline": True},
-    ]
-    if top_bounty:
-        fields.append({"name": "Top published bounty", "value": kmoney(top_bounty), "inline": True})
-    return {
-        "title": title,
-        "description": desc,
-        "color": BRAND_BLUE,
-        "fields": fields,
-        "footer": {"text": "BountyFlow · data auto-updates every 30 min · " + NEXT_SCAN_NOTE},
-        "timestamp": iso(now),
-    }
+def short_reward(p):
+    if p["bountyKnown"] and p["maxBountyUSD"]:
+        return "Up to " + kmoney(p["maxBountyUSD"])
+    if p["offersBounties"]:
+        return "Cash bounties"
+    return "Swag, no cash" if p["offersSwag"] else "No cash (VDP)"
 
 
-def spotlight_embed(p, base):
+def program_block(p, base):
+    """Two short lines per program: who, then what it pays, what is in scope, how hard, links."""
     a = p["analysis"]
-    fields = [
-        {"name": "Bounties", "value": clean(money_line(p)), "inline": True},
-    ]
-
-    fit = "{} ({}/100)".format(DIFF_LABEL[a["level"]], a["score"])
-    extras = []
-    if p["safeHarbor"] == "full":
-        extras.append("full safe harbor")
-    if p["offersSwag"]:
-        extras.append("swag")
-    if p["managed"]:
-        extras.append("managed program")
-    if p["avgFirstResponseDays"] is not None:
-        extras.append("~{}d first response".format(round(p["avgFirstResponseDays"])))
-    if extras:
-        fit += " · " + " · ".join(extras)
-    fields.append({"name": "Student fit", "value": fit, "inline": True})
-
-    if a["why"]:
-        fields.append({"name": "Why this rating", "value": "; ".join(a["why"][:2]), "inline": False})
-
-    fields.append({"name": "Scope", "value": clean(scope_line(p, a)), "inline": False})
-    fields.append({"name": "What you'll need", "value": " · ".join(a["tools"][:6]) + " (all free)", "inline": False})
-
-    if a["first_moves"]:
-        fields.append({"name": "First move", "value": "\n".join(a["first_moves"]), "inline": False})
-
-    if p["oos"]:
-        excl = [clean(t["t"]) for t in p["oos"][:3] if t["t"]]
-        if excl:
-            extra = " (+{} more)".format(len(p["oos"]) - 3) if len(p["oos"]) > 3 else ""
-            fields.append({"name": "Do not touch", "value": ", ".join(excl) + extra, "inline": False})
-
+    cats = ", ".join(CAT_LABEL.get(k, "other") for k, _ in a["top_cats"][:2])
+    scope = "{} target{}".format(a["total"], "" if a["total"] == 1 else "s") + (" ({})".format(cats) if cats else "")
     links = []
+    if p["url"]:
+        links.append("[Program](" + p["url"] + ")")
     dl = deep_link(p, base)
     if dl:
-        links.append("[Full playbook on BountyFlow](" + dl + ")")
-    if p["url"]:
-        links.append("[Program page](" + p["url"] + ")")
-    if links:
-        fields.append({"name": "Links", "value": " · ".join(links), "inline": False})
-
-    embed = {
-        "title": clean(p["name"]) + " · " + PLATFORM_LABEL[p["platform"]],
-        "color": PLATFORM_COLOR.get(p["platform"], BRAND_BLUE),
-        "fields": fields,
-        "footer": {"text": "Student value {}/99 · auto-analyzed from public scope data".format(a["value"])},
-    }
-    if dl:
-        embed["url"] = dl
-    elif p["url"]:
-        embed["url"] = p["url"]
-    if a["snapshot"]:
-        embed["description"] = a["snapshot"]
-    return embed
+        links.append("[Playbook](" + dl + ")")
+    line1 = "**{}** · {}".format(clean(p["name"])[:80], PLATFORM_LABEL[p["platform"]])
+    line2 = " · ".join([short_reward(p), scope, DIFF_LABEL[a["level"]]] + links)
+    return line1 + "\n" + line2
 
 
-def compact_embed(items, base, title="Also new this cycle"):
-    fields = []
-    for p in items:
-        a = p["analysis"]
-        bits = [money_line(p), "{} ({}/100)".format(DIFF_LABEL[a["level"]], a["score"])]
-        dl = deep_link(p, base)
-        if dl:
-            bits.append("[open](" + dl + ")")
-        elif p["url"]:
-            bits.append("[program](" + p["url"] + ")")
-        fields.append({
-            "name": clean(p["name"]) + " · " + PLATFORM_LABEL[p["platform"]],
-            "value": clean(" · ".join(bits)),
-        })
-    return {"title": title, "color": BRAND_BLUE, "fields": fields}
+def card(title, intro, blocks, more_line, now):
+    desc = (intro + "\n\n" if intro else "") + "\n\n".join(blocks)
+    if more_line:
+        desc += "\n\n" + more_line
+    return {"title": title, "description": desc, "color": BRAND_BLUE,
+            "footer": {"text": "BountyFlow by CyberFlow · checked twice a day"}, "timestamp": iso(now)}
+
+
+def new_page(base):
+    return (base + "#/new") if base else "https://beemo1001.github.io/bountyflow/#/new"
+
+
+def listing(programs, base, now, title, intro):
+    paid = [p for p in programs if is_paid(p)]
+    free = [p for p in programs if not is_paid(p)]
+    ordered = by_value(paid) + by_value(free)
+    shown = ordered[:ALERT_MAX_LISTED]
+    more = len(ordered) - len(shown)
+    if more > 0:
+        more_line = "[+{} more on BountyFlow]({})".format(more, new_page(base))
+    else:
+        more_line = "[See all new programs]({})".format(new_page(base))
+    return card(title, intro, [program_block(p, base) for p in shown], more_line, now), shown
+
+
+def first_seen_recent(programs, days):
+    """Open programs whose first-seen date (data/first-seen.json, kept by the tracker) is within `days`."""
+    try:
+        fs = json.load(open(os.path.join(HERE, "..", "data", "first-seen.json"), encoding="utf-8")).get("first_seen", {})
+    except Exception:
+        return []
+    cutoff = (now_utc() - timedelta(days=days)).strftime("%Y-%m-%d")
+    return [p for p in programs if fs.get(p["id"], "") >= cutoff and p["submissionState"] == "open"]
 
 
 def fit_embeds(embeds):
@@ -898,86 +841,69 @@ def weekly_picks(programs, history_ids):
 
 def plan(mode, programs, state, now):
     """Returns a dict: type, embeds, featured ids, post?, weekly?, write_state?"""
-    base = os.environ.get("SITE_URL") or ""
+    base = os.environ.get("SITE_URL") or DEFAULT_SITE
     if base and not base.endswith("/"):
         base += "/"
-
     seen = state.get("seen") or {}
-    candidates = [p for p in programs if p["submissionState"] == "open"]
 
-    # ---- test mode: current top picks, never touch state ----
-    if mode == "test":
-        picks = by_value([p for p in candidates if is_paid(p) and p["analysis"]["value"] >= WEEKLY_MIN_SCORE])[:WEEKLY_TOP]
-        embeds = [header_embed("test", programs, 0, 0, [], now)]
-        embeds += [spotlight_embed(p, base) for p in picks]
-        log("TEST MODE: sample digest with the current top {} picks".format(len(picks)))
-        for p in picks:
-            log("  pick: {} ({}) value={}".format(p["name"], p["id"], p["analysis"]["value"]))
-        return {"type": "test", "embeds": embeds, "featured": [p["id"] for p in picks],
-                "post": True, "weekly": False, "write_state": False}
-
-    # ---- first ever run: friendly welcome, no data dump ----
-    if not seen:
-        picks = weekly_picks(programs, [])
-        embeds = [header_embed("welcome", programs, 0, 0, [], now)]
-        embeds += [spotlight_embed(p, base) for p in picks]
-        return {"type": "welcome", "embeds": embeds, "featured": [p["id"] for p in picks],
-                "post": True, "weekly": True, "write_state": True}
+    # ---- test mode and the very first run: the programs that launched this week ----
+    if mode == "test" or not seen:
+        recent = first_seen_recent(programs, 7)
+        if mode == "test":
+            title = "Test message: new programs this week"
+            intro = "If you can read this, the BountyFlow feed works. Real posts look exactly like this."
+        else:
+            title = "BountyFlow is live in this channel"
+            intro = "New bug bounty programs land here twice a day, plus a weekly top 3. Here is what launched this week:"
+        if recent:
+            embed, shown = listing(recent, base, now, title, intro)
+        else:
+            shown = weekly_picks(programs, [])
+            embed = card(title, intro.replace("Here is what launched this week:", "Nothing launched yet this week, so here are 3 good picks:"),
+                         [program_block(p, base) for p in shown], "", now)
+        log("{}: {} programs listed".format("TEST" if mode == "test" else "WELCOME", len(shown)))
+        return {"type": "test" if mode == "test" else "welcome", "embeds": [embed], "featured": [p["id"] for p in shown],
+                "post": True, "weekly": mode != "test", "write_state": mode != "test"}
 
     # ---- diff against last scan ----
     ids_now = {p["id"] for p in programs}
     gone = state.get("gone") or {}
-    returning = {pid for pid, d in gone.items()
-                 if (parse_iso(d) or now) >= now - timedelta(days=14)}
+    returning = {pid for pid, d in gone.items() if (parse_iso(d) or now) >= now - timedelta(days=14)}
     fresh = [p for p in programs if p["id"] not in seen and p["id"] not in returning]
     retired_ids = [pid for pid in seen if pid not in ids_now]
 
     # safety: if the dataset looks broken (mass shrinkage), do nothing
     if len(retired_ids) > max(5, 0.2 * len(seen)):
-        return {"type": "anomaly", "embeds": [], "featured": [],
-                "post": False, "weekly": False, "write_state": False,
-                "abort": "dataset shrank by {} of {} programs, refusing to announce retirements".format(
-                    len(retired_ids), len(seen))}
+        return {"type": "anomaly", "embeds": [], "featured": [], "post": False, "weekly": False, "write_state": False,
+                "abort": "dataset shrank by {} of {} programs, refusing to post".format(len(retired_ids), len(seen))}
 
-    by_id = {p["id"]: p for p in programs}
-    notables = [p for p in fresh
-                if p["submissionState"] == "open"
-                and (not ALERT_REQUIRES_PAID or is_paid(p))
-                and p["analysis"]["value"] >= ALERT_MIN_SCORE]
-    notables = by_value(notables)
-
+    notables = [p for p in fresh if p["submissionState"] == "open"
+                and (not ALERT_REQUIRES_PAID or is_paid(p)) and p["analysis"]["value"] >= ALERT_MIN_SCORE]
     last_weekly = parse_iso(state.get("last_weekly") or "")
     weekly_due = (last_weekly is None) or (now - last_weekly) >= timedelta(days=WEEKLY_INTERVAL_DAYS)
 
-    # ---- 1) news beats the roundup ----
+    # ---- 1) new programs since the last scan ----
     if notables:
-        featured = notables[:ALERT_MAX_SPOTLIGHT]
-        listed = notables[ALERT_MAX_SPOTLIGHT:][:ALERT_MAX_LISTED]
-        retired_names = [by_id[pid]["name"] for pid in retired_ids if pid in by_id]
-        embeds = [header_embed("new", programs, len(fresh), len(notables), retired_names, now)]
-        embeds += [spotlight_embed(p, base) for p in featured]
-        if listed:
-            embeds.append(compact_embed(listed, base))
-        skipped = len(fresh) - len(notables)
-        log("new since last scan: {} (notable: {}, below threshold: {}, retired: {})".format(
-            len(fresh), len(notables), skipped, len(retired_ids)))
-        return {"type": "new", "embeds": embeds, "featured": [p["id"] for p in featured],
-                "post": True, "weekly": weekly_due, "write_state": True}
+        n = len(notables)
+        embed, shown = listing(notables, base, now, "{} new bug bounty program{}".format(n, "" if n == 1 else "s"), "")
+        log("new since last scan: {} (listed {}), retired: {}".format(len(fresh), len(shown), len(retired_ids)))
+        return {"type": "new", "embeds": [embed], "featured": [], "post": True, "weekly": False, "write_state": True}
 
-    # ---- 2) weekly roundup, avoiding recent picks ----
+    # ---- 2) weekly top 3, avoiding recent picks ----
     if weekly_due or mode == "force":
         history_ids = [h["id"] for h in (state.get("spotlight_history") or [])[-WEEKLY_AVOID_RECENT:]]
         picks = weekly_picks(programs, history_ids)
-        embeds = [header_embed("weekly", programs, len(fresh), 0, [], now)]
-        embeds += [spotlight_embed(p, base) for p in picks]
-        return {"type": "weekly", "embeds": embeds, "featured": [p["id"] for p in picks],
+        week_new = len(first_seen_recent(programs, 7))
+        intro = "{} new program{} launched this week. These 3 are the best bets for students right now:".format(
+            week_new, "" if week_new == 1 else "s")
+        embed = card("This week's top picks", intro, [program_block(p, base) for p in picks],
+                     "[Browse every program]({})".format(base or "https://beemo1001.github.io/bountyflow/"), now)
+        return {"type": "weekly", "embeds": [embed], "featured": [p["id"] for p in picks],
                 "post": True, "weekly": True, "write_state": True}
 
-    # ---- 3) nothing worth students' time: stay silent ----
-    log("quiet run: {} new (none above threshold {}), {} retired, weekly not due".format(
-        len(fresh), ALERT_MIN_SCORE, len(retired_ids)))
-    return {"type": "quiet", "embeds": [], "featured": [],
-            "post": False, "weekly": False, "write_state": True}
+    # ---- 3) nothing new: stay silent ----
+    log("quiet run: nothing new, weekly not due ({} retired)".format(len(retired_ids)))
+    return {"type": "quiet", "embeds": [], "featured": [], "post": False, "weekly": False, "write_state": True}
 
 
 # ------------------------------------------------------------
@@ -1040,7 +966,7 @@ def main(argv):
 
     # 3. post (or print)
     if out["post"]:
-        payload = build_payload(out["embeds"], os.environ.get("AVATAR_URL") or "")
+        payload = build_payload(out["embeds"], os.environ.get("AVATAR_URL") or DEFAULT_SITE + "logo.png")
         if opts["dry"]:
             log("DRY RUN: would post a {} message with {} embeds".format(out["type"], len(payload["embeds"])))
             print(json.dumps(payload, indent=2, ensure_ascii=True))
