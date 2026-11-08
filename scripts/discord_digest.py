@@ -59,7 +59,8 @@ WEEKLY_MIN_SCORE = 40
 WEEKLY_AVOID_RECENT = 8       # skip programs featured in recent roundups
 
 # Where Discord links send members: the BountyFlow app inside the Whop community.
-# Whop forwards the query string to the embed, so ?program=<id> / ?view=new deep links work.
+# (Whop's website embed does not forward query strings, so links open the app's home page,
+# where new programs sit at the top under "Just launched".)
 # Override with the APP_URL repo variable. The bot avatar is served from the public site.
 DEFAULT_APP = "https://whop.com/cyberflow/exp_SUX6Kgq38007TT/app/"
 DEFAULT_SITE = "https://beemo1001.github.io/bountyflow/"
@@ -634,13 +635,12 @@ def program_block(p, base):
     a = p["analysis"]
     cats = ", ".join(CAT_LABEL.get(k, "other") for k, _ in a["top_cats"][:2])
     scope = "{} target{}".format(a["total"], "" if a["total"] == 1 else "s") + (" ({})".format(cats) if cats else "")
-    links = []
-    if p["url"]:
-        links.append("[Program](" + p["url"] + ")")
-    dl = deep_link(p, base)
-    if dl:
-        links.append("[Playbook](" + dl + ")")
-    line1 = "**{}** · {}".format(clean(p["name"])[:80], PLATFORM_LABEL[p["platform"]])
+    links = ["[Program page](" + p["url"] + ")"] if p["url"] else []
+    name = clean(p["name"])
+    if name.lower() in ("vdp", "bbp", "bug bounty", "bug bounty program", "vulnerability disclosure program") and p["url"] and "/programs/" in p["url"]:
+        company = p["url"].split("/programs/")[1].split("/")[0].replace("-", " ").title()
+        name = company + " " + name     # e.g. Intigriti's "VDP" -> "Showpad VDP"
+    line1 = "**{}** · {}".format(name[:80], PLATFORM_LABEL[p["platform"]])
     line2 = " · ".join([short_reward(p), scope, DIFF_LABEL[a["level"]]] + links)
     return line1 + "\n" + line2
 
@@ -664,9 +664,9 @@ def listing(programs, base, now, title, intro):
     shown = ordered[:ALERT_MAX_LISTED]
     more = len(ordered) - len(shown)
     if more > 0:
-        more_line = "[+{} more on BountyFlow]({})".format(more, new_page(base))
+        more_line = "+{} more · [Open BountyFlow]({}) for scopes, difficulty and a playbook for each".format(more, base or DEFAULT_APP)
     else:
-        more_line = "[See all new programs]({})".format(new_page(base))
+        more_line = "[Open BountyFlow]({}) for scopes, difficulty and a playbook for each".format(base or DEFAULT_APP)
     return card(title, intro, [program_block(p, base) for p in shown], more_line, now), shown
 
 
@@ -900,7 +900,7 @@ def plan(mode, programs, state, now):
         intro = "{} new program{} launched this week. These 3 are the best bets for students right now:".format(
             week_new, "" if week_new == 1 else "s")
         embed = card("This week's top picks", intro, [program_block(p, base) for p in picks],
-                     "[Browse every program]({})".format(base or DEFAULT_APP), now)
+                     "[Open BountyFlow]({}) to browse every program".format(base or DEFAULT_APP), now)
         return {"type": "weekly", "embeds": [embed], "featured": [p["id"] for p in picks],
                 "post": True, "weekly": True, "write_state": True}
 

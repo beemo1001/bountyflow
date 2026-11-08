@@ -12,7 +12,7 @@ GitHub Actions, twice a day (07:17 and 19:17 UTC)
 
 ## What gets posted
 
-- **New programs:** every new open program since the last scan, paid ones first. Two lines each: name and platform, then reward, scope, level and links to the program page and the BountyFlow playbook. Up to 8 per message, then a link to the New page for the rest.
+- **New programs:** every new open program since the last scan, paid ones first. Two lines each: name and platform, then reward, scope, level and a link to the official program page. Up to 8 per message. Each card ends with one link to the BountyFlow app inside the Whop community (`APP_URL`), where new programs sit at the top under Just launched.
 - **Weekly top picks:** once a week, the 3 best programs for students right now (never repeating recent picks).
 - **First message:** a short "BountyFlow is live" card listing the programs that launched this week.
 - Nothing new? Nothing is posted.
@@ -25,7 +25,7 @@ GitHub Actions, twice a day (07:17 and 19:17 UTC)
 
 That's it. The next scheduled run posts the "BountyFlow is live" card, and from then on only new programs and the weekly picks.
 
-Optional repo **variables** (Variables tab, not Secrets): `SITE_URL` to point links at another copy of the site, `AVATAR_URL` for a different bot picture (PNG/JPG). Both default to the GitHub Pages site.
+Optional repo **variables** (Variables tab, not Secrets): `APP_URL` to change where the card's BountyFlow link goes (default: the Whop app page), `AVATAR_URL` for a different bot picture (PNG/JPG).
 
 ## Tuning
 
