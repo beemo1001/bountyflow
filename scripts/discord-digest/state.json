@@ -1,9 +1,2839 @@
 {
  "version": 1,
- "seen": {},
+ "seen": {
+  "h1-verisk-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-omarchy": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-xp-inc-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-nebius-ai-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-common-codes": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-coindcx-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-smartsheet-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-assa-abloy-americas": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-prism-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-wolt": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-agoda-public": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-anthropic-cyber-jailbreak": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-epicgames-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-omnicell": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-aegean-airlines-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-phonepe-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-vanguard": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-mcgrawhill": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-clear-street-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-discover-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-gogo-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-coupang-tw": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-live-nation": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-getyourguide-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-essity": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-tbs-sct": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-bose-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-mod-supply-chain-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-anduril-industries": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-cognition": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-tines-automation-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-taxwell-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-luminor": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-twilio": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-mufg-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-bankunited": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-mueller-water-products-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-hexagon-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-doordash": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-henkel-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-robinhood-markets": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-robinhood": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-docusign": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-british-airways-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-regions-financial": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-1win-com": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-citi-group": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-tucows-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-banco-plata": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-netscaler-public-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-hack-the-box": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-meesho-bbp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-kaseya": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-lovable-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-braze-inc": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-hyland-software": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-worldpay": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-hertz": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-qinetiq": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-kraken-tech": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-vf-corporation-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-experian": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-ferrero": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-baird-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-dust": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-msci": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-hotmartvdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-whoop-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-hex": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-hubspot": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-alibaba-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-oppo-bbp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-1password": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-bill-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-bcny": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-penn-entertainment": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-verily-life-sciences": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-neon-bbp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-bumba-bbp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-starbucks-japan": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-starbucks-china": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-adevinta-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-recreation-gov-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-syfe-bbp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-pepsico-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-aws-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-nba-public": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-hpe-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-itau-unibanco": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-supabase": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-finnair-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-liverpool-victoria": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-6sense-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-mintel": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-circle-bbp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-lpl-financial-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-peloton": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-varonis": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-ion": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-klarna": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-unico-idtech": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-walt-io": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-tomtom": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-fanduel-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-singlestore": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-lowes": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-rei-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-chia-network": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-corebridge-financial": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-3cx": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-interco-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-privy-bbp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-dailypay-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-netflix": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-transunion": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-wellhive": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-23andme-bbp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-aeromexico-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-audible": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-temu": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-vectra-ai-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-bybit-fintech": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-trip-com": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-bykea": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-anthropic": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-inditex": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-aon": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-oaknorth-bank": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-aven-response": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-visa": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-brightspeed": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-toolsforhumanity": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-alshaya": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-ring": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-truist-financial": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-six-group": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-eufy-security": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-eero": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-fertitta-entertainment": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-stripchat": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-redox-bbp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-okg": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-wisdomtree": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-pornbox": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-tron-dao": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-superbet": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-abn-amro-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-magic-eden": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-prudential-financial": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-boozt": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-us-department-of-state": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-sheer-bbp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-vodafone-oman": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-vercel": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-kkr-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-intuit-rdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-fifth-third-bank-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-indrive": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-rei-bbp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-mergify": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-arkose-labs": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-productboard": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-abb": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-avalara": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-alsco": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-abercrombie-fitch-bbp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-abercrombie-fitch": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-city-of-los-angeles-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-resmed": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-yuga-labs": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-modern-treasury": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-notion": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-daimler-truck": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-canada-goose-inc": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-monarch-money": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-clarivate": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-render": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-floqast": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-callsign": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-palantir-public": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-ro": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-unitigroup": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-mongodb": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-ripio": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-deribit": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-fidelity": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-sorare": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-caterpillar": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-disney": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-alohi": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-arc-bbp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-hilton": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-gymshark": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-moov": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-vodafone": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-compass-bbp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-wellsfargo-bbp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-allegion": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-wickr": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-pagerduty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-oanda": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-payoneer": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-tesco": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-planet-labs": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-moonpay": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-koho": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-veeam": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-redis-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-godaddy-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-mondelez": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-inspectorio": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-capital-one-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-apnic": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-blend-labs": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-razorpay": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-hy-vee": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-zooplus": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-tenable": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-newegg": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-octopus-energy": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-semtech": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-fastly-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-servicenow-disclosure": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-zurich-insurance": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-krisp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-whatnot": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-latamairlines": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-khealth": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-smtp2go": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-jetblue": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-nominet": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-zebra-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-fiserv": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-ups": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-playtika": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-beiersdorf": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-john-deere": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-trendyol": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-mtb": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-dib-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-global-payments": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-blackrock": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-costco": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-on": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-hypr-corp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-mars": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-who-covid-19-mobile-app": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-stripe": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-pfizer": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-emoney-advisor": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-paystack-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-freshworks": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-judgeme": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-r3": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-cbre": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-doppler": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-grindr": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-csg-public": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-xvideos": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-anywhererealestate": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-ohiosecretaryofstate": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-openmage": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-8x8-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-tiktok": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-estee-lauder": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-aig": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-finra": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-polygon-technology": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-cognizant": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-vendasta": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-insightly": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-figma": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-mendix": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-amazonvrp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-cs-money": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-cedars-sinai": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-hostinger": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-shutterfly-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-usps": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-shein": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-navient-solutions": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-stagingdoteverydotorg": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-td-bank": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-flexport-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-thnks": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-myndr": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-faraday-inc": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-playstation": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-insulet-corporation": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-simple-poll": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-pubg": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-picsart": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-evernote": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-box-private": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-hcl-software": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-bestbuy": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-stripo": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-lemlist": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-exodus": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-keybank": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-gmelius": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-thomsonreuters-public": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-streak-com": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-palo-alto-software": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-mtn-group": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-kubernetes": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-coinspot": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-gocardless-bbp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-equifax": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-forescout-technologies": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-att": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-lark-technologies": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-top-echelon-software": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-solidus": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-worklytics": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-defectdojo": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-trellix": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-curl": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-dynatrace": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-ridewithvia": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-xiaomi": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-starling-bank": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-central-security-project": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-capital-one": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-reddit": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-msd": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-early-warning": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-instacart": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-ford": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-fronthq": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-fanduel": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-creditkarma": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-mercadolibre": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-urbancompany": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-remitly": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-expediagroup": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-nutanix": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-s-pankki": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-flickr": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-matomo": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-nisc": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-logitech": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-marriott": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-hyatt": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-flipkart": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-acronis": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-chainlink": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-paypal": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-mariadb": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-chaturbate": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-pixiv": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-ibm": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-arkadiyt-projects": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-duckduckgo": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-affirm": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-crypto": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-goodrx": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-nodejs": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-pingidentity": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-flutteruki": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-toyota": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-crowdstrike": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-databricks": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-coalition": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-elastic": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-goldmansachs": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-yoti": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-valve": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-epicgames": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-sony": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-superhuman": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-autodesk": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-monero": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-bitwarden": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-oportun-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-wakatime": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-bumble": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-spotify": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-roblox": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-stellar": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-dyson": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-weblate": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-disclosure-assistance": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-lyst": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-kiwicom": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-discourse": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-enjin": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-nintendo": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-deptofdefense": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-plaid": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-semrush": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-quora": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-portswigger": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-rubygems": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-files": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-owox": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-exness": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-scopely": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-wordpress": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-nextcloud": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-publitas": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-starbucks": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-ruby": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-rockstargames": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-github": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-wealthsimple": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-eternal": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-gm": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-torproject": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-deriv": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-tinder": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-fetlife": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-versioncake": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-grab": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-cert": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-coinmate": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-clear": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-revive-adserver": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-moneybird": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-coursera": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-udemy": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-kayak": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-basecamp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-shopify": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-ips": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-airbnb": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-bookingcom": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-airtable": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-formassembly": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-ui": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-snapchat": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-priceline": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-uber": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-yelp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-informatica": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-vimeo": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-linkedin": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-greenhouse": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-gitlab": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-x": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-cloudflare": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-automattic": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-khanacademy": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-coinbase": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-concretecms": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-slack": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-phabricator": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-rails": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-security": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-coindesk-data-data-api-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-findout-infovis-ab-marketplace-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-jaanga-marketplace-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-accxia-marketplace-bug-bounty-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-acorns-grow-inc-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-aelbox-marketplace-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-afterpay-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-agilepulse-marketplace-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-agile-doyens": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-agilis-lt-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-aiven-managed-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-akeles-marketplace-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-almarise-marketplace-managed-bug-bounty-engagement-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-amoeboids": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-appliger": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-ai-apps-marketplace-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-appsvio-marketplace-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-arlo-cash-rewards": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-asana": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-atlassian": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-atlassian-built-apps": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-aurory-managed-bug-bounty-engagement-public-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-auth0-by-okta": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-appfox": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-avisi-marketplace-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-axis-os": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-backblaze": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-balsamiq-for-atlassian-products": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-appliances-barracuda-networks-inc-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-binance": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-bitdefender": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-bitdefender-box-v2": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-bitgo-managed-public-bug-bounty-engagement-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-bitgo-mobile-apps-bug-bounty-engagement-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-bitpanda-ongoing-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-bitso-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-blockchain-com-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-block-open-source": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-blofin-crypto-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-bloompeak-s-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-boja-consulting-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-bolt-technology-o-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-brizoit": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-broken-build-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-browserstack-inc-marketplace-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-bugcrowd": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-bullish-com": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-bullish-exchange": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-bytera-marketplace-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-caelor-group": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-canva": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-cappsule-sarl-marketplace-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-majid-al-futtaim-retail": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-cash-app": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-catapult-labs-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-celix-solutions-gmbh-marketplace-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-council-on-foreign-relations": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-chime-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-chipotle-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-cisco-networking": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-city-of-vienna-managed-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-classdojo": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-clickhouse": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-cloudinary": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-centers-for-medicare-medicaid-services-public-bug-bounty-program-2026": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-codecentric-ag-marketplace-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-codeclou-gmbh": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-codefortynine": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-codeai": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-coindesk-com": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-coindesk-mobile": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-colined": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-comcast-xfinity-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc--comcast-xfinity-vulnerability-disclosure-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-consensus-by-coindesk": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-craft-coders-marketplace-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-creativas": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-cvent-bug-bounty-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-decadis-ag": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-dell-technologies-application-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-dell-technologies-products-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-devacrobats": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-deview-studios-marketplace-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-deviniti": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-devsamurai": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-digital-rose-s-marketplace-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-directly": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-dutch-beginners-zzp-marketplace-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-easy-agile": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-eazybi": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-elementor-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-elements": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-entain-game-logic-flaws-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-entain-public-managed-bug-bounty-engagement-2024": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-smart-guess-ehf-marketplace-bug-bounty-program-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-epam-systems-managed-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-aptis": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-etoro-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-etsy": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-excentia-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-felix-health-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-55-degrees": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-certinia-formerly-financialforce-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-fireblocks-web-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-fireblocks-mpc-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-fis": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-fivetran": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-flourish": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-securedrop": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-gearset-managed-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-glassdoor-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-glean-technologies-public-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-gliffy": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-herocoders-apps": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-hostgator-latam-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-hpe-networking-product-public-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-the-hut-group-public-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-hypixel-studios-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-ibotta": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-ifood-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-immutable-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-thales-cyber-security-products-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-indeed": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-inprowiser-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-intercom": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-internet-brands-public": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-irobot": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-izymes": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-j-tricks-marketplace-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-jora": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-just-eat-takeaway-com": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-k15t": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-kaleido": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-kantega-sso": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-keeper-security-public-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-kiteworks": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-klaviyo-managed-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-kohl-s": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-kucoin-managed-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-lastpass": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-latitude-financial-services-bug-bounty-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-launchdarkly-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-electroneum-legacy-blockchain-eol": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-lightspeed-hospitality": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-lightspeed-retail": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-lime": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-linktree": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-litew8-gmbh-marketplace-bug-bounty-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-lively-apps-gmbh-marketplace-bug-bounty-program-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-lululemon": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-majid-al-futtaim-lifestyle": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-magic-apps-marketplace-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-magic-labs-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-majid-al-futtaim-customer-solutions": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-majid-al-futtaim-properties": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-marketplace-expert-sl": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-marvelution": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-mastercard-public-bug-bounty-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-matlab-online-ongoing-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-mattermost-public-bug-bounty-engagement-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-meetical": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-meta-inf": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-mgm-china-holdings-limited-managed-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-mobilitystream-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-monash-university-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-moneytree-kk": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-moovit-managed-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-motorola-mobility-hardware-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-move-work-forward": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-myfitnesspal-managed-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-navan": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-navarambh": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-nemetschek": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-neogov-public-assets": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-new-relic-public-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-nextup-ai": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-northwestern-mutual-public-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-nubank-brasil-managed-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-octopus-deploy": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-octopus": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-odesk-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-okapya": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-okta": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-onetrust": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-onward-software-solutions-inc-marketplace-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-openai": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-safety-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-opensea-managed-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-opera-public-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-opsgenie": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-optimizely": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-optus-managed-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-opus-guard-marketplace-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-orderly-network-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-orderly-network-public-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-origin-energy": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-osl-managed-public-bug-bounty-engagement-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-ost-consulting-srl-marketplace-managed-bug-bounty-engagement-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-pantheon": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-empower-personal-wealth": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-pexels": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-pinterest": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-pixabay": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-planethoster-bug-bounty-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-the-plugin-people": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-plusgrade-loyalty-public-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-pni-media-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-presago-marketplace-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-projectbalm": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-prosus": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-quintoandar-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-quirk-consulting-marketplace-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-quizlet": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-radbee-ltd-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-railsware": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-raley-apps": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-rapyd": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-rea-group-realestate-com-au-realcommercial-com-au-property-com-au": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-recorded-future-public-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-rec-room-video-games": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-redmoon": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-refined": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-release-management-by-y2-engr-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-requirement-yogi-bug-bounty-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-resolution": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-revyz-marketplace-bug-bounty-program-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-rv-softwares-marketplace-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-saasjet": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-sap-invitational-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-savignano-software-solutions-marketplace-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-secureflag-marketplace-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-seek-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-seek-com": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-shinetech-software-inc-marketplace-managed-bug-bounty-engagement-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-shipwire": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-simplisafe-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-skroutz-public-managed-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-sky-uk-roi-vulnerability-disclosure-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-sky-italy-vulnerability-disclosure-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-sky-dach-vulnerability-disclosure-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-skyscanner": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-electroneum-smart-chain-etn-sc-evm-compatible-blockchain": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-snapnames-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-soldevelo": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-sophos": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-soteri-marketplace-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-soundcloud": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-spacex-starlink": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-square": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-stagil-marketplace-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-statuspage": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-stiltsoft": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-stonikbyte": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-sykora-it-marketplace-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-t-mobile": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-tamedia": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-infinite-athlete": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-tesla": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-thefork-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-the-trade-desk": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-cisco-thousandeyes-vulnerability-hunting-aka-bug-bounty-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-tidal": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-toolsplus": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-trello": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-tripadvisor-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-trm-labs-public-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-20-minuten": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-tyler-technologies-data-insights-tyler-data-platform-powered-by-socrata": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-ultra-mobile-public-ecomm-2025-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-ultra-mobile-mobile-apps-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-ultra-mobile-public-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-ultra-mobile-retailer-portal-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-under-armour-product-security": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-under-armour-corporate": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-unisys-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-unity-technologies": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-upwork": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-usaa": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-vectors-bug-bounty-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-verisign-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-viator": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-vico-marketplace-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-vinted-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-volkswagen-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-new-blue-website-nbw-vwfs-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-majid-al-futtaim-entertainment": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-vr-public-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-weweave-gmbh-marketplace-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-web-com-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-wise-ex-transferwise-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-wyze-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-xfinity-home-xfi": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-xopero-software-s-a-marketplace-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-ynab": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-zendesk-managed-bug-bounty-engagement": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "bc-zola-managed-bug-bounty-": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-adacvulnerabilitydisclosureprogram": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-aikido": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-algemeendagblad": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-allegrobugbounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-anacondavdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-arboniavdpprogram": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-arm": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-atollsvdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-attentiavdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-nmt": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-axelspringersevulnerabilitydisclosureprogram": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-bmc": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-bmwgroup": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-bmwgroup-automotive": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-bitvavovdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-dummy": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-buhlergroupvdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-innovapost": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-capitalcom": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-responsiblevulnerabilitydisclosureprogram": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-cloudways": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-cokeonenorthamerica": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-crossborderfines": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-cybersecuritycoalition": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-dhlvdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-digi-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-dpgmedia": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-dashlanevulnerabilitydisclosureprogram": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-demorgen": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-devolkskrant": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-privatebankdelen": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-digitalocean": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-donorboxvdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-driessenvdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-dropbox": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-dropbox-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-dstnybugbounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-dutchlotteryvdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-eurid": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-europeanspaceagencyvdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-exactvulnerabilitydisclosureprogram": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-excoscalebugbounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-fing": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-fluvius": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-gulp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-grafanalabsvdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-hrsgroupvdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-hetlaatstenieuws": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-hetparool": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-houseofhrvulnerabilitydisclosureprogram": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-huisvesting": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-humo": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-iciparisxl": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-ing-responsible-disclosure": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-innogames": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-intelvulnerabilitydisclosureprogram": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-intergamma": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-ivovulnerabilitydisclosureprogram": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-kuleuvenrdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-website": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-kiwavdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-kruidvat": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-libelle": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-liferay-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-freepikcompany": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-marionnaud": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-matecovdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-mobilevikings": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-monzopublicbugbountyprogram": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-nvidiapublicbugbounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-nvidiavdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-nestl\u00e9vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-nexo": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-nexuzhealth": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-nexuzhealthvdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-nexuzhealthwebpacs": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-nxtportvdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-ouravulnerabilitydisclosureprogram": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-onlineinschrijvingenbetalingstoepassing": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-orbiavdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-pdqcomprivate": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-peoplecert": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-personio": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-portofantwerp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-postibugbounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-proofvdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-qcvdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-qualifiedresponsibledisclosureprogram": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-rgfbe-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-ripencc": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-randstad": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-redbull": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-revolutvdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-rivianbugbounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-rivianvdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-sbbglobal": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-saltovulnerabilitydisclosure": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-signicatresponsibledisclosure": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-simscale": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-skodaautoprivatebugbountyprogram": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-socialdeal": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-solarwindsvdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-spaceliftvdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-speakapresponsibledisclosure": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-storebrand-rd": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-superdrug": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-tekionvdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-tempo-team": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-coca-cola": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-theperfumeshop": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-toastvdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-tomorrowland": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-torfs": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-trouw": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-truelayervdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-tweakers": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-uzleuven": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-ubisoftvdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-universityofbaselvdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-usz-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-vdp-866": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-vrtnv": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-vtmgo": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-arkanenetwork": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-VismaResponsibleDisclosure": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-vlerickbusinessschool": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-voivulnerabilitydisclosureprogram": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-wpengine": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-water-linkvdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-watsons": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-wartsila-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-yacht": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-yahoobugbounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-zabkagroup-vdp": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-e-tracker": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-ehealthhub&meta-hubvznkul": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "int-intigriti": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-outscale": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-atg-public-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-alasco-gmbh-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-bookbeat": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-bug-bounty-program-blablacar": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-cryptobox-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-cyberghost-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-dana-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-decathlon": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-datadome-bot-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-datadome-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-doctolib-public-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-dossier-medical-partage-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-expressvpn-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-ezviz-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-fdj-united-online-betting-gaming-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-grw-trading-fze-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-govtech-vulnerability-disclosure-programme-policy": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-harman-international-web-applications": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-harman-international-public-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-imou-public-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-infomaniak-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-kiteworks-public-bug-bounty-program-1": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-louis-vuitton-malletier-public-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-maya-public-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-mediamarktsaturn-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-mon-espace-sante-mes": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-moneybox-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-otto-de-bug-bounty": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-ovh": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-onedoc-sa-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-ooredoo-qpsc-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-paddle-com-public-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-pine-labs-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-private-internet-access-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-programmes-de-primes-aux-bogues-du-gouvernement-du-quebec-cgcd": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-sante-publique-france-bugbounty-public-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-sogexia": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-superbank-public-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-swapcard": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-swiss-post": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-swiss-post-evoting": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-teamviewer-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-telenor-sweden-public-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-tencent-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-thuringer-aufbaubank-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-vfs-global-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-vincisa-public-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-yes-we-hack": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-dojo": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-zecible-public-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-toom-baumarkt-gmbh-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  },
+  "ywh-vidaxl-services-open-bug-bounty-program": {
+   "first": "2026-11-08T20:29:03Z"
+  }
+ },
  "gone": {},
- "spotlight_history": [],
- "last_weekly": null,
- "last_post": null,
- "last_run": null
+ "spotlight_history": [
+  {
+   "id": "bc-bytera-marketplace-managed-bug-bounty-engagement",
+   "at": "2026-11-08T20:29:03Z"
+  },
+  {
+   "id": "h1-freshworks",
+   "at": "2026-11-08T20:29:03Z"
+  },
+  {
+   "id": "int-rivianvdp",
+   "at": "2026-11-08T20:29:03Z"
+  },
+  {
+   "id": "int-vdp-866",
+   "at": "2026-11-08T20:29:03Z"
+  },
+  {
+   "id": "h1-solidus",
+   "at": "2026-11-08T20:29:03Z"
+  }
+ ],
+ "last_weekly": "2026-11-08T20:29:03Z",
+ "last_post": "2026-11-08T20:29:03Z",
+ "last_run": "2026-11-08T20:29:03Z"
 }
