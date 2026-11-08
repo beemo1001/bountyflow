@@ -2536,9 +2536,6 @@
   "int-simscale": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-skodaautoprivatebugbountyprogram": {
-   "first": "2026-11-08T20:29:03Z"
-  },
   "int-socialdeal": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2599,8 +2596,8 @@
   "int-usz-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-vdp-866": {
-   "first": "2026-11-08T20:29:03Z"
+  "int-vdp-865": {
+   "first": "2026-11-08T22:53:12Z"
   },
   "int-vrtnv": {
    "first": "2026-11-08T20:29:03Z"
@@ -2810,7 +2807,10 @@
    "first": "2026-11-08T20:29:03Z"
   }
  },
- "gone": {},
+ "gone": {
+  "int-skodaautoprivatebugbountyprogram": "2026-11-08T22:53:12Z",
+  "int-vdp-866": "2026-11-08T22:53:12Z"
+ },
  "spotlight_history": [
   {
    "id": "bc-bytera-marketplace-managed-bug-bounty-engagement",
@@ -2834,6 +2834,6 @@
   }
  ],
  "last_weekly": "2026-11-08T20:29:03Z",
- "last_post": "2026-11-08T20:29:03Z",
- "last_run": "2026-11-08T20:29:03Z"
+ "last_post": "2026-11-08T22:53:12Z",
+ "last_run": "2026-11-08T22:53:12Z"
 }
