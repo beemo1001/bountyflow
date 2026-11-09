@@ -1,6 +1,9 @@
 {
  "version": 1,
  "seen": {
+  "h1-litellm": {
+   "first": "2026-11-09T17:28:13Z"
+  },
   "h1-verisk-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -562,6 +565,9 @@
   "h1-sorare": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "h1-fresenius": {
+   "first": "2026-11-09T17:28:13Z"
+  },
   "h1-caterpillar": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -892,6 +898,9 @@
   "h1-stripo": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "h1-oasisprotocol": {
+   "first": "2026-11-09T17:28:13Z"
+  },
   "h1-lemlist": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -944,9 +953,6 @@
    "first": "2026-11-08T20:29:03Z"
   },
   "h1-worklytics": {
-   "first": "2026-11-08T20:29:03Z"
-  },
-  "h1-defectdojo": {
    "first": "2026-11-08T20:29:03Z"
   },
   "h1-trellix": {
@@ -1176,6 +1182,9 @@
   },
   "h1-quora": {
    "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-brave": {
+   "first": "2026-11-09T17:28:13Z"
   },
   "h1-portswigger": {
    "first": "2026-11-08T20:29:03Z"
@@ -2287,6 +2296,9 @@
   "int-buhlergroupvdp": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "int-cmcom": {
+   "first": "2026-11-09T17:28:13Z"
+  },
   "int-innovapost": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2344,9 +2356,6 @@
   "int-dropbox-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-dstnybugbounty": {
-   "first": "2026-11-08T20:29:03Z"
-  },
   "int-dutchlotteryvdp": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2367,6 +2376,9 @@
   },
   "int-fluvius": {
    "first": "2026-11-08T20:29:03Z"
+  },
+  "int-flywirevulnerabilitydiscloseprogram": {
+   "first": "2026-11-09T17:28:13Z"
   },
   "int-gulp": {
    "first": "2026-11-08T20:29:03Z"
@@ -2596,8 +2608,11 @@
   "int-usz-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-vdp-865": {
-   "first": "2026-11-08T22:53:12Z"
+  "int-upholdcom": {
+   "first": "2026-11-09T17:28:13Z"
+  },
+  "int-vdp-870": {
+   "first": "2026-11-09T17:28:13Z"
   },
   "int-vrtnv": {
    "first": "2026-11-08T20:29:03Z"
@@ -2614,8 +2629,14 @@
   "int-vlerickbusinessschool": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "int-voiscooters": {
+   "first": "2026-11-09T17:28:13Z"
+  },
   "int-voivulnerabilitydisclosureprogram": {
    "first": "2026-11-08T20:29:03Z"
+  },
+  "int-wpenginebugbounty": {
+   "first": "2026-11-09T17:28:13Z"
   },
   "int-wpengine": {
    "first": "2026-11-08T20:29:03Z"
@@ -2809,7 +2830,10 @@
  },
  "gone": {
   "int-skodaautoprivatebugbountyprogram": "2026-11-08T22:53:12Z",
-  "int-vdp-866": "2026-11-08T22:53:12Z"
+  "int-vdp-866": "2026-11-08T22:53:12Z",
+  "h1-defectdojo": "2026-11-09T17:28:13Z",
+  "int-dstnybugbounty": "2026-11-09T17:28:13Z",
+  "int-vdp-865": "2026-11-09T17:28:13Z"
  },
  "spotlight_history": [
   {
@@ -2834,6 +2858,6 @@
   }
  ],
  "last_weekly": "2026-11-08T20:29:03Z",
- "last_post": "2026-11-08T22:53:12Z",
- "last_run": "2026-11-08T22:53:12Z"
+ "last_post": "2026-11-09T17:28:13Z",
+ "last_run": "2026-11-09T17:28:13Z"
 }
