@@ -886,6 +886,9 @@
   "h1-evernote": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "h1-filezilla": {
+   "first": "2026-11-10T15:35:55Z"
+  },
   "h1-box-private": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -955,13 +958,13 @@
   "h1-worklytics": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "h1-defectdojo": {
+   "first": "2026-11-10T15:35:55Z"
+  },
   "h1-trellix": {
    "first": "2026-11-08T20:29:03Z"
   },
   "h1-curl": {
-   "first": "2026-11-08T20:29:03Z"
-  },
-  "h1-dynatrace": {
    "first": "2026-11-08T20:29:03Z"
   },
   "h1-ridewithvia": {
@@ -2437,6 +2440,9 @@
   "int-kruidvat": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "int-lansweeper1": {
+   "first": "2026-11-10T15:35:55Z"
+  },
   "int-libelle": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2490,6 +2496,9 @@
   },
   "int-orbiavdp": {
    "first": "2026-11-08T20:29:03Z"
+  },
+  "int-pdqcomprivate": {
+   "first": "2026-11-10T15:35:55Z"
   },
   "int-peoplecert": {
    "first": "2026-11-08T20:29:03Z"
@@ -2611,11 +2620,8 @@
   "int-usz-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-upholdcom": {
-   "first": "2026-11-09T17:28:13Z"
-  },
-  "int-vdp-871": {
-   "first": "2026-11-10T02:08:09Z"
+  "int-vdp-873": {
+   "first": "2026-11-10T15:35:55Z"
   },
   "int-vrtnv": {
    "first": "2026-11-08T20:29:03Z"
@@ -2631,9 +2637,6 @@
   },
   "int-vlerickbusinessschool": {
    "first": "2026-11-08T20:29:03Z"
-  },
-  "int-voiscooters": {
-   "first": "2026-11-09T17:28:13Z"
   },
   "int-voivulnerabilitydisclosureprogram": {
    "first": "2026-11-08T20:29:03Z"
@@ -2830,12 +2833,14 @@
  },
  "gone": {
   "int-vdp-866": "2026-11-08T22:53:12Z",
-  "h1-defectdojo": "2026-11-09T17:28:13Z",
   "int-dstnybugbounty": "2026-11-09T17:28:13Z",
   "int-vdp-865": "2026-11-09T17:28:13Z",
-  "int-pdqcomprivate": "2026-11-10T02:08:09Z",
   "int-vdp-870": "2026-11-10T02:08:09Z",
-  "int-wpenginebugbounty": "2026-11-10T02:08:09Z"
+  "int-wpenginebugbounty": "2026-11-10T02:08:09Z",
+  "h1-dynatrace": "2026-11-10T15:35:55Z",
+  "int-upholdcom": "2026-11-10T15:35:55Z",
+  "int-vdp-871": "2026-11-10T15:35:55Z",
+  "int-voiscooters": "2026-11-10T15:35:55Z"
  },
  "spotlight_history": [
   {
@@ -2860,6 +2865,6 @@
   }
  ],
  "last_weekly": "2026-11-08T20:29:03Z",
- "last_post": "2026-11-10T02:08:09Z",
- "last_run": "2026-11-10T02:08:09Z"
+ "last_post": "2026-11-10T15:35:55Z",
+ "last_run": "2026-11-10T15:35:55Z"
 }
