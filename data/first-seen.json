@@ -48,6 +48,7 @@
   "h1-walt-io": "2026-09-29",
   "h1-xp-inc-vdp": "2026-10-27",
   "int-arkanenetwork": "2026-10-02",
+  "int-borgwarnervdp": "2026-11-10",
   "int-cokeonenorthamerica": "2026-10-23",
   "int-dstnybugbounty": "2026-10-15",
   "int-fluvius": "2026-10-19",
@@ -67,6 +68,7 @@
   "int-vdp-867": "2026-11-07",
   "int-vdp-868": "2026-09-28",
   "int-vdp-870": "2026-11-09",
+  "int-vdp-871": "2026-11-10",
   "int-voiscooters": "2026-10-26",
   "int-website": "2026-09-24",
   "int-wpenginebugbounty": "2026-09-28",
@@ -840,6 +842,7 @@
   "int-bmc",
   "int-bmwgroup",
   "int-bmwgroup-automotive",
+  "int-borgwarnervdp",
   "int-buhlergroupvdp",
   "int-capitalcom",
   "int-cloudways",
@@ -962,6 +965,7 @@
   "int-vdp-868",
   "int-vdp-869",
   "int-vdp-870",
+  "int-vdp-871",
   "int-vlerickbusinessschool",
   "int-voiscooters",
   "int-voivulnerabilitydisclosureprogram",
@@ -1030,5 +1034,5 @@
   "ywh-yes-we-hack",
   "ywh-zecible-public-bug-bounty-program"
  ],
- "updated": "2026-11-09T17:28:13Z"
+ "updated": "2026-11-10T02:08:09Z"
 }

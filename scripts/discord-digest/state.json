@@ -2290,6 +2290,9 @@
   "int-bitvavovdp": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "int-borgwarnervdp": {
+   "first": "2026-11-10T02:08:09Z"
+  },
   "int-dummy": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2488,9 +2491,6 @@
   "int-orbiavdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-pdqcomprivate": {
-   "first": "2026-11-08T20:29:03Z"
-  },
   "int-peoplecert": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2547,6 +2547,9 @@
   },
   "int-simscale": {
    "first": "2026-11-08T20:29:03Z"
+  },
+  "int-skodaautoprivatebugbountyprogram": {
+   "first": "2026-11-10T02:08:09Z"
   },
   "int-socialdeal": {
    "first": "2026-11-08T20:29:03Z"
@@ -2611,8 +2614,8 @@
   "int-upholdcom": {
    "first": "2026-11-09T17:28:13Z"
   },
-  "int-vdp-870": {
-   "first": "2026-11-09T17:28:13Z"
+  "int-vdp-871": {
+   "first": "2026-11-10T02:08:09Z"
   },
   "int-vrtnv": {
    "first": "2026-11-08T20:29:03Z"
@@ -2634,9 +2637,6 @@
   },
   "int-voivulnerabilitydisclosureprogram": {
    "first": "2026-11-08T20:29:03Z"
-  },
-  "int-wpenginebugbounty": {
-   "first": "2026-11-09T17:28:13Z"
   },
   "int-wpengine": {
    "first": "2026-11-08T20:29:03Z"
@@ -2829,11 +2829,13 @@
   }
  },
  "gone": {
-  "int-skodaautoprivatebugbountyprogram": "2026-11-08T22:53:12Z",
   "int-vdp-866": "2026-11-08T22:53:12Z",
   "h1-defectdojo": "2026-11-09T17:28:13Z",
   "int-dstnybugbounty": "2026-11-09T17:28:13Z",
-  "int-vdp-865": "2026-11-09T17:28:13Z"
+  "int-vdp-865": "2026-11-09T17:28:13Z",
+  "int-pdqcomprivate": "2026-11-10T02:08:09Z",
+  "int-vdp-870": "2026-11-10T02:08:09Z",
+  "int-wpenginebugbounty": "2026-11-10T02:08:09Z"
  },
  "spotlight_history": [
   {
@@ -2858,6 +2860,6 @@
   }
  ],
  "last_weekly": "2026-11-08T20:29:03Z",
- "last_post": "2026-11-09T17:28:13Z",
- "last_run": "2026-11-09T17:28:13Z"
+ "last_post": "2026-11-10T02:08:09Z",
+ "last_run": "2026-11-10T02:08:09Z"
 }
