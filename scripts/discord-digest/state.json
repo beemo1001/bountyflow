@@ -1090,6 +1090,9 @@
   "h1-toyota": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "h1-bitmex": {
+   "first": "2026-11-11T15:10:55Z"
+  },
   "h1-crowdstrike": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2359,6 +2362,9 @@
   "int-dropbox-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "int-dstnybugbounty": {
+   "first": "2026-11-11T15:10:55Z"
+  },
   "int-dutchlotteryvdp": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2620,8 +2626,11 @@
   "int-usz-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-vdp-873": {
-   "first": "2026-11-10T15:35:55Z"
+  "int-upholdcom": {
+   "first": "2026-11-11T15:10:55Z"
+  },
+  "int-vdp-876": {
+   "first": "2026-11-11T15:10:55Z"
   },
   "int-vrtnv": {
    "first": "2026-11-08T20:29:03Z"
@@ -2836,15 +2845,14 @@
  },
  "gone": {
   "int-vdp-866": "2026-11-08T22:53:12Z",
-  "int-dstnybugbounty": "2026-11-09T17:28:13Z",
   "int-vdp-865": "2026-11-09T17:28:13Z",
   "int-vdp-870": "2026-11-10T02:08:09Z",
   "int-wpenginebugbounty": "2026-11-10T02:08:09Z",
   "h1-dynatrace": "2026-11-10T15:35:55Z",
-  "int-upholdcom": "2026-11-10T15:35:55Z",
   "int-vdp-871": "2026-11-10T15:35:55Z",
   "int-voiscooters": "2026-11-10T15:35:55Z",
-  "h1-litellm": "2026-11-11T00:02:23Z"
+  "h1-litellm": "2026-11-11T00:02:23Z",
+  "int-vdp-873": "2026-11-11T15:10:55Z"
  },
  "spotlight_history": [
   {
@@ -2869,6 +2877,6 @@
   }
  ],
  "last_weekly": "2026-11-08T20:29:03Z",
- "last_post": "2026-11-11T00:02:23Z",
- "last_run": "2026-11-11T00:02:23Z"
+ "last_post": "2026-11-11T15:10:55Z",
+ "last_run": "2026-11-11T15:10:55Z"
 }
