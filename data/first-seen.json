@@ -71,6 +71,7 @@
   "int-vdp-870": "2026-11-09",
   "int-vdp-871": "2026-11-10",
   "int-vdp-873": "2026-11-10",
+  "int-veriffbugbounty": "2026-11-11",
   "int-voiscooters": "2026-10-26",
   "int-website": "2026-09-24",
   "int-wpenginebugbounty": "2026-09-28",
@@ -970,6 +971,7 @@
   "int-vdp-870",
   "int-vdp-871",
   "int-vdp-873",
+  "int-veriffbugbounty",
   "int-vlerickbusinessschool",
   "int-voiscooters",
   "int-voivulnerabilitydisclosureprogram",
@@ -1038,5 +1040,5 @@
   "ywh-yes-we-hack",
   "ywh-zecible-public-bug-bounty-program"
  ],
- "updated": "2026-11-10T15:35:55Z"
+ "updated": "2026-11-11T00:02:23Z"
 }

@@ -1,9 +1,6 @@
 {
  "version": 1,
  "seen": {
-  "h1-litellm": {
-   "first": "2026-11-09T17:28:13Z"
-  },
   "h1-verisk-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2449,6 +2446,9 @@
   "int-liferay-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "int-lightsparkpublicbugbounty": {
+   "first": "2026-11-11T00:02:23Z"
+  },
   "int-freepikcompany": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2631,6 +2631,9 @@
   },
   "int-arkanenetwork": {
    "first": "2026-11-08T20:29:03Z"
+  },
+  "int-veriffbugbounty": {
+   "first": "2026-11-11T00:02:23Z"
   },
   "int-VismaResponsibleDisclosure": {
    "first": "2026-11-08T20:29:03Z"
@@ -2840,7 +2843,8 @@
   "h1-dynatrace": "2026-11-10T15:35:55Z",
   "int-upholdcom": "2026-11-10T15:35:55Z",
   "int-vdp-871": "2026-11-10T15:35:55Z",
-  "int-voiscooters": "2026-11-10T15:35:55Z"
+  "int-voiscooters": "2026-11-10T15:35:55Z",
+  "h1-litellm": "2026-11-11T00:02:23Z"
  },
  "spotlight_history": [
   {
@@ -2865,6 +2869,6 @@
   }
  ],
  "last_weekly": "2026-11-08T20:29:03Z",
- "last_post": "2026-11-10T15:35:55Z",
- "last_run": "2026-11-10T15:35:55Z"
+ "last_post": "2026-11-11T00:02:23Z",
+ "last_run": "2026-11-11T00:02:23Z"
 }
