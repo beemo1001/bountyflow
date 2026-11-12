@@ -883,9 +883,6 @@
   "h1-evernote": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "h1-filezilla": {
-   "first": "2026-11-10T15:35:55Z"
-  },
   "h1-box-private": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -1190,9 +1187,6 @@
    "first": "2026-11-09T17:28:13Z"
   },
   "h1-portswigger": {
-   "first": "2026-11-08T20:29:03Z"
-  },
-  "h1-rubygems": {
    "first": "2026-11-08T20:29:03Z"
   },
   "h1-files": {
@@ -2626,11 +2620,8 @@
   "int-usz-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-upholdcom": {
-   "first": "2026-11-11T15:10:55Z"
-  },
-  "int-vdp-876": {
-   "first": "2026-11-11T15:10:55Z"
+  "int-vdp-873": {
+   "first": "2026-11-12T01:32:06Z"
   },
   "int-vrtnv": {
    "first": "2026-11-08T20:29:03Z"
@@ -2640,9 +2631,6 @@
   },
   "int-arkanenetwork": {
    "first": "2026-11-08T20:29:03Z"
-  },
-  "int-veriffbugbounty": {
-   "first": "2026-11-11T00:02:23Z"
   },
   "int-VismaResponsibleDisclosure": {
    "first": "2026-11-08T20:29:03Z"
@@ -2852,7 +2840,11 @@
   "int-vdp-871": "2026-11-10T15:35:55Z",
   "int-voiscooters": "2026-11-10T15:35:55Z",
   "h1-litellm": "2026-11-11T00:02:23Z",
-  "int-vdp-873": "2026-11-11T15:10:55Z"
+  "h1-filezilla": "2026-11-12T01:32:06Z",
+  "h1-rubygems": "2026-11-12T01:32:06Z",
+  "int-upholdcom": "2026-11-12T01:32:06Z",
+  "int-vdp-876": "2026-11-12T01:32:06Z",
+  "int-veriffbugbounty": "2026-11-12T01:32:06Z"
  },
  "spotlight_history": [
   {
@@ -2878,5 +2870,5 @@
  ],
  "last_weekly": "2026-11-08T20:29:03Z",
  "last_post": "2026-11-11T15:10:55Z",
- "last_run": "2026-11-11T15:10:55Z"
+ "last_run": "2026-11-12T01:32:06Z"
 }
