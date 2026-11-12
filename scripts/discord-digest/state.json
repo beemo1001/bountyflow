@@ -619,6 +619,9 @@
   "h1-moonpay": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "h1-divvy-homes": {
+   "first": "2026-11-12T15:58:30Z"
+  },
   "h1-koho": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2332,6 +2335,9 @@
   "int-dashlanevulnerabilitydisclosureprogram": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "int-datacamp": {
+   "first": "2026-11-12T15:58:30Z"
+  },
   "int-demorgen": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2436,9 +2442,6 @@
   },
   "int-kruidvat": {
    "first": "2026-11-08T20:29:03Z"
-  },
-  "int-lansweeper1": {
-   "first": "2026-11-10T15:35:55Z"
   },
   "int-libelle": {
    "first": "2026-11-08T20:29:03Z"
@@ -2620,8 +2623,8 @@
   "int-usz-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-vdp-873": {
-   "first": "2026-11-12T01:32:06Z"
+  "int-vdp-874": {
+   "first": "2026-11-12T15:58:30Z"
   },
   "int-vrtnv": {
    "first": "2026-11-08T20:29:03Z"
@@ -2643,6 +2646,9 @@
   },
   "int-wpengine": {
    "first": "2026-11-08T20:29:03Z"
+  },
+  "int-water-link": {
+   "first": "2026-11-12T15:58:30Z"
   },
   "int-water-linkvdp": {
    "first": "2026-11-08T20:29:03Z"
@@ -2844,7 +2850,9 @@
   "h1-rubygems": "2026-11-12T01:32:06Z",
   "int-upholdcom": "2026-11-12T01:32:06Z",
   "int-vdp-876": "2026-11-12T01:32:06Z",
-  "int-veriffbugbounty": "2026-11-12T01:32:06Z"
+  "int-veriffbugbounty": "2026-11-12T01:32:06Z",
+  "int-lansweeper1": "2026-11-12T15:58:30Z",
+  "int-vdp-873": "2026-11-12T15:58:30Z"
  },
  "spotlight_history": [
   {
@@ -2869,6 +2877,6 @@
   }
  ],
  "last_weekly": "2026-11-08T20:29:03Z",
- "last_post": "2026-11-11T15:10:55Z",
- "last_run": "2026-11-12T01:32:06Z"
+ "last_post": "2026-11-12T15:58:30Z",
+ "last_run": "2026-11-12T15:58:30Z"
 }
