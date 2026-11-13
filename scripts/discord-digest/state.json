@@ -409,8 +409,8 @@
   "h1-six-group": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "h1-eufy-security": {
-   "first": "2026-11-08T20:29:03Z"
+  "h1-anker": {
+   "first": "2026-11-13T15:23:29Z"
   },
   "h1-eero": {
    "first": "2026-11-08T20:29:03Z"
@@ -2395,9 +2395,6 @@
   "int-hrsgroupvdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-heretechnologies": {
-   "first": "2026-11-13T00:22:18Z"
-  },
   "int-hetlaatstenieuws": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2623,8 +2620,8 @@
   "int-usz-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-vdp-874": {
-   "first": "2026-11-12T15:58:30Z"
+  "int-vdp-873": {
+   "first": "2026-11-13T15:23:29Z"
   },
   "int-vrtnv": {
    "first": "2026-11-08T20:29:03Z"
@@ -2634,9 +2631,6 @@
   },
   "int-arkanenetwork": {
    "first": "2026-11-08T20:29:03Z"
-  },
-  "int-veriffbugbounty": {
-   "first": "2026-11-13T00:22:18Z"
   },
   "int-VismaResponsibleDisclosure": {
    "first": "2026-11-08T20:29:03Z"
@@ -2794,9 +2788,6 @@
   "ywh-sogexia": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "ywh-superbank-public-bug-bounty-program": {
-   "first": "2026-11-08T20:29:03Z"
-  },
   "ywh-swapcard": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2854,8 +2845,12 @@
   "int-upholdcom": "2026-11-12T01:32:06Z",
   "int-vdp-876": "2026-11-12T01:32:06Z",
   "int-lansweeper1": "2026-11-12T15:58:30Z",
-  "int-vdp-873": "2026-11-12T15:58:30Z",
-  "h1-estee-lauder": "2026-11-13T00:22:18Z"
+  "h1-estee-lauder": "2026-11-13T00:22:18Z",
+  "h1-eufy-security": "2026-11-13T15:23:29Z",
+  "int-heretechnologies": "2026-11-13T15:23:29Z",
+  "int-vdp-874": "2026-11-13T15:23:29Z",
+  "int-veriffbugbounty": "2026-11-13T15:23:29Z",
+  "ywh-superbank-public-bug-bounty-program": "2026-11-13T15:23:29Z"
  },
  "spotlight_history": [
   {
@@ -2880,6 +2875,6 @@
   }
  ],
  "last_weekly": "2026-11-08T20:29:03Z",
- "last_post": "2026-11-13T00:22:18Z",
- "last_run": "2026-11-13T00:22:18Z"
+ "last_post": "2026-11-13T15:23:29Z",
+ "last_run": "2026-11-13T15:23:29Z"
 }

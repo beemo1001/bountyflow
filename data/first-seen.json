@@ -27,6 +27,7 @@
   "bc-vinted-bug-bounty": "2026-09-30",
   "bc-vr-public-managed-bug-bounty-engagement": "2026-09-24",
   "h1-aegean-airlines-vdp": "2026-10-09",
+  "h1-anker": "2026-11-13",
   "h1-basecamp": "2026-10-20",
   "h1-bitmex": "2026-11-11",
   "h1-brave": "2026-09-28",
@@ -408,6 +409,7 @@
   "h1-alshaya",
   "h1-amazonvrp",
   "h1-anduril-industries",
+  "h1-anker",
   "h1-anthropic",
   "h1-anthropic-cyber-jailbreak",
   "h1-anywhererealestate",
@@ -1052,5 +1054,5 @@
   "ywh-yes-we-hack",
   "ywh-zecible-public-bug-bounty-program"
  ],
- "updated": "2026-11-13T00:22:18Z"
+ "updated": "2026-11-13T15:23:29Z"
 }
