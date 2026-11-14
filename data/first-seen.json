@@ -51,6 +51,7 @@
   "h1-verisk-vdp": "2026-10-09",
   "h1-walt-io": "2026-09-29",
   "h1-xp-inc-vdp": "2026-10-27",
+  "int-altera": "2026-11-14",
   "int-arkanenetwork": "2026-10-02",
   "int-borgwarnervdp": "2026-11-10",
   "int-cokeonenorthamerica": "2026-10-23",
@@ -845,6 +846,7 @@
   "int-aikido",
   "int-algemeendagblad",
   "int-allegrobugbounty",
+  "int-altera",
   "int-anacondavdp",
   "int-arboniavdpprogram",
   "int-arkanenetwork",
@@ -1054,5 +1056,5 @@
   "ywh-yes-we-hack",
   "ywh-zecible-public-bug-bounty-program"
  ],
- "updated": "2026-11-13T15:23:29Z"
+ "updated": "2026-11-14T00:19:52Z"
 }

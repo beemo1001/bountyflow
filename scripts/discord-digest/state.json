@@ -2254,6 +2254,9 @@
   "int-allegrobugbounty": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "int-altera": {
+   "first": "2026-11-14T00:19:52Z"
+  },
   "int-anacondavdp": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2331,9 +2334,6 @@
   },
   "int-dashlanevulnerabilitydisclosureprogram": {
    "first": "2026-11-08T20:29:03Z"
-  },
-  "int-datacamp": {
-   "first": "2026-11-12T15:58:30Z"
   },
   "int-demorgen": {
    "first": "2026-11-08T20:29:03Z"
@@ -2440,6 +2440,9 @@
   "int-kruidvat": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "int-lansweeper1": {
+   "first": "2026-11-14T00:19:52Z"
+  },
   "int-libelle": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2501,9 +2504,6 @@
    "first": "2026-11-10T15:35:55Z"
   },
   "int-peoplecert": {
-   "first": "2026-11-08T20:29:03Z"
-  },
-  "int-personio": {
    "first": "2026-11-08T20:29:03Z"
   },
   "int-portofantwerp": {
@@ -2631,6 +2631,9 @@
   },
   "int-arkanenetwork": {
    "first": "2026-11-08T20:29:03Z"
+  },
+  "int-veriffbugbounty": {
+   "first": "2026-11-14T00:19:52Z"
   },
   "int-VismaResponsibleDisclosure": {
    "first": "2026-11-08T20:29:03Z"
@@ -2844,13 +2847,13 @@
   "h1-rubygems": "2026-11-12T01:32:06Z",
   "int-upholdcom": "2026-11-12T01:32:06Z",
   "int-vdp-876": "2026-11-12T01:32:06Z",
-  "int-lansweeper1": "2026-11-12T15:58:30Z",
   "h1-estee-lauder": "2026-11-13T00:22:18Z",
   "h1-eufy-security": "2026-11-13T15:23:29Z",
   "int-heretechnologies": "2026-11-13T15:23:29Z",
   "int-vdp-874": "2026-11-13T15:23:29Z",
-  "int-veriffbugbounty": "2026-11-13T15:23:29Z",
-  "ywh-superbank-public-bug-bounty-program": "2026-11-13T15:23:29Z"
+  "ywh-superbank-public-bug-bounty-program": "2026-11-13T15:23:29Z",
+  "int-datacamp": "2026-11-14T00:19:52Z",
+  "int-personio": "2026-11-14T00:19:52Z"
  },
  "spotlight_history": [
   {
@@ -2875,6 +2878,6 @@
   }
  ],
  "last_weekly": "2026-11-08T20:29:03Z",
- "last_post": "2026-11-13T15:23:29Z",
- "last_run": "2026-11-13T15:23:29Z"
+ "last_post": "2026-11-14T00:19:52Z",
+ "last_run": "2026-11-14T00:19:52Z"
 }
