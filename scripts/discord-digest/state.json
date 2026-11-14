@@ -1183,9 +1183,6 @@
   "h1-quora": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "h1-brave": {
-   "first": "2026-11-09T17:28:13Z"
-  },
   "h1-portswigger": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2608,9 +2605,6 @@
   "int-tweakers": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-uzleuven": {
-   "first": "2026-11-08T20:29:03Z"
-  },
   "int-ubisoftvdp": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2620,8 +2614,8 @@
   "int-usz-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-vdp-873": {
-   "first": "2026-11-13T15:23:29Z"
+  "int-vdp-871": {
+   "first": "2026-11-14T14:08:42Z"
   },
   "int-vrtnv": {
    "first": "2026-11-08T20:29:03Z"
@@ -2840,7 +2834,6 @@
   "int-vdp-870": "2026-11-10T02:08:09Z",
   "int-wpenginebugbounty": "2026-11-10T02:08:09Z",
   "h1-dynatrace": "2026-11-10T15:35:55Z",
-  "int-vdp-871": "2026-11-10T15:35:55Z",
   "int-voiscooters": "2026-11-10T15:35:55Z",
   "h1-litellm": "2026-11-11T00:02:23Z",
   "h1-filezilla": "2026-11-12T01:32:06Z",
@@ -2853,7 +2846,10 @@
   "int-vdp-874": "2026-11-13T15:23:29Z",
   "ywh-superbank-public-bug-bounty-program": "2026-11-13T15:23:29Z",
   "int-datacamp": "2026-11-14T00:19:52Z",
-  "int-personio": "2026-11-14T00:19:52Z"
+  "int-personio": "2026-11-14T00:19:52Z",
+  "h1-brave": "2026-11-14T14:08:42Z",
+  "int-uzleuven": "2026-11-14T14:08:42Z",
+  "int-vdp-873": "2026-11-14T14:08:42Z"
  },
  "spotlight_history": [
   {
@@ -2879,5 +2875,5 @@
  ],
  "last_weekly": "2026-11-08T20:29:03Z",
  "last_post": "2026-11-14T00:19:52Z",
- "last_run": "2026-11-14T00:19:52Z"
+ "last_run": "2026-11-14T14:08:42Z"
 }
