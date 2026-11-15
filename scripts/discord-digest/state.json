@@ -2437,9 +2437,6 @@
   "int-kruidvat": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-lansweeper1": {
-   "first": "2026-11-14T00:19:52Z"
-  },
   "int-libelle": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2496,9 +2493,6 @@
   },
   "int-orbiavdp": {
    "first": "2026-11-08T20:29:03Z"
-  },
-  "int-pdqcomprivate": {
-   "first": "2026-11-10T15:35:55Z"
   },
   "int-peoplecert": {
    "first": "2026-11-08T20:29:03Z"
@@ -2614,8 +2608,8 @@
   "int-usz-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-vdp-871": {
-   "first": "2026-11-14T14:08:42Z"
+  "int-vdp-869": {
+   "first": "2026-11-15T14:44:53Z"
   },
   "int-vrtnv": {
    "first": "2026-11-08T20:29:03Z"
@@ -2625,9 +2619,6 @@
   },
   "int-arkanenetwork": {
    "first": "2026-11-08T20:29:03Z"
-  },
-  "int-veriffbugbounty": {
-   "first": "2026-11-14T00:19:52Z"
   },
   "int-VismaResponsibleDisclosure": {
    "first": "2026-11-08T20:29:03Z"
@@ -2849,7 +2840,11 @@
   "int-personio": "2026-11-14T00:19:52Z",
   "h1-brave": "2026-11-14T14:08:42Z",
   "int-uzleuven": "2026-11-14T14:08:42Z",
-  "int-vdp-873": "2026-11-14T14:08:42Z"
+  "int-vdp-873": "2026-11-14T14:08:42Z",
+  "int-lansweeper1": "2026-11-15T14:44:53Z",
+  "int-pdqcomprivate": "2026-11-15T14:44:53Z",
+  "int-vdp-871": "2026-11-15T14:44:53Z",
+  "int-veriffbugbounty": "2026-11-15T14:44:53Z"
  },
  "spotlight_history": [
   {
@@ -2874,6 +2869,6 @@
   }
  ],
  "last_weekly": "2026-11-08T20:29:03Z",
- "last_post": "2026-11-14T00:19:52Z",
- "last_run": "2026-11-14T22:58:23Z"
+ "last_post": "2026-11-15T14:44:53Z",
+ "last_run": "2026-11-15T14:44:53Z"
 }
