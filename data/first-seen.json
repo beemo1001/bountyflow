@@ -54,6 +54,7 @@
   "int-altera": "2026-11-14",
   "int-arkanenetwork": "2026-10-02",
   "int-borgwarnervdp": "2026-11-10",
+  "int-challenge1126": "2026-11-16",
   "int-cokeonenorthamerica": "2026-10-23",
   "int-datacamp": "2026-11-12",
   "int-dstnybugbounty": "2026-10-15",
@@ -75,6 +76,7 @@
   "int-vdp-868": "2026-09-28",
   "int-vdp-870": "2026-11-09",
   "int-vdp-871": "2026-11-10",
+  "int-vdp-872": "2026-11-16",
   "int-vdp-873": "2026-11-10",
   "int-vdp-874": "2026-11-12",
   "int-vdp-876": "2026-11-11",
@@ -83,6 +85,7 @@
   "int-water-link": "2026-11-12",
   "int-website": "2026-09-24",
   "int-wpenginebugbounty": "2026-09-28",
+  "ywh-boursobank-bug-bounty-program": "2026-11-16",
   "ywh-govtech-vulnerability-disclosure-programme-policy": "2026-10-19",
   "ywh-onedoc-sa-bug-bounty-program": "2026-10-14",
   "ywh-vfs-global-bug-bounty-program": "2026-10-15"
@@ -861,6 +864,7 @@
   "int-borgwarnervdp",
   "int-buhlergroupvdp",
   "int-capitalcom",
+  "int-challenge1126",
   "int-cloudways",
   "int-cmcom",
   "int-coca-cola",
@@ -983,6 +987,7 @@
   "int-vdp-869",
   "int-vdp-870",
   "int-vdp-871",
+  "int-vdp-872",
   "int-vdp-873",
   "int-vdp-874",
   "int-vdp-876",
@@ -1005,6 +1010,7 @@
   "ywh-alasco-gmbh-bug-bounty-program",
   "ywh-atg-public-bug-bounty-program",
   "ywh-bookbeat",
+  "ywh-boursobank-bug-bounty-program",
   "ywh-bug-bounty-program-blablacar",
   "ywh-cryptobox-bug-bounty",
   "ywh-cyberghost-bug-bounty-program",
@@ -1056,5 +1062,5 @@
   "ywh-yes-we-hack",
   "ywh-zecible-public-bug-bounty-program"
  ],
- "updated": "2026-11-15T23:22:49Z"
+ "updated": "2026-11-16T16:59:37Z"
 }
