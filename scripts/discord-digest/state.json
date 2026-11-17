@@ -217,9 +217,6 @@
   "h1-oppo-bbp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "h1-1password": {
-   "first": "2026-11-08T20:29:03Z"
-  },
   "h1-bill-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -1043,9 +1040,6 @@
    "first": "2026-11-08T20:29:03Z"
   },
   "h1-paypal": {
-   "first": "2026-11-08T20:29:03Z"
-  },
-  "h1-mariadb": {
    "first": "2026-11-08T20:29:03Z"
   },
   "h1-chaturbate": {
@@ -2497,6 +2491,9 @@
   "int-orbiavdp": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "int-pdqcomprivate": {
+   "first": "2026-11-17T16:52:57Z"
+  },
   "int-peoplecert": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2614,8 +2611,8 @@
   "int-usz-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-vdp-871": {
-   "first": "2026-11-17T02:28:32Z"
+  "int-vdp-870": {
+   "first": "2026-11-17T16:52:57Z"
   },
   "int-vrtnv": {
    "first": "2026-11-08T20:29:03Z"
@@ -2625,6 +2622,9 @@
   },
   "int-arkanenetwork": {
    "first": "2026-11-08T20:29:03Z"
+  },
+  "int-veriffbugbounty": {
+   "first": "2026-11-17T16:52:57Z"
   },
   "int-VismaResponsibleDisclosure": {
    "first": "2026-11-08T20:29:03Z"
@@ -2637,6 +2637,9 @@
   },
   "int-wpengine": {
    "first": "2026-11-08T20:29:03Z"
+  },
+  "int-water-link": {
+   "first": "2026-11-17T16:52:57Z"
   },
   "int-water-linkvdp": {
    "first": "2026-11-08T20:29:03Z"
@@ -2825,7 +2828,6 @@
  "gone": {
   "int-vdp-866": "2026-11-08T22:53:12Z",
   "int-vdp-865": "2026-11-09T17:28:13Z",
-  "int-vdp-870": "2026-11-10T02:08:09Z",
   "int-wpenginebugbounty": "2026-11-10T02:08:09Z",
   "h1-dynatrace": "2026-11-10T15:35:55Z",
   "int-voiscooters": "2026-11-10T15:35:55Z",
@@ -2842,14 +2844,14 @@
   "int-uzleuven": "2026-11-14T14:08:42Z",
   "int-vdp-873": "2026-11-14T14:08:42Z",
   "int-lansweeper1": "2026-11-15T14:44:53Z",
-  "int-veriffbugbounty": "2026-11-15T14:44:53Z",
   "h1-sheer-bbp": "2026-11-16T16:59:37Z",
   "int-vdp-869": "2026-11-16T16:59:37Z",
-  "int-water-link": "2026-11-16T16:59:37Z",
   "ywh-cryptobox-bug-bounty": "2026-11-16T16:59:37Z",
   "int-datacamp": "2026-11-17T02:28:32Z",
-  "int-pdqcomprivate": "2026-11-17T02:28:32Z",
-  "int-vdp-872": "2026-11-17T02:28:32Z"
+  "int-vdp-872": "2026-11-17T02:28:32Z",
+  "h1-1password": "2026-11-17T16:52:57Z",
+  "h1-mariadb": "2026-11-17T16:52:57Z",
+  "int-vdp-871": "2026-11-17T16:52:57Z"
  },
  "spotlight_history": [
   {
@@ -2887,5 +2889,5 @@
  ],
  "last_weekly": "2026-11-15T23:22:49Z",
  "last_post": "2026-11-16T16:59:37Z",
- "last_run": "2026-11-17T02:28:32Z"
+ "last_run": "2026-11-17T16:52:57Z"
 }
