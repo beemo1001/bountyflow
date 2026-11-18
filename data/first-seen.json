@@ -19,6 +19,7 @@
   "bc-lively-apps-gmbh-marketplace-bug-bounty-program-": "2026-10-15",
   "bc-meetical": "2026-10-01",
   "bc-monash-university-bug-bounty": "2026-10-05",
+  "bc-nord-security-managed-bug-bounty-engagement": "2026-11-18",
   "bc-presago-marketplace-bug-bounty-program": "2026-09-24",
   "bc-revyz-marketplace-bug-bounty-program-": "2026-09-24",
   "bc-smart-guess-ehf-marketplace-bug-bounty-program-": "2026-10-15",
@@ -27,6 +28,7 @@
   "bc-vinted-bug-bounty": "2026-09-30",
   "bc-vr-public-managed-bug-bounty-engagement": "2026-09-24",
   "h1-aegean-airlines-vdp": "2026-10-09",
+  "h1-algolia": "2026-11-18",
   "h1-anker": "2026-11-13",
   "h1-basecamp": "2026-10-20",
   "h1-bitmex": "2026-11-11",
@@ -274,6 +276,7 @@
   "bc-new-blue-website-nbw-vwfs-bug-bounty-program",
   "bc-new-relic-public-bug-bounty-program",
   "bc-nextup-ai",
+  "bc-nord-security-managed-bug-bounty-engagement",
   "bc-northwestern-mutual-public-bug-bounty",
   "bc-nubank-brasil-managed-bug-bounty-program",
   "bc-octopus",
@@ -410,6 +413,7 @@
   "h1-aig",
   "h1-airbnb",
   "h1-airtable",
+  "h1-algolia",
   "h1-alibaba-vdp",
   "h1-allegion",
   "h1-alohi",
@@ -1070,5 +1074,5 @@
   "ywh-yes-we-hack",
   "ywh-zecible-public-bug-bounty-program"
  ],
- "updated": "2026-11-18T01:36:54Z"
+ "updated": "2026-11-18T16:26:42Z"
 }

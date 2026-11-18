@@ -493,9 +493,6 @@
   "h1-alsco": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "h1-abercrombie-fitch-bbp": {
-   "first": "2026-11-08T20:29:03Z"
-  },
   "h1-abercrombie-fitch": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -1237,6 +1234,9 @@
   "h1-versioncake": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "h1-algolia": {
+   "first": "2026-11-18T16:26:42Z"
+  },
   "h1-grab": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -1250,9 +1250,6 @@
    "first": "2026-11-08T20:29:03Z"
   },
   "h1-revive-adserver": {
-   "first": "2026-11-08T20:29:03Z"
-  },
-  "h1-moneybird": {
    "first": "2026-11-08T20:29:03Z"
   },
   "h1-coursera": {
@@ -1876,6 +1873,9 @@
   "bc-nextup-ai": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "bc-nord-security-managed-bug-bounty-engagement": {
+   "first": "2026-11-18T16:26:42Z"
+  },
   "bc-northwestern-mutual-public-bug-bounty": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2359,9 +2359,6 @@
   "int-dropbox-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-dstnybugbounty": {
-   "first": "2026-11-11T15:10:55Z"
-  },
   "int-dutchlotteryvdp": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2515,9 +2512,6 @@
   "int-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-postibugbounty": {
-   "first": "2026-11-08T20:29:03Z"
-  },
   "int-proofvdp": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2623,8 +2617,8 @@
   "int-usz-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-vdp-874": {
-   "first": "2026-11-18T01:36:54Z"
+  "int-vdp-872": {
+   "first": "2026-11-18T16:26:42Z"
   },
   "int-vrtnv": {
    "first": "2026-11-08T20:29:03Z"
@@ -2634,9 +2628,6 @@
   },
   "int-arkanenetwork": {
    "first": "2026-11-08T20:29:03Z"
-  },
-  "int-veriffbugbounty": {
-   "first": "2026-11-17T16:52:57Z"
   },
   "int-VismaResponsibleDisclosure": {
    "first": "2026-11-08T20:29:03Z"
@@ -2858,12 +2849,17 @@
   "int-vdp-869": "2026-11-16T16:59:37Z",
   "ywh-cryptobox-bug-bounty": "2026-11-16T16:59:37Z",
   "int-datacamp": "2026-11-17T02:28:32Z",
-  "int-vdp-872": "2026-11-17T02:28:32Z",
   "h1-1password": "2026-11-17T16:52:57Z",
   "h1-mariadb": "2026-11-17T16:52:57Z",
   "int-vdp-871": "2026-11-17T16:52:57Z",
   "h1-solidus": "2026-11-18T01:36:54Z",
-  "int-vdp-870": "2026-11-18T01:36:54Z"
+  "int-vdp-870": "2026-11-18T01:36:54Z",
+  "h1-abercrombie-fitch-bbp": "2026-11-18T16:26:42Z",
+  "h1-moneybird": "2026-11-18T16:26:42Z",
+  "int-dstnybugbounty": "2026-11-18T16:26:42Z",
+  "int-postibugbounty": "2026-11-18T16:26:42Z",
+  "int-vdp-874": "2026-11-18T16:26:42Z",
+  "int-veriffbugbounty": "2026-11-18T16:26:42Z"
  },
  "spotlight_history": [
   {
@@ -2900,6 +2896,6 @@
   }
  ],
  "last_weekly": "2026-11-15T23:22:49Z",
- "last_post": "2026-11-18T01:36:54Z",
- "last_run": "2026-11-18T01:36:54Z"
+ "last_post": "2026-11-18T16:26:42Z",
+ "last_run": "2026-11-18T16:26:42Z"
 }
