@@ -14,6 +14,7 @@
   "bc-dell-technologies-application-bug-bounty": "2026-09-24",
   "bc-deview-studios-marketplace-managed-bug-bounty-engagement": "2026-09-24",
   "bc-excentia-bug-bounty": "2026-10-09",
+  "bc-fis-553": "2026-11-19",
   "bc-herocoders-apps": "2026-09-24",
   "bc-hypixel-studios-managed-bug-bounty-engagement": "2026-10-05",
   "bc-lively-apps-gmbh-marketplace-bug-bounty-program-": "2026-10-15",
@@ -205,6 +206,7 @@
   "bc-fireblocks-mpc-managed-bug-bounty-engagement",
   "bc-fireblocks-web-managed-bug-bounty-engagement",
   "bc-fis",
+  "bc-fis-553",
   "bc-fivetran",
   "bc-flourish",
   "bc-gearset-managed-bug-bounty",
@@ -1074,5 +1076,5 @@
   "ywh-yes-we-hack",
   "ywh-zecible-public-bug-bounty-program"
  ],
- "updated": "2026-11-18T16:26:42Z"
+ "updated": "2026-11-19T01:12:59Z"
 }
