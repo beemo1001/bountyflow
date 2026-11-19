@@ -1411,6 +1411,9 @@
   "bc-aurory-managed-bug-bounty-engagement-public-": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "bc-auth0-by-okta": {
+   "first": "2026-11-19T16:33:34Z"
+  },
   "bc-appfox": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -1659,9 +1662,6 @@
   },
   "bc-fis": {
    "first": "2026-11-08T20:29:03Z"
-  },
-  "bc-fis-553": {
-   "first": "2026-11-19T01:12:59Z"
   },
   "bc-fivetran": {
    "first": "2026-11-08T20:29:03Z"
@@ -2440,6 +2440,9 @@
   "int-kruidvat": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "int-lansweeper1": {
+   "first": "2026-11-19T16:33:34Z"
+  },
   "int-libelle": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2620,8 +2623,8 @@
   "int-usz-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-vdp-873": {
-   "first": "2026-11-19T01:12:59Z"
+  "int-vdp-874": {
+   "first": "2026-11-19T16:33:34Z"
   },
   "int-vrtnv": {
    "first": "2026-11-08T20:29:03Z"
@@ -2846,7 +2849,6 @@
   "h1-eufy-security": "2026-11-13T15:23:29Z",
   "int-heretechnologies": "2026-11-13T15:23:29Z",
   "ywh-superbank-public-bug-bounty-program": "2026-11-13T15:23:29Z",
-  "int-lansweeper1": "2026-11-15T14:44:53Z",
   "h1-sheer-bbp": "2026-11-16T16:59:37Z",
   "int-vdp-869": "2026-11-16T16:59:37Z",
   "ywh-cryptobox-bug-bounty": "2026-11-16T16:59:37Z",
@@ -2859,10 +2861,10 @@
   "h1-abercrombie-fitch-bbp": "2026-11-18T16:26:42Z",
   "h1-moneybird": "2026-11-18T16:26:42Z",
   "int-postibugbounty": "2026-11-18T16:26:42Z",
-  "int-vdp-874": "2026-11-18T16:26:42Z",
   "int-veriffbugbounty": "2026-11-18T16:26:42Z",
-  "bc-auth0-by-okta": "2026-11-19T01:12:59Z",
-  "int-vdp-872": "2026-11-19T01:12:59Z"
+  "int-vdp-872": "2026-11-19T01:12:59Z",
+  "bc-fis-553": "2026-11-19T16:33:34Z",
+  "int-vdp-873": "2026-11-19T16:33:34Z"
  },
  "spotlight_history": [
   {
@@ -2900,5 +2902,5 @@
  ],
  "last_weekly": "2026-11-15T23:22:49Z",
  "last_post": "2026-11-19T01:12:59Z",
- "last_run": "2026-11-19T01:12:59Z"
+ "last_run": "2026-11-19T16:33:34Z"
 }
