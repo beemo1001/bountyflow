@@ -172,9 +172,6 @@
   "h1-hyland-software": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "h1-worldpay": {
-   "first": "2026-11-08T20:29:03Z"
-  },
   "h1-hertz": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -719,9 +716,6 @@
    "first": "2026-11-08T20:29:03Z"
   },
   "h1-dib-vdp": {
-   "first": "2026-11-08T20:29:03Z"
-  },
-  "h1-global-payments": {
    "first": "2026-11-08T20:29:03Z"
   },
   "h1-blackrock": {
@@ -2434,9 +2428,6 @@
   "int-kuleuvenrdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-website": {
-   "first": "2026-11-08T20:29:03Z"
-  },
   "int-kiwavdp": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2487,6 +2478,9 @@
   },
   "int-nexuzhealthwebpacs": {
    "first": "2026-11-08T20:29:03Z"
+  },
+  "int-ninjakiwigames": {
+   "first": "2026-11-20T16:08:46Z"
   },
   "int-nxtportvdp": {
    "first": "2026-11-08T20:29:03Z"
@@ -2557,9 +2551,6 @@
   "int-simscale": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-skodaautoprivatebugbountyprogram": {
-   "first": "2026-11-10T02:08:09Z"
-  },
   "int-socialdeal": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2620,8 +2611,8 @@
   "int-usz-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-vdp-873": {
-   "first": "2026-11-20T01:15:58Z"
+  "int-vdp-870": {
+   "first": "2026-11-20T16:08:46Z"
   },
   "int-vrtnv": {
    "first": "2026-11-08T20:29:03Z"
@@ -2854,15 +2845,18 @@
   "h1-mariadb": "2026-11-17T16:52:57Z",
   "int-vdp-871": "2026-11-17T16:52:57Z",
   "h1-solidus": "2026-11-18T01:36:54Z",
-  "int-vdp-870": "2026-11-18T01:36:54Z",
   "h1-abercrombie-fitch-bbp": "2026-11-18T16:26:42Z",
   "int-postibugbounty": "2026-11-18T16:26:42Z",
   "int-veriffbugbounty": "2026-11-18T16:26:42Z",
   "int-vdp-872": "2026-11-19T01:12:59Z",
   "bc-fis-553": "2026-11-19T16:33:34Z",
   "int-lansweeper1": "2026-11-20T01:15:58Z",
-  "int-ninjakiwigames": "2026-11-20T01:15:58Z",
-  "int-vdp-874": "2026-11-20T01:15:58Z"
+  "int-vdp-874": "2026-11-20T01:15:58Z",
+  "h1-worldpay": "2026-11-20T16:08:46Z",
+  "h1-global-payments": "2026-11-20T16:08:46Z",
+  "int-website": "2026-11-20T16:08:46Z",
+  "int-skodaautoprivatebugbountyprogram": "2026-11-20T16:08:46Z",
+  "int-vdp-873": "2026-11-20T16:08:46Z"
  },
  "spotlight_history": [
   {
@@ -2900,5 +2894,5 @@
  ],
  "last_weekly": "2026-11-15T23:22:49Z",
  "last_post": "2026-11-19T01:12:59Z",
- "last_run": "2026-11-20T01:15:58Z"
+ "last_run": "2026-11-20T16:08:46Z"
 }
