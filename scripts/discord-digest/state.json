@@ -973,6 +973,9 @@
   "h1-instacart": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "h1-phpbb": {
+   "first": "2026-11-21T00:47:39Z"
+  },
   "h1-ford": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -1170,6 +1173,9 @@
   },
   "h1-portswigger": {
    "first": "2026-11-08T20:29:03Z"
+  },
+  "h1-rubygems": {
+   "first": "2026-11-21T00:47:39Z"
   },
   "h1-files": {
    "first": "2026-11-08T20:29:03Z"
@@ -2428,6 +2434,9 @@
   "int-kuleuvenrdp": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "int-website": {
+   "first": "2026-11-21T00:47:39Z"
+  },
   "int-kiwavdp": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2508,6 +2517,9 @@
   },
   "int-vdp": {
    "first": "2026-11-08T20:29:03Z"
+  },
+  "int-postibugbounty": {
+   "first": "2026-11-21T00:47:39Z"
   },
   "int-proofvdp": {
    "first": "2026-11-08T20:29:03Z"
@@ -2611,8 +2623,8 @@
   "int-usz-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-vdp-870": {
-   "first": "2026-11-20T16:08:46Z"
+  "int-vdp-874": {
+   "first": "2026-11-21T00:47:39Z"
   },
   "int-vrtnv": {
    "first": "2026-11-08T20:29:03Z"
@@ -2634,9 +2646,6 @@
   },
   "int-wpengine": {
    "first": "2026-11-08T20:29:03Z"
-  },
-  "int-water-link": {
-   "first": "2026-11-17T16:52:57Z"
   },
   "int-water-linkvdp": {
    "first": "2026-11-08T20:29:03Z"
@@ -2830,7 +2839,6 @@
   "int-voiscooters": "2026-11-10T15:35:55Z",
   "h1-litellm": "2026-11-11T00:02:23Z",
   "h1-filezilla": "2026-11-12T01:32:06Z",
-  "h1-rubygems": "2026-11-12T01:32:06Z",
   "int-upholdcom": "2026-11-12T01:32:06Z",
   "int-vdp-876": "2026-11-12T01:32:06Z",
   "h1-estee-lauder": "2026-11-13T00:22:18Z",
@@ -2846,17 +2854,16 @@
   "int-vdp-871": "2026-11-17T16:52:57Z",
   "h1-solidus": "2026-11-18T01:36:54Z",
   "h1-abercrombie-fitch-bbp": "2026-11-18T16:26:42Z",
-  "int-postibugbounty": "2026-11-18T16:26:42Z",
   "int-veriffbugbounty": "2026-11-18T16:26:42Z",
   "int-vdp-872": "2026-11-19T01:12:59Z",
   "bc-fis-553": "2026-11-19T16:33:34Z",
   "int-lansweeper1": "2026-11-20T01:15:58Z",
-  "int-vdp-874": "2026-11-20T01:15:58Z",
   "h1-worldpay": "2026-11-20T16:08:46Z",
   "h1-global-payments": "2026-11-20T16:08:46Z",
-  "int-website": "2026-11-20T16:08:46Z",
   "int-skodaautoprivatebugbountyprogram": "2026-11-20T16:08:46Z",
-  "int-vdp-873": "2026-11-20T16:08:46Z"
+  "int-vdp-873": "2026-11-20T16:08:46Z",
+  "int-vdp-870": "2026-11-21T00:47:39Z",
+  "int-water-link": "2026-11-21T00:47:39Z"
  },
  "spotlight_history": [
   {
@@ -2893,6 +2900,6 @@
   }
  ],
  "last_weekly": "2026-11-15T23:22:49Z",
- "last_post": "2026-11-19T01:12:59Z",
- "last_run": "2026-11-20T16:08:46Z"
+ "last_post": "2026-11-21T00:47:39Z",
+ "last_run": "2026-11-21T00:47:39Z"
 }

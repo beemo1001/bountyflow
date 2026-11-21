@@ -49,6 +49,7 @@
   "h1-nebius-ai-vdp": "2026-09-24",
   "h1-oasisprotocol": "2026-11-09",
   "h1-omarchy": "2026-10-01",
+  "h1-phpbb": "2026-11-21",
   "h1-publitas": "2026-10-21",
   "h1-smartsheet-vdp": "2026-10-29",
   "h1-solidus": "2026-11-02",
@@ -705,6 +706,7 @@
   "h1-pfizer",
   "h1-phabricator",
   "h1-phonepe-vdp",
+  "h1-phpbb",
   "h1-picsart",
   "h1-pingidentity",
   "h1-pixiv",
@@ -1076,5 +1078,5 @@
   "ywh-yes-we-hack",
   "ywh-zecible-public-bug-bounty-program"
  ],
- "updated": "2026-11-20T16:08:46Z"
+ "updated": "2026-11-21T00:47:39Z"
 }
