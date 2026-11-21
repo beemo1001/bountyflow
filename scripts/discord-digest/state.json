@@ -1168,9 +1168,6 @@
   "h1-quora": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "h1-brave": {
-   "first": "2026-11-17T02:28:32Z"
-  },
   "h1-portswigger": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -1894,9 +1891,6 @@
   "bc-odesk-": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "bc-okapya": {
-   "first": "2026-11-08T20:29:03Z"
-  },
   "bc-okta": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2518,9 +2512,6 @@
   "int-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-postibugbounty": {
-   "first": "2026-11-21T00:47:39Z"
-  },
   "int-proofvdp": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2623,8 +2614,8 @@
   "int-usz-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-vdp-874": {
-   "first": "2026-11-21T00:47:39Z"
+  "int-vdp-871": {
+   "first": "2026-11-21T15:21:52Z"
   },
   "int-vrtnv": {
    "first": "2026-11-08T20:29:03Z"
@@ -2851,7 +2842,6 @@
   "int-datacamp": "2026-11-17T02:28:32Z",
   "h1-1password": "2026-11-17T16:52:57Z",
   "h1-mariadb": "2026-11-17T16:52:57Z",
-  "int-vdp-871": "2026-11-17T16:52:57Z",
   "h1-solidus": "2026-11-18T01:36:54Z",
   "h1-abercrombie-fitch-bbp": "2026-11-18T16:26:42Z",
   "int-veriffbugbounty": "2026-11-18T16:26:42Z",
@@ -2863,7 +2853,11 @@
   "int-skodaautoprivatebugbountyprogram": "2026-11-20T16:08:46Z",
   "int-vdp-873": "2026-11-20T16:08:46Z",
   "int-vdp-870": "2026-11-21T00:47:39Z",
-  "int-water-link": "2026-11-21T00:47:39Z"
+  "int-water-link": "2026-11-21T00:47:39Z",
+  "h1-brave": "2026-11-21T15:21:52Z",
+  "bc-okapya": "2026-11-21T15:21:52Z",
+  "int-postibugbounty": "2026-11-21T15:21:52Z",
+  "int-vdp-874": "2026-11-21T15:21:52Z"
  },
  "spotlight_history": [
   {
@@ -2901,5 +2895,5 @@
  ],
  "last_weekly": "2026-11-15T23:22:49Z",
  "last_post": "2026-11-21T00:47:39Z",
- "last_run": "2026-11-21T00:47:39Z"
+ "last_run": "2026-11-21T15:21:52Z"
 }
