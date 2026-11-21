@@ -2428,9 +2428,6 @@
   "int-kuleuvenrdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-website": {
-   "first": "2026-11-21T00:47:39Z"
-  },
   "int-kiwavdp": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2614,8 +2611,8 @@
   "int-usz-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-vdp-871": {
-   "first": "2026-11-21T15:21:52Z"
+  "int-vdp-870": {
+   "first": "2026-11-21T23:47:47Z"
   },
   "int-vrtnv": {
    "first": "2026-11-08T20:29:03Z"
@@ -2852,12 +2849,13 @@
   "h1-global-payments": "2026-11-20T16:08:46Z",
   "int-skodaautoprivatebugbountyprogram": "2026-11-20T16:08:46Z",
   "int-vdp-873": "2026-11-20T16:08:46Z",
-  "int-vdp-870": "2026-11-21T00:47:39Z",
   "int-water-link": "2026-11-21T00:47:39Z",
   "h1-brave": "2026-11-21T15:21:52Z",
   "bc-okapya": "2026-11-21T15:21:52Z",
   "int-postibugbounty": "2026-11-21T15:21:52Z",
-  "int-vdp-874": "2026-11-21T15:21:52Z"
+  "int-vdp-874": "2026-11-21T15:21:52Z",
+  "int-website": "2026-11-21T23:47:47Z",
+  "int-vdp-871": "2026-11-21T23:47:47Z"
  },
  "spotlight_history": [
   {
@@ -2895,5 +2893,5 @@
  ],
  "last_weekly": "2026-11-15T23:22:49Z",
  "last_post": "2026-11-21T00:47:39Z",
- "last_run": "2026-11-21T15:21:52Z"
+ "last_run": "2026-11-21T23:47:47Z"
 }
