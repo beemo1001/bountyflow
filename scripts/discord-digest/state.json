@@ -1618,6 +1618,9 @@
   "bc-elementor-bug-bounty-program": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "bc-elementor-bug-bounty-program-539": {
+   "first": "2026-11-23T00:18:36Z"
+  },
   "bc-elements": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -1883,9 +1886,6 @@
    "first": "2026-11-08T20:29:03Z"
   },
   "bc-octopus-deploy": {
-   "first": "2026-11-08T20:29:03Z"
-  },
-  "bc-octopus": {
    "first": "2026-11-08T20:29:03Z"
   },
   "bc-odesk-": {
@@ -2855,7 +2855,8 @@
   "int-postibugbounty": "2026-11-21T15:21:52Z",
   "int-vdp-874": "2026-11-21T15:21:52Z",
   "int-website": "2026-11-21T23:47:47Z",
-  "int-vdp-871": "2026-11-21T23:47:47Z"
+  "int-vdp-871": "2026-11-21T23:47:47Z",
+  "bc-octopus": "2026-11-23T00:18:36Z"
  },
  "spotlight_history": [
   {
@@ -2892,6 +2893,6 @@
   }
  ],
  "last_weekly": "2026-11-15T23:22:49Z",
- "last_post": "2026-11-21T00:47:39Z",
- "last_run": "2026-11-22T15:16:48Z"
+ "last_post": "2026-11-23T00:18:36Z",
+ "last_run": "2026-11-23T00:18:36Z"
 }

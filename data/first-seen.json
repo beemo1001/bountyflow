@@ -13,6 +13,7 @@
   "bc-decadis-ag": "2026-10-09",
   "bc-dell-technologies-application-bug-bounty": "2026-09-24",
   "bc-deview-studios-marketplace-managed-bug-bounty-engagement": "2026-09-24",
+  "bc-elementor-bug-bounty-program-539": "2026-11-23",
   "bc-excentia-bug-bounty": "2026-10-09",
   "bc-fis-553": "2026-11-19",
   "bc-herocoders-apps": "2026-09-24",
@@ -194,6 +195,7 @@
   "bc-electroneum-legacy-blockchain-eol",
   "bc-electroneum-smart-chain-etn-sc-evm-compatible-blockchain",
   "bc-elementor-bug-bounty-program",
+  "bc-elementor-bug-bounty-program-539",
   "bc-elements",
   "bc-empower-personal-wealth",
   "bc-entain-game-logic-flaws-bug-bounty-program",
@@ -1078,5 +1080,5 @@
   "ywh-yes-we-hack",
   "ywh-zecible-public-bug-bounty-program"
  ],
- "updated": "2026-11-22T15:16:48Z"
+ "updated": "2026-11-23T00:18:36Z"
 }
