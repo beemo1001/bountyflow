@@ -1168,6 +1168,9 @@
   "h1-quora": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "h1-brave": {
+   "first": "2026-11-24T04:18:11Z"
+  },
   "h1-portswigger": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2392,6 +2395,9 @@
   "int-hrsgroupvdp": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "int-heretechnologies": {
+   "first": "2026-11-24T04:18:11Z"
+  },
   "int-hetlaatstenieuws": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2427,6 +2433,9 @@
   },
   "int-kuleuvenrdp": {
    "first": "2026-11-08T20:29:03Z"
+  },
+  "int-website": {
+   "first": "2026-11-24T04:18:11Z"
   },
   "int-kiwavdp": {
    "first": "2026-11-08T20:29:03Z"
@@ -2614,8 +2623,8 @@
   "int-usz-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-vdp-871": {
-   "first": "2026-11-23T19:14:25Z"
+  "int-vdp-874": {
+   "first": "2026-11-24T04:18:11Z"
   },
   "int-vrtnv": {
    "first": "2026-11-08T20:29:03Z"
@@ -2834,7 +2843,6 @@
   "int-vdp-876": "2026-11-12T01:32:06Z",
   "h1-estee-lauder": "2026-11-13T00:22:18Z",
   "h1-eufy-security": "2026-11-13T15:23:29Z",
-  "int-heretechnologies": "2026-11-13T15:23:29Z",
   "ywh-superbank-public-bug-bounty-program": "2026-11-13T15:23:29Z",
   "h1-sheer-bbp": "2026-11-16T16:59:37Z",
   "int-vdp-869": "2026-11-16T16:59:37Z",
@@ -2852,14 +2860,12 @@
   "int-skodaautoprivatebugbountyprogram": "2026-11-20T16:08:46Z",
   "int-vdp-873": "2026-11-20T16:08:46Z",
   "int-water-link": "2026-11-21T00:47:39Z",
-  "h1-brave": "2026-11-21T15:21:52Z",
   "bc-okapya": "2026-11-21T15:21:52Z",
   "int-postibugbounty": "2026-11-21T15:21:52Z",
-  "int-vdp-874": "2026-11-21T15:21:52Z",
-  "int-website": "2026-11-21T23:47:47Z",
   "h1-klarna": "2026-11-23T19:14:25Z",
   "bc-elementor-bug-bounty-program-539": "2026-11-23T19:14:25Z",
-  "int-vdp-870": "2026-11-23T19:14:25Z"
+  "int-vdp-870": "2026-11-23T19:14:25Z",
+  "int-vdp-871": "2026-11-24T04:18:11Z"
  },
  "spotlight_history": [
   {
@@ -2893,9 +2899,21 @@
   {
    "id": "h1-indrive",
    "at": "2026-11-15T23:22:49Z"
+  },
+  {
+   "id": "h1-mercadolibre",
+   "at": "2026-11-24T04:18:11Z"
+  },
+  {
+   "id": "h1-remitly",
+   "at": "2026-11-24T04:18:11Z"
+  },
+  {
+   "id": "h1-visa",
+   "at": "2026-11-24T04:18:11Z"
   }
  ],
- "last_weekly": "2026-11-15T23:22:49Z",
- "last_post": "2026-11-23T19:14:25Z",
- "last_run": "2026-11-23T19:14:25Z"
+ "last_weekly": "2026-11-24T04:18:11Z",
+ "last_post": "2026-11-24T04:18:11Z",
+ "last_run": "2026-11-24T04:18:11Z"
 }
