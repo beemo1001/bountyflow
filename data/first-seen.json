@@ -49,6 +49,7 @@
   "h1-live-nation": "2026-09-24",
   "h1-moneybird": "2026-10-27",
   "h1-nebius-ai-vdp": "2026-09-24",
+  "h1-northerntechhq": "2026-11-25",
   "h1-oasisprotocol": "2026-11-09",
   "h1-omarchy": "2026-10-01",
   "h1-phpbb": "2026-11-21",
@@ -684,6 +685,7 @@
   "h1-nisc",
   "h1-nodejs",
   "h1-nominet",
+  "h1-northerntechhq",
   "h1-notion",
   "h1-nutanix",
   "h1-oaknorth-bank",
@@ -1084,5 +1086,5 @@
   "ywh-yes-we-hack",
   "ywh-zecible-public-bug-bounty-program"
  ],
- "updated": "2026-11-25T03:02:06Z"
+ "updated": "2026-11-25T17:57:54Z"
 }

@@ -205,6 +205,9 @@
   "h1-hotmartvdp": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "h1-northerntechhq": {
+   "first": "2026-11-25T17:57:54Z"
+  },
   "h1-whoop-bug-bounty": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -1193,9 +1196,6 @@
    "first": "2026-11-08T20:29:03Z"
   },
   "h1-nextcloud": {
-   "first": "2026-11-08T20:29:03Z"
-  },
-  "h1-publitas": {
    "first": "2026-11-08T20:29:03Z"
   },
   "h1-starbucks": {
@@ -2251,9 +2251,6 @@
   "int-allegrobugbounty": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-altera": {
-   "first": "2026-11-14T00:19:52Z"
-  },
   "int-anacondavdp": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2434,14 +2431,14 @@
   "int-kuleuvenrdp": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "int-website": {
+   "first": "2026-11-25T17:57:54Z"
+  },
   "int-kiwavdp": {
    "first": "2026-11-08T20:29:03Z"
   },
   "int-kruidvat": {
    "first": "2026-11-08T20:29:03Z"
-  },
-  "int-lansweeper1": {
-   "first": "2026-11-23T19:14:25Z"
   },
   "int-libelle": {
    "first": "2026-11-08T20:29:03Z"
@@ -2517,6 +2514,9 @@
   },
   "int-vdp": {
    "first": "2026-11-08T20:29:03Z"
+  },
+  "int-postibugbounty": {
+   "first": "2026-11-25T17:57:54Z"
   },
   "int-proofvdp": {
    "first": "2026-11-08T20:29:03Z"
@@ -2620,8 +2620,11 @@
   "int-usz-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-vdp-873": {
-   "first": "2026-11-24T18:53:10Z"
+  "int-upholdcom": {
+   "first": "2026-11-25T17:57:54Z"
+  },
+  "int-vdp-874": {
+   "first": "2026-11-25T17:57:54Z"
   },
   "int-vrtnv": {
    "first": "2026-11-08T20:29:03Z"
@@ -2855,16 +2858,16 @@
   "int-skodaautoprivatebugbountyprogram": "2026-11-20T16:08:46Z",
   "int-water-link": "2026-11-21T00:47:39Z",
   "bc-okapya": "2026-11-21T15:21:52Z",
-  "int-postibugbounty": "2026-11-21T15:21:52Z",
   "h1-klarna": "2026-11-23T19:14:25Z",
   "bc-elementor-bug-bounty-program-539": "2026-11-23T19:14:25Z",
   "int-vdp-870": "2026-11-23T19:14:25Z",
   "int-vdp-871": "2026-11-24T04:18:11Z",
   "h1-oasisprotocol": "2026-11-24T18:53:10Z",
   "int-challenge1126": "2026-11-24T18:53:10Z",
-  "int-website": "2026-11-24T18:53:10Z",
-  "int-vdp-874": "2026-11-24T18:53:10Z",
-  "int-upholdcom": "2026-11-25T03:02:06Z"
+  "h1-publitas": "2026-11-25T17:57:54Z",
+  "int-altera": "2026-11-25T17:57:54Z",
+  "int-lansweeper1": "2026-11-25T17:57:54Z",
+  "int-vdp-873": "2026-11-25T17:57:54Z"
  },
  "spotlight_history": [
   {
@@ -2913,6 +2916,6 @@
   }
  ],
  "last_weekly": "2026-11-24T04:18:11Z",
- "last_post": "2026-11-25T03:02:06Z",
- "last_run": "2026-11-25T03:02:06Z"
+ "last_post": "2026-11-25T17:57:54Z",
+ "last_run": "2026-11-25T17:57:54Z"
 }
