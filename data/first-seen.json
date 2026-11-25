@@ -62,6 +62,7 @@
   "int-1passwordbugbountyprogram": "2026-11-18",
   "int-altera": "2026-11-14",
   "int-arkanenetwork": "2026-10-02",
+  "int-aspiravdp": "2026-11-25",
   "int-borgwarnervdp": "2026-11-10",
   "int-challenge1126": "2026-11-16",
   "int-cokeonenorthamerica": "2026-10-23",
@@ -873,6 +874,7 @@
   "int-arboniavdpprogram",
   "int-arkanenetwork",
   "int-arm",
+  "int-aspiravdp",
   "int-atollsvdp",
   "int-attentiavdp",
   "int-axelspringersevulnerabilitydisclosureprogram",
@@ -1082,5 +1084,5 @@
   "ywh-yes-we-hack",
   "ywh-zecible-public-bug-bounty-program"
  ],
- "updated": "2026-11-24T18:53:10Z"
+ "updated": "2026-11-25T03:02:06Z"
 }
