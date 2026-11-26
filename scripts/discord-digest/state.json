@@ -625,9 +625,6 @@
   "h1-godaddy-vdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "h1-mondelez": {
-   "first": "2026-11-08T20:29:03Z"
-  },
   "h1-inspectorio": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2476,9 +2473,6 @@
   "int-nexuzhealthwebpacs": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-ninjakiwigames": {
-   "first": "2026-11-20T16:08:46Z"
-  },
   "int-nxtportvdp": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2614,8 +2608,8 @@
   "int-upholdcom": {
    "first": "2026-11-25T17:57:54Z"
   },
-  "int-vdp-871": {
-   "first": "2026-11-26T02:12:11Z"
+  "int-vdp-869": {
+   "first": "2026-11-26T17:42:43Z"
   },
   "int-vrtnv": {
    "first": "2026-11-08T20:29:03Z"
@@ -2708,9 +2702,6 @@
    "first": "2026-11-08T20:29:03Z"
   },
   "ywh-ezviz-bug-bounty-program": {
-   "first": "2026-11-08T20:29:03Z"
-  },
-  "ywh-fdj-united-online-betting-gaming-bug-bounty-program": {
    "first": "2026-11-08T20:29:03Z"
   },
   "ywh-grw-trading-fze-bug-bounty-program": {
@@ -2835,7 +2826,6 @@
   "h1-eufy-security": "2026-11-13T15:23:29Z",
   "ywh-superbank-public-bug-bounty-program": "2026-11-13T15:23:29Z",
   "h1-sheer-bbp": "2026-11-16T16:59:37Z",
-  "int-vdp-869": "2026-11-16T16:59:37Z",
   "ywh-cryptobox-bug-bounty": "2026-11-16T16:59:37Z",
   "int-datacamp": "2026-11-17T02:28:32Z",
   "h1-1password": "2026-11-17T16:52:57Z",
@@ -2861,7 +2851,11 @@
   "h1-fifth-third-bank-vdp": "2026-11-26T02:12:11Z",
   "h1-brave": "2026-11-26T02:12:11Z",
   "int-allegrobugbounty": "2026-11-26T02:12:11Z",
-  "int-vdp-874": "2026-11-26T02:12:11Z"
+  "int-vdp-874": "2026-11-26T02:12:11Z",
+  "h1-mondelez": "2026-11-26T17:42:43Z",
+  "int-ninjakiwigames": "2026-11-26T17:42:43Z",
+  "int-vdp-871": "2026-11-26T17:42:43Z",
+  "ywh-fdj-united-online-betting-gaming-bug-bounty-program": "2026-11-26T17:42:43Z"
  },
  "spotlight_history": [
   {
@@ -2911,5 +2905,5 @@
  ],
  "last_weekly": "2026-11-24T04:18:11Z",
  "last_post": "2026-11-25T17:57:54Z",
- "last_run": "2026-11-26T02:12:11Z"
+ "last_run": "2026-11-26T17:42:43Z"
 }
