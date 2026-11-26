@@ -466,9 +466,6 @@
   "h1-intuit-rdp": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "h1-fifth-third-bank-vdp": {
-   "first": "2026-11-08T20:29:03Z"
-  },
   "h1-indrive": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -1170,9 +1167,6 @@
   },
   "h1-quora": {
    "first": "2026-11-08T20:29:03Z"
-  },
-  "h1-brave": {
-   "first": "2026-11-24T04:18:11Z"
   },
   "h1-portswigger": {
    "first": "2026-11-08T20:29:03Z"
@@ -2248,9 +2242,6 @@
   "int-algemeendagblad": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-allegrobugbounty": {
-   "first": "2026-11-08T20:29:03Z"
-  },
   "int-anacondavdp": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2623,8 +2614,8 @@
   "int-upholdcom": {
    "first": "2026-11-25T17:57:54Z"
   },
-  "int-vdp-874": {
-   "first": "2026-11-25T17:57:54Z"
+  "int-vdp-871": {
+   "first": "2026-11-26T02:12:11Z"
   },
   "int-vrtnv": {
    "first": "2026-11-08T20:29:03Z"
@@ -2861,13 +2852,16 @@
   "h1-klarna": "2026-11-23T19:14:25Z",
   "bc-elementor-bug-bounty-program-539": "2026-11-23T19:14:25Z",
   "int-vdp-870": "2026-11-23T19:14:25Z",
-  "int-vdp-871": "2026-11-24T04:18:11Z",
   "h1-oasisprotocol": "2026-11-24T18:53:10Z",
   "int-challenge1126": "2026-11-24T18:53:10Z",
   "h1-publitas": "2026-11-25T17:57:54Z",
   "int-altera": "2026-11-25T17:57:54Z",
   "int-lansweeper1": "2026-11-25T17:57:54Z",
-  "int-vdp-873": "2026-11-25T17:57:54Z"
+  "int-vdp-873": "2026-11-25T17:57:54Z",
+  "h1-fifth-third-bank-vdp": "2026-11-26T02:12:11Z",
+  "h1-brave": "2026-11-26T02:12:11Z",
+  "int-allegrobugbounty": "2026-11-26T02:12:11Z",
+  "int-vdp-874": "2026-11-26T02:12:11Z"
  },
  "spotlight_history": [
   {
@@ -2917,5 +2911,5 @@
  ],
  "last_weekly": "2026-11-24T04:18:11Z",
  "last_post": "2026-11-25T17:57:54Z",
- "last_run": "2026-11-25T17:57:54Z"
+ "last_run": "2026-11-26T02:12:11Z"
 }
