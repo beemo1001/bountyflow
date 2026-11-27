@@ -2239,6 +2239,9 @@
   "int-algemeendagblad": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "int-allegrobugbounty": {
+   "first": "2026-11-27T17:27:30Z"
+  },
   "int-anacondavdp": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2418,9 +2421,6 @@
   },
   "int-kuleuvenrdp": {
    "first": "2026-11-08T20:29:03Z"
-  },
-  "int-website": {
-   "first": "2026-11-25T17:57:54Z"
   },
   "int-kiwavdp": {
    "first": "2026-11-08T20:29:03Z"
@@ -2665,9 +2665,6 @@
   "ywh-atg-public-bug-bounty-program": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "ywh-alasco-gmbh-bug-bounty-program": {
-   "first": "2026-11-08T20:29:03Z"
-  },
   "ywh-bookbeat": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2850,12 +2847,13 @@
   "int-vdp-873": "2026-11-25T17:57:54Z",
   "h1-fifth-third-bank-vdp": "2026-11-26T02:12:11Z",
   "h1-brave": "2026-11-26T02:12:11Z",
-  "int-allegrobugbounty": "2026-11-26T02:12:11Z",
   "int-vdp-874": "2026-11-26T02:12:11Z",
   "h1-mondelez": "2026-11-26T17:42:43Z",
   "int-ninjakiwigames": "2026-11-26T17:42:43Z",
   "int-vdp-871": "2026-11-26T17:42:43Z",
-  "ywh-fdj-united-online-betting-gaming-bug-bounty-program": "2026-11-26T17:42:43Z"
+  "ywh-fdj-united-online-betting-gaming-bug-bounty-program": "2026-11-26T17:42:43Z",
+  "int-website": "2026-11-27T17:27:30Z",
+  "ywh-alasco-gmbh-bug-bounty-program": "2026-11-27T17:27:30Z"
  },
  "spotlight_history": [
   {
@@ -2905,5 +2903,5 @@
  ],
  "last_weekly": "2026-11-24T04:18:11Z",
  "last_post": "2026-11-25T17:57:54Z",
- "last_run": "2026-11-27T02:10:15Z"
+ "last_run": "2026-11-27T17:27:30Z"
 }
