@@ -2239,9 +2239,6 @@
   "int-algemeendagblad": {
    "first": "2026-11-08T20:29:03Z"
   },
-  "int-allegrobugbounty": {
-   "first": "2026-11-27T17:27:30Z"
-  },
   "int-anacondavdp": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2422,6 +2419,9 @@
   "int-kuleuvenrdp": {
    "first": "2026-11-08T20:29:03Z"
   },
+  "int-website": {
+   "first": "2026-11-28T01:58:45Z"
+  },
   "int-kiwavdp": {
    "first": "2026-11-08T20:29:03Z"
   },
@@ -2450,9 +2450,6 @@
    "first": "2026-11-08T20:29:03Z"
   },
   "int-monzopublicbugbountyprogram": {
-   "first": "2026-11-08T20:29:03Z"
-  },
-  "int-nvidiapublicbugbounty": {
    "first": "2026-11-08T20:29:03Z"
   },
   "int-nvidiavdp": {
@@ -2608,8 +2605,8 @@
   "int-upholdcom": {
    "first": "2026-11-25T17:57:54Z"
   },
-  "int-vdp-869": {
-   "first": "2026-11-26T17:42:43Z"
+  "int-vdp-868": {
+   "first": "2026-11-28T01:58:45Z"
   },
   "int-vrtnv": {
    "first": "2026-11-08T20:29:03Z"
@@ -2852,8 +2849,10 @@
   "int-ninjakiwigames": "2026-11-26T17:42:43Z",
   "int-vdp-871": "2026-11-26T17:42:43Z",
   "ywh-fdj-united-online-betting-gaming-bug-bounty-program": "2026-11-26T17:42:43Z",
-  "int-website": "2026-11-27T17:27:30Z",
-  "ywh-alasco-gmbh-bug-bounty-program": "2026-11-27T17:27:30Z"
+  "ywh-alasco-gmbh-bug-bounty-program": "2026-11-27T17:27:30Z",
+  "int-allegrobugbounty": "2026-11-28T01:58:45Z",
+  "int-nvidiapublicbugbounty": "2026-11-28T01:58:45Z",
+  "int-vdp-869": "2026-11-28T01:58:45Z"
  },
  "spotlight_history": [
   {
@@ -2902,6 +2901,6 @@
   }
  ],
  "last_weekly": "2026-11-24T04:18:11Z",
- "last_post": "2026-11-25T17:57:54Z",
- "last_run": "2026-11-27T17:27:30Z"
+ "last_post": "2026-11-28T01:58:45Z",
+ "last_run": "2026-11-28T01:58:45Z"
 }
